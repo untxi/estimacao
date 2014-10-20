@@ -5,6 +5,8 @@
  */
 package estimacao;
 
+import GUI.ventanaPrincipal;
+
 /**
  *
  * @author Samantha
@@ -16,6 +18,8 @@ public class Estimacao {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("hola, soy estimacao");
+        
     }
     
 }
