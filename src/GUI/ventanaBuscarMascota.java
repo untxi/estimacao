@@ -150,10 +150,13 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
         jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         panelVentanaBuscar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 240, 60));
 
+        btnCancelar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Cancelar");
         panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 90, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
         btnBuscar.setText("Buscar");
         panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 90, 40));
 

@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Samantha
  */
-public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
+public class ventanaReportarMascota extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ventanaBuscarMascota
      */
-    public ventanaBuscarMascota() {
+    public ventanaReportarMascota() {
         initComponents();
     }
 
@@ -33,7 +33,7 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
         lblImagenMascota = new javax.swing.JLabel();
         lblCaracteristicasLugar = new javax.swing.JLabel();
         lblCaracteristicas = new javax.swing.JLabel();
-        lblNombreMascota = new javax.swing.JLabel();
+        lblNombreReportante = new javax.swing.JLabel();
         fieldIdChip = new javax.swing.JTextField();
         lblEspecia = new javax.swing.JLabel();
         lblRaza = new javax.swing.JLabel();
@@ -46,14 +46,17 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
         lblPelaje = new javax.swing.JLabel();
         fieldPelaje = new javax.swing.JTextField();
         lblidChip = new javax.swing.JLabel();
-        fieldNombreMascota = new javax.swing.JTextField();
+        fieldNombreReportante = new javax.swing.JTextField();
         lblUbicacion = new javax.swing.JLabel();
         fieldUbicacion = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        lblEjemplodireccion = new javax.swing.JLabel();
+        lblNotas = new javax.swing.JLabel();
+        fieldNotas = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        lblFecha = new javax.swing.JLabel();
+        lblNombreMascota = new javax.swing.JLabel();
+        fieldNombreMascota = new javax.swing.JTextField();
 
         setResizable(true);
         setTitle("Buscar Mascota - Estimação");
@@ -62,10 +65,10 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
         panelVentanaBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTituloVentana.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        lblTituloVentana.setText("Buscar Mascota");
+        lblTituloVentana.setText("Reportar Mascota");
         panelVentanaBuscar.add(lblTituloVentana, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
-        lblImagenBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/buscar.png"))); // NOI18N
+        lblImagenBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/alerta.png"))); // NOI18N
         panelVentanaBuscar.add(lblImagenBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, 30));
 
         lblImagenMascota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/adoptar.png"))); // NOI18N
@@ -79,9 +82,9 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
         lblCaracteristicas.setText("Características de la Mascota");
         panelVentanaBuscar.add(lblCaracteristicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        lblNombreMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblNombreMascota.setText("Nombre");
-        panelVentanaBuscar.add(lblNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        lblNombreReportante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblNombreReportante.setText("Nombre del Reportante");
+        panelVentanaBuscar.add(lblNombreReportante, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
         panelVentanaBuscar.add(fieldIdChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 130, -1));
 
         lblEspecia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -125,10 +128,10 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
         lblidChip.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblidChip.setText("ID Chip");
         panelVentanaBuscar.add(lblidChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
-        panelVentanaBuscar.add(fieldNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 130, -1));
+        panelVentanaBuscar.add(fieldNombreReportante, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 240, -1));
 
         lblUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblUbicacion.setText("Ubicación donde se vió por última vez");
+        lblUbicacion.setText("Ubicación donde se encontró la mascota");
         panelVentanaBuscar.add(lblUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, -1, -1));
 
         fieldUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
@@ -139,23 +142,40 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
         });
         panelVentanaBuscar.add(fieldUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 200, -1));
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel1.setText("(Distrito, Cantón o Barrio)");
-        panelVentanaBuscar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 160, -1));
+        lblEjemplodireccion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblEjemplodireccion.setText("(Distrito, Cantón o Barrio)");
+        panelVentanaBuscar.add(lblEjemplodireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 160, -1));
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel2.setText("Notas");
-        panelVentanaBuscar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
+        lblNotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblNotas.setText("Notas");
+        panelVentanaBuscar.add(lblNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        panelVentanaBuscar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 240, 60));
+        fieldNotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        panelVentanaBuscar.add(fieldNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 240, 60));
 
+        btnCancelar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Cancelar");
-        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 90, 40));
+        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 90, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        btnBuscar.setText("Buscar");
-        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 90, 40));
+        btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
+        btnBuscar.setText("Reportar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 90, 40));
+
+        lblFecha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblFecha.setText("Fecha de encontrado");
+        panelVentanaBuscar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+
+        lblNombreMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblNombreMascota.setText("Nombre");
+        panelVentanaBuscar.add(lblNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        panelVentanaBuscar.add(fieldNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,7 +185,7 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         pack();
@@ -174,6 +194,10 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
     private void fieldUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldUbicacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldUbicacionActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -184,18 +208,21 @@ public class ventanaBuscarMascota extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JTextField fieldIdChip;
     private javax.swing.JTextField fieldNombreMascota;
+    private javax.swing.JTextField fieldNombreReportante;
+    private javax.swing.JTextField fieldNotas;
     private javax.swing.JTextField fieldOjos;
     private javax.swing.JTextField fieldPelaje;
     private javax.swing.JTextField fieldUbicacion;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblCaracteristicas;
     private javax.swing.JLabel lblCaracteristicasLugar;
+    private javax.swing.JLabel lblEjemplodireccion;
     private javax.swing.JLabel lblEspecia;
+    private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblImagenBuscar;
     private javax.swing.JLabel lblImagenMascota;
     private javax.swing.JLabel lblNombreMascota;
+    private javax.swing.JLabel lblNombreReportante;
+    private javax.swing.JLabel lblNotas;
     private javax.swing.JLabel lblOjos;
     private javax.swing.JLabel lblPelaje;
     private javax.swing.JLabel lblRaza;

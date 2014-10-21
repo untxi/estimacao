@@ -52,8 +52,6 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Estimação");
-        setIconImage(getIconImage());
-        setMaximumSize(getMaximumSize());
 
         panelPrincipal.setBackground(new java.awt.Color(190, 160, 100));
         panelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
