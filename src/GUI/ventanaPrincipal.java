@@ -45,13 +45,14 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         buscarPersona = new javax.swing.JMenuItem();
         buscarCasaCuna = new javax.swing.JMenuItem();
         menuReportar = new javax.swing.JMenu();
-        reoprtarPersona = new javax.swing.JMenuItem();
         reportarMascota = new javax.swing.JMenuItem();
+        reoprtarPersona = new javax.swing.JMenuItem();
         menuAyudar = new javax.swing.JMenu();
         acercade = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Estimação");
+        setIconImage(getIconImage());
         setMaximumSize(getMaximumSize());
 
         panelPrincipal.setBackground(new java.awt.Color(190, 160, 100));
@@ -60,7 +61,10 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
         panelPrincipal.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
+        barraMenu.setBackground(new java.awt.Color(153, 255, 153));
+
         menuUsuario.setForeground(new java.awt.Color(170, 80, 0));
+        menuUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuarioM.png"))); // NOI18N
         menuUsuario.setText("Usuario");
         menuUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
@@ -92,6 +96,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         barraMenu.add(menuUsuario);
 
         menuBusqueda.setForeground(new java.awt.Color(170, 80, 0));
+        menuBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/buscar.png"))); // NOI18N
         menuBusqueda.setText("Búsqueda");
         menuBusqueda.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
@@ -113,27 +118,30 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         barraMenu.add(menuBusqueda);
 
         menuReportar.setForeground(new java.awt.Color(170, 80, 0));
+        menuReportar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/alerta.png"))); // NOI18N
         menuReportar.setText("Reportar");
         menuReportar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-
-        reoprtarPersona.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        reoprtarPersona.setForeground(new java.awt.Color(170, 80, 0));
-        reoprtarPersona.setText("Reportar Persona");
-        menuReportar.add(reoprtarPersona);
 
         reportarMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         reportarMascota.setForeground(new java.awt.Color(170, 80, 0));
         reportarMascota.setText("Reportar Mascota");
         menuReportar.add(reportarMascota);
 
+        reoprtarPersona.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        reoprtarPersona.setForeground(new java.awt.Color(170, 80, 0));
+        reoprtarPersona.setText("Reportar Persona");
+        menuReportar.add(reoprtarPersona);
+
         barraMenu.add(menuReportar);
 
         menuAyudar.setForeground(new java.awt.Color(170, 80, 0));
+        menuAyudar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/donar.png"))); // NOI18N
         menuAyudar.setText("Donar");
         menuAyudar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         barraMenu.add(menuAyudar);
 
         acercade.setForeground(new java.awt.Color(170, 80, 0));
+        acercade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/acerca.png"))); // NOI18N
         acercade.setText("Acerca de");
         acercade.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         barraMenu.add(acercade);
@@ -144,11 +152,11 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
         );
 
         pack();

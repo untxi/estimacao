@@ -34,6 +34,8 @@ public class ventanaAsignarAdministradores extends javax.swing.JInternalFrame {
         lblTituloAsignarAdministradores = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setTitle("Asignar Administradores - Estimação");
+
         panelVentanaAsignarAdministradores.setBackground(new java.awt.Color(190, 160, 100));
         panelVentanaAsignarAdministradores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -88,7 +90,7 @@ public class ventanaAsignarAdministradores extends javax.swing.JInternalFrame {
 
         lblTituloAsignarAdministradores.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTituloAsignarAdministradores.setText("Asignar Administradores");
-        panelVentanaAsignarAdministradores.add(lblTituloAsignarAdministradores, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
+        panelVentanaAsignarAdministradores.add(lblTituloAsignarAdministradores, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/reporte.png"))); // NOI18N
         panelVentanaAsignarAdministradores.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, -1, -1));
