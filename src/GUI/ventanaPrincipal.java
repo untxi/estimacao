@@ -27,70 +27,136 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        panelPrincipal = new javax.swing.JPanel();
+        barraMenu = new javax.swing.JMenuBar();
         menuUsuario = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        crearUsuario = new javax.swing.JMenuItem();
+        ingresarCuenta = new javax.swing.JMenuItem();
+        crearAdministrador = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        menuBusqueda = new javax.swing.JMenu();
+        buscarMascota = new javax.swing.JMenuItem();
+        buscarPersona = new javax.swing.JMenuItem();
+        buscarCasaCuna = new javax.swing.JMenuItem();
+        menuReportar = new javax.swing.JMenu();
+        reoprtarPersona = new javax.swing.JMenuItem();
+        reportarMascota = new javax.swing.JMenuItem();
+        menuAyudar = new javax.swing.JMenu();
+        acercade = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Estimacao");
 
-        jPanel1.setBackground(new java.awt.Color(190, 160, 100));
+        panelPrincipal.setBackground(new java.awt.Color(190, 160, 100));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
+        panelPrincipal.setLayout(panelPrincipalLayout);
+        panelPrincipalLayout.setHorizontalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelPrincipalLayout.setVerticalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 279, Short.MAX_VALUE)
         );
 
         menuUsuario.setForeground(new java.awt.Color(170, 80, 0));
         menuUsuario.setText("Usuario");
         menuUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jMenuBar1.add(menuUsuario);
 
-        jMenu2.setForeground(new java.awt.Color(170, 80, 0));
-        jMenu2.setText("Búsqueda");
-        jMenu2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jMenuBar1.add(jMenu2);
+        crearUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        crearUsuario.setForeground(new java.awt.Color(170, 80, 0));
+        crearUsuario.setText("Crear Usuario Nuevo");
+        menuUsuario.add(crearUsuario);
 
-        jMenu3.setForeground(new java.awt.Color(170, 80, 0));
-        jMenu3.setText("Reportar");
-        jMenu3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jMenuBar1.add(jMenu3);
+        ingresarCuenta.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        ingresarCuenta.setForeground(new java.awt.Color(170, 80, 0));
+        ingresarCuenta.setText("Ingresar a mi Cuenta");
+        menuUsuario.add(ingresarCuenta);
 
-        jMenu1.setForeground(new java.awt.Color(170, 80, 0));
-        jMenu1.setText("Ayudar");
-        jMenu1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jMenuBar1.add(jMenu1);
+        crearAdministrador.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        crearAdministrador.setForeground(new java.awt.Color(170, 80, 0));
+        crearAdministrador.setText("Asignar Administradores");
+        crearAdministrador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearAdministradorActionPerformed(evt);
+            }
+        });
+        menuUsuario.add(crearAdministrador);
 
-        jMenu4.setForeground(new java.awt.Color(170, 80, 0));
-        jMenu4.setText("Acerca de");
-        jMenu4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jMenuBar1.add(jMenu4);
+        jMenuItem1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jMenuItem1.setForeground(new java.awt.Color(170, 80, 0));
+        jMenuItem1.setText("Salir de mi Cuenta");
+        menuUsuario.add(jMenuItem1);
 
-        setJMenuBar(jMenuBar1);
+        barraMenu.add(menuUsuario);
+
+        menuBusqueda.setForeground(new java.awt.Color(170, 80, 0));
+        menuBusqueda.setText("Búsqueda");
+        menuBusqueda.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        buscarMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        buscarMascota.setForeground(new java.awt.Color(170, 80, 0));
+        buscarMascota.setText("Buscar Mascota");
+        menuBusqueda.add(buscarMascota);
+
+        buscarPersona.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        buscarPersona.setForeground(new java.awt.Color(170, 80, 0));
+        buscarPersona.setText("Buscar Persona");
+        menuBusqueda.add(buscarPersona);
+
+        buscarCasaCuna.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        buscarCasaCuna.setForeground(new java.awt.Color(170, 80, 0));
+        buscarCasaCuna.setText("Buscar Casa Cuna");
+        menuBusqueda.add(buscarCasaCuna);
+
+        barraMenu.add(menuBusqueda);
+
+        menuReportar.setForeground(new java.awt.Color(170, 80, 0));
+        menuReportar.setText("Reportar");
+        menuReportar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        reoprtarPersona.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        reoprtarPersona.setForeground(new java.awt.Color(170, 80, 0));
+        reoprtarPersona.setText("Reportar Persona");
+        menuReportar.add(reoprtarPersona);
+
+        reportarMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        reportarMascota.setForeground(new java.awt.Color(170, 80, 0));
+        reportarMascota.setText("Reportar Mascota");
+        menuReportar.add(reportarMascota);
+
+        barraMenu.add(menuReportar);
+
+        menuAyudar.setForeground(new java.awt.Color(170, 80, 0));
+        menuAyudar.setText("Donar");
+        menuAyudar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        barraMenu.add(menuAyudar);
+
+        acercade.setForeground(new java.awt.Color(170, 80, 0));
+        acercade.setText("Acerca de");
+        acercade.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        barraMenu.add(acercade);
+
+        setJMenuBar(barraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void crearAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearAdministradorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crearAdministradorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,12 +194,21 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu acercade;
+    private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JMenuItem buscarCasaCuna;
+    private javax.swing.JMenuItem buscarMascota;
+    private javax.swing.JMenuItem buscarPersona;
+    private javax.swing.JMenuItem crearAdministrador;
+    private javax.swing.JMenuItem crearUsuario;
+    private javax.swing.JMenuItem ingresarCuenta;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu menuAyudar;
+    private javax.swing.JMenu menuBusqueda;
+    private javax.swing.JMenu menuReportar;
     private javax.swing.JMenu menuUsuario;
+    private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JMenuItem reoprtarPersona;
+    private javax.swing.JMenuItem reportarMascota;
     // End of variables declaration//GEN-END:variables
 }
