@@ -84,7 +84,7 @@ public class ventanaAsignarAdministradores extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tablaPersonas);
 
         panelVentanaAsignarAdministradores.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 580, -1));
-        panelVentanaAsignarAdministradores.add(scrollBarVentanaAsignarAdministradores, new org.netbeans.lib.awtextra.AbsoluteConstraints(637, 0, 20, 330));
+        panelVentanaAsignarAdministradores.add(scrollBarVentanaAsignarAdministradores, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 20, 330));
 
         lblTituloAsignarAdministradores.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTituloAsignarAdministradores.setText("Asignar Administradores");

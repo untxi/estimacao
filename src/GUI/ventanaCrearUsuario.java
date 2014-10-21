@@ -48,9 +48,10 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
         lblCuna = new javax.swing.JLabel();
         checkAdoptante = new javax.swing.JCheckBox();
         checkCasaCuna = new javax.swing.JCheckBox();
+        btnCancelar = new javax.swing.JButton();
 
         setClosable(true);
-        setTitle("Crear Usuario Nuevo - Estimacao");
+        setTitle("Crear Usuario Nuevo - Estimação");
 
         panelCrearUsuario.setBackground(new java.awt.Color(190, 160, 100));
         panelCrearUsuario.setToolTipText("");
@@ -95,7 +96,7 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
         btnCrear.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         btnCrear.setForeground(new java.awt.Color(170, 80, 0));
         btnCrear.setText("Crear");
-        panelCrearUsuario.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 408, -1, -1));
+        panelCrearUsuario.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 110, 50));
 
         fieldNombre.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         fieldNombre.setToolTipText("");
@@ -136,13 +137,13 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(fieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 369, 204, -1));
 
         lblimagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuario.png"))); // NOI18N
-        panelCrearUsuario.add(lblimagenUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 11, 142, 185));
+        panelCrearUsuario.add(lblimagenUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 70, 80));
 
         lblimagenAdoptante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/adoptar.png"))); // NOI18N
-        panelCrearUsuario.add(lblimagenAdoptante, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 11, -1, -1));
+        panelCrearUsuario.add(lblimagenAdoptante, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, -1, -1));
 
         lblCuna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/casaCuna.png"))); // NOI18N
-        panelCrearUsuario.add(lblCuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(713, 20, -1, -1));
+        panelCrearUsuario.add(lblCuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 30, 140, -1));
 
         checkAdoptante.setBackground(new java.awt.Color(190, 160, 100));
         checkAdoptante.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
@@ -156,19 +157,24 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
         checkCasaCuna.setText("Casa Cuna");
         panelCrearUsuario.add(checkCasaCuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, -1, -1));
 
+        btnCancelar.setBackground(new java.awt.Color(255, 153, 0));
+        btnCancelar.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.setMaximumSize(new java.awt.Dimension(63, 23));
+        btnCancelar.setMinimumSize(new java.awt.Dimension(63, 23));
+        btnCancelar.setPreferredSize(new java.awt.Dimension(63, 23));
+        panelCrearUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 100, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 48, Short.MAX_VALUE))
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 22, Short.MAX_VALUE))
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
         );
 
         pack();
@@ -184,6 +190,7 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCrear;
     private javax.swing.JCheckBox checkAdoptante;
     private javax.swing.JCheckBox checkCasaCuna;

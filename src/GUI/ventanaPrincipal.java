@@ -8,6 +8,11 @@ package GUI;
 /**
  *
  * @author Samantha
+ * Toolkit.getDefaultToolkit().getImage(ventanaPrincipal.class.getResource("/Recursos/ImagenesGUI/Logo Adrian.png"))
+ * 
+ * ImageIcon portada = new ImageIcon(ventanaPrincipal.class.getResource("/Recursos/ImagenesGUI/Logo Adrian.png"));
+   lblNewLabel_1.setIcon(new ImageIcon(portada.getImage().getScaledInstance(lblNewLabel_1.getWidth(), lblNewLabel_1.getHeight(), Image.SCALE_SMOOTH)));
+		
  */
 public class ventanaPrincipal extends javax.swing.JFrame {
 
@@ -28,6 +33,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         panelPrincipal = new javax.swing.JPanel();
+        lblLogo = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
         menuUsuario = new javax.swing.JMenu();
         crearUsuario = new javax.swing.JMenuItem();
@@ -45,20 +51,14 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         acercade = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Estimacao");
+        setTitle("Estimação");
+        setMaximumSize(getMaximumSize());
 
         panelPrincipal.setBackground(new java.awt.Color(190, 160, 100));
+        panelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
-        panelPrincipal.setLayout(panelPrincipalLayout);
-        panelPrincipalLayout.setHorizontalGroup(
-            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        panelPrincipalLayout.setVerticalGroup(
-            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
-        );
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
+        panelPrincipal.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
         menuUsuario.setForeground(new java.awt.Color(170, 80, 0));
         menuUsuario.setText("Usuario");
@@ -203,6 +203,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem crearUsuario;
     private javax.swing.JMenuItem ingresarCuenta;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JMenu menuAyudar;
     private javax.swing.JMenu menuBusqueda;
     private javax.swing.JMenu menuReportar;
