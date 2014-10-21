@@ -27,183 +27,70 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelPrincipal = new javax.swing.JPanel();
-        presentaLogo = new javax.swing.JLabel();
-        menuPrincipal = new javax.swing.JMenuBar();
+        jPanel1 = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
         menuUsuario = new javax.swing.JMenu();
-        crearUsuario = new javax.swing.JMenuItem();
-        ingresarUsuario = new javax.swing.JMenuItem();
-        menuCrearAdministrador = new javax.swing.JMenuItem();
-        salirUsuario = new javax.swing.JMenuItem();
-        menuBusqueda = new javax.swing.JMenu();
-        buscaMascota = new javax.swing.JMenuItem();
-        buscaUsuario = new javax.swing.JMenuItem();
-        buscaCasaCuna = new javax.swing.JMenuItem();
-        menuReportar = new javax.swing.JMenu();
-        reportarMascota = new javax.swing.JMenuItem();
-        reportarUsuario = new javax.swing.JMenuItem();
-        ayuda = new javax.swing.JMenu();
-        serCasaCuna = new javax.swing.JMenuItem();
-        donar = new javax.swing.JMenuItem();
-        acercade = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Estimacao");
-        setBackground(new java.awt.Color(190, 160, 100));
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setName("ventanaPrincipal"); // NOI18N
 
-        panelPrincipal.setBackground(new java.awt.Color(190, 160, 100));
-        panelPrincipal.setForeground(new java.awt.Color(190, 160, 100));
-        panelPrincipal.setName(""); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(190, 160, 100));
 
-        presentaLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoEstimacao.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
-        panelPrincipal.setLayout(panelPrincipalLayout);
-        panelPrincipalLayout.setHorizontalGroup(
-            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(presentaLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(270, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
-        panelPrincipalLayout.setVerticalGroup(
-            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(presentaLogo)
-                .addContainerGap(39, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
         );
-
-        menuPrincipal.setForeground(new java.awt.Color(240, 240, 240));
-        menuPrincipal.setToolTipText("");
-        menuPrincipal.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
-        menuPrincipal.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        menuPrincipal.setName(""); // NOI18N
 
         menuUsuario.setForeground(new java.awt.Color(170, 80, 0));
         menuUsuario.setText("Usuario");
         menuUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jMenuBar1.add(menuUsuario);
 
-        crearUsuario.setBackground(new java.awt.Color(190, 160, 100));
-        crearUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        crearUsuario.setForeground(new java.awt.Color(170, 80, 0));
-        crearUsuario.setText("Crear Usuario Nuevo");
-        crearUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearUsuarioActionPerformed(evt);
-            }
-        });
-        menuUsuario.add(crearUsuario);
+        jMenu2.setForeground(new java.awt.Color(170, 80, 0));
+        jMenu2.setText("Búsqueda");
+        jMenu2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jMenuBar1.add(jMenu2);
 
-        ingresarUsuario.setBackground(new java.awt.Color(190, 160, 100));
-        ingresarUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        ingresarUsuario.setForeground(new java.awt.Color(170, 80, 0));
-        ingresarUsuario.setText("Ingresar a mi Cuenta");
-        menuUsuario.add(ingresarUsuario);
+        jMenu3.setForeground(new java.awt.Color(170, 80, 0));
+        jMenu3.setText("Reportar");
+        jMenu3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jMenuBar1.add(jMenu3);
 
-        menuCrearAdministrador.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        menuCrearAdministrador.setForeground(new java.awt.Color(170, 80, 0));
-        menuCrearAdministrador.setText("Crear Administrador");
-        menuUsuario.add(menuCrearAdministrador);
+        jMenu1.setForeground(new java.awt.Color(170, 80, 0));
+        jMenu1.setText("Ayudar");
+        jMenu1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jMenuBar1.add(jMenu1);
 
-        salirUsuario.setBackground(new java.awt.Color(190, 160, 100));
-        salirUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        salirUsuario.setForeground(new java.awt.Color(170, 80, 0));
-        salirUsuario.setText("Salir de mi Cuenta");
-        menuUsuario.add(salirUsuario);
+        jMenu4.setForeground(new java.awt.Color(170, 80, 0));
+        jMenu4.setText("Acerca de");
+        jMenu4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jMenuBar1.add(jMenu4);
 
-        menuPrincipal.add(menuUsuario);
-
-        menuBusqueda.setForeground(new java.awt.Color(170, 80, 0));
-        menuBusqueda.setText("Búsqueda");
-        menuBusqueda.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-
-        buscaMascota.setBackground(new java.awt.Color(190, 160, 100));
-        buscaMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        buscaMascota.setForeground(new java.awt.Color(170, 80, 0));
-        buscaMascota.setText("Buscar Mascota");
-        menuBusqueda.add(buscaMascota);
-
-        buscaUsuario.setBackground(new java.awt.Color(190, 160, 100));
-        buscaUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        buscaUsuario.setForeground(new java.awt.Color(170, 80, 0));
-        buscaUsuario.setText("Buscar Usuario");
-        menuBusqueda.add(buscaUsuario);
-
-        buscaCasaCuna.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        buscaCasaCuna.setForeground(new java.awt.Color(170, 80, 0));
-        buscaCasaCuna.setText("Buscar Casa Cuna");
-        menuBusqueda.add(buscaCasaCuna);
-
-        menuPrincipal.add(menuBusqueda);
-
-        menuReportar.setForeground(new java.awt.Color(170, 80, 0));
-        menuReportar.setText("Reportar");
-        menuReportar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-
-        reportarMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        reportarMascota.setForeground(new java.awt.Color(170, 80, 0));
-        reportarMascota.setText("Reportar Mascota");
-        reportarMascota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reportarMascotaActionPerformed(evt);
-            }
-        });
-        menuReportar.add(reportarMascota);
-
-        reportarUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        reportarUsuario.setForeground(new java.awt.Color(170, 80, 0));
-        reportarUsuario.setText("Reportar Usuario");
-        menuReportar.add(reportarUsuario);
-
-        menuPrincipal.add(menuReportar);
-
-        ayuda.setForeground(new java.awt.Color(170, 80, 0));
-        ayuda.setText("Ayudar");
-        ayuda.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-
-        serCasaCuna.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        serCasaCuna.setForeground(new java.awt.Color(170, 80, 0));
-        serCasaCuna.setText("Ser Casa Cuna");
-        ayuda.add(serCasaCuna);
-
-        donar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        donar.setForeground(new java.awt.Color(170, 80, 0));
-        donar.setText("Donar");
-        ayuda.add(donar);
-
-        menuPrincipal.add(ayuda);
-
-        acercade.setForeground(new java.awt.Color(170, 80, 0));
-        acercade.setText("Acerca de");
-        acercade.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        menuPrincipal.add(acercade);
-
-        setJMenuBar(menuPrincipal);
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void crearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_crearUsuarioActionPerformed
-
-    private void reportarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportarMascotaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_reportarMascotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,24 +128,12 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu acercade;
-    private javax.swing.JMenu ayuda;
-    private javax.swing.JMenuItem buscaCasaCuna;
-    private javax.swing.JMenuItem buscaMascota;
-    private javax.swing.JMenuItem buscaUsuario;
-    private javax.swing.JMenuItem crearUsuario;
-    private javax.swing.JMenuItem donar;
-    private javax.swing.JMenuItem ingresarUsuario;
-    private javax.swing.JMenu menuBusqueda;
-    private javax.swing.JMenuItem menuCrearAdministrador;
-    private javax.swing.JMenuBar menuPrincipal;
-    private javax.swing.JMenu menuReportar;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu menuUsuario;
-    private javax.swing.JPanel panelPrincipal;
-    private javax.swing.JLabel presentaLogo;
-    private javax.swing.JMenuItem reportarMascota;
-    private javax.swing.JMenuItem reportarUsuario;
-    private javax.swing.JMenuItem salirUsuario;
-    private javax.swing.JMenuItem serCasaCuna;
     // End of variables declaration//GEN-END:variables
 }

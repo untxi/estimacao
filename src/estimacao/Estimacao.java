@@ -5,8 +5,6 @@
  */
 package estimacao;
 
-import GUI.ventanaPrincipal;
-
 /**
  *
  * @author Samantha
