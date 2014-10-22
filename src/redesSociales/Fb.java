@@ -5,10 +5,19 @@
  */
 package redesSociales;
 
-/**
- *
- * @author Fede
- */
+
 public class Fb {
+    //Atributos
+    private static Fb miFb;
     
+    //Constructor
+    
+    //Metodos
+    public static Fb getInstance(){
+        // La clase singleton
+        if (miFb == null){
+            miFb = new Fb();
+        }
+        return miFb ;
+    }
 }
