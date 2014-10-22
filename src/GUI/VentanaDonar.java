@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Samantha
  */
-public class ventanaBuscarCasaCuna extends javax.swing.JInternalFrame {
+public class VentanaDonar extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form ventanaBuscarCasaCuna
+     * Creates new form ventanaDonar
      */
-    public ventanaBuscarCasaCuna() {
+    public VentanaDonar() {
         initComponents();
     }
 
@@ -29,17 +29,20 @@ public class ventanaBuscarCasaCuna extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
 
+        setTitle("Donar - Estimação");
+
+        jPanel1.setBackground(new java.awt.Color(190, 160, 100));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
         );
 
         pack();

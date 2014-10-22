@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Samantha
  */
-public class ventanaIngresarCuenta extends javax.swing.JInternalFrame {
+public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ventanaIngresarCuenta
      */
-    public ventanaIngresarCuenta() {
+    public VentanaIngresarCuenta() {
         initComponents();
     }
 
@@ -53,12 +53,10 @@ public class ventanaIngresarCuenta extends javax.swing.JInternalFrame {
         panelIngresarUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
 
         lblingreseID.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
-        lblingreseID.setForeground(new java.awt.Color(170, 80, 0));
         lblingreseID.setText("ID usuario");
         panelIngresarUsuario.add(lblingreseID, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         lblingresePassword.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
-        lblingresePassword.setForeground(new java.awt.Color(170, 80, 0));
         lblingresePassword.setText("Password");
         panelIngresarUsuario.add(lblingresePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 

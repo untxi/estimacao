@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Samantha
  */
-public class ventanaAsignarAdministradores extends javax.swing.JInternalFrame {
+public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ventanaAsignarAdministradores
      */
-    public ventanaAsignarAdministradores() {
+    public VentanaAsignarAdministradores() {
         initComponents();
     }
 
