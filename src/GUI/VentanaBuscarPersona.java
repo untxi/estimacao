@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Samantha
  */
-public class ventanaBuscarPersona extends javax.swing.JInternalFrame {
+public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ventanaBuscarMascota
      */
-    public ventanaBuscarPersona() {
+    public VentanaBuscarPersona() {
         initComponents();
     }
 

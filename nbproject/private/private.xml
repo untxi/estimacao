@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/ventanaBuscarPersona.java</file>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/ventanaIngresarCuenta.java</file>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/ventanaPrincipal.java</file>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/ventanaAsignarAdministradores.java</file>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/ventanaCrearUsuario.java</file>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/ventanaAcercade.java</file>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/ventanaReportarMascota.java</file>
+            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/VentanaBuscarCasaCuna.java</file>
+            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/VentanaDonar.java</file>
         </group>
     </open-files>
 </project-private>

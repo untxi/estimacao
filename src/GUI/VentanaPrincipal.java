@@ -8,18 +8,18 @@ package GUI;
 /**
  *
  * @author Samantha
- * Toolkit.getDefaultToolkit().getImage(ventanaPrincipal.class.getResource("/Recursos/ImagenesGUI/Logo Adrian.png"))
- * 
- * ImageIcon portada = new ImageIcon(ventanaPrincipal.class.getResource("/Recursos/ImagenesGUI/Logo Adrian.png"));
+ Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/Recursos/ImagenesGUI/Logo Adrian.png"))
+ 
+ ImageIcon portada = new ImageIcon(VentanaPrincipal.class.getResource("/Recursos/ImagenesGUI/Logo Adrian.png"));
    lblNewLabel_1.setIcon(new ImageIcon(portada.getImage().getScaledInstance(lblNewLabel_1.getWidth(), lblNewLabel_1.getHeight(), Image.SCALE_SMOOTH)));
 		
  */
-public class ventanaPrincipal extends javax.swing.JFrame {
+public class VentanaPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form ventanaPrincipal
      */
-    public ventanaPrincipal() {
+    public VentanaPrincipal() {
         initComponents();
     }
 
@@ -181,20 +181,21 @@ public class ventanaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ventanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ventanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ventanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ventanaPrincipal().setVisible(true);
+                new VentanaPrincipal().setVisible(true);
             }
         });
     }

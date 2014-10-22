@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Samantha
  */
-public class ventanaAcercade extends javax.swing.JInternalFrame {
+public class VentanaAcercade extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ventanaAcercade
      */
-    public ventanaAcercade() {
+    public VentanaAcercade() {
         initComponents();
     }
 

@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Samantha
  */
-public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
+public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ventanaCrearUsuario
      */
-    public ventanaCrearUsuario() {
+    public VentanaCrearUsuario() {
         initComponents();
     }
 
@@ -49,6 +49,19 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
         checkAdoptante = new javax.swing.JCheckBox();
         checkCasaCuna = new javax.swing.JCheckBox();
         btnCancelar = new javax.swing.JButton();
+        lblUbicacion = new javax.swing.JLabel();
+        lblTipoResidencia = new javax.swing.JLabel();
+        fieldUbicacion = new javax.swing.JTextField();
+        fieldTipoResidencia = new javax.swing.JTextField();
+        lblTamano = new javax.swing.JLabel();
+        lblCantidadMascotas = new javax.swing.JLabel();
+        boxEspecie = new javax.swing.JComboBox();
+        boxTamaño = new javax.swing.JComboBox();
+        lblTamano1 = new javax.swing.JLabel();
+        boxDonacion = new javax.swing.JComboBox();
+        checkDonacion = new javax.swing.JCheckBox();
+        lblEspecie = new javax.swing.JLabel();
+        boxCantidadMascotas = new javax.swing.JComboBox();
 
         setClosable(true);
         setTitle("Crear Usuario Nuevo - Estimação");
@@ -57,38 +70,31 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
         panelCrearUsuario.setToolTipText("");
         panelCrearUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblNombre.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        lblNombre.setForeground(new java.awt.Color(170, 80, 0));
+        lblNombre.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblNombre.setText("Nombre");
         panelCrearUsuario.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 205, -1, -1));
 
-        lblApellido1.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        lblApellido1.setForeground(new java.awt.Color(170, 80, 0));
+        lblApellido1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblApellido1.setText("Primer      Apellido");
         panelCrearUsuario.add(lblApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 237, -1, -1));
 
-        lblApellido2.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        lblApellido2.setForeground(new java.awt.Color(170, 80, 0));
+        lblApellido2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblApellido2.setText("Segundo Apellido");
         panelCrearUsuario.add(lblApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 261, -1, -1));
 
-        lblTelefono.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        lblTelefono.setForeground(new java.awt.Color(170, 80, 0));
+        lblTelefono.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblTelefono.setText("Teléfono");
         panelCrearUsuario.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 291, -1, -1));
 
-        lblEmail.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        lblEmail.setForeground(new java.awt.Color(170, 80, 0));
+        lblEmail.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblEmail.setText("E-mail");
         panelCrearUsuario.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 318, -1, -1));
 
-        lblid.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        lblid.setForeground(new java.awt.Color(170, 80, 0));
+        lblid.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblid.setText("ID (Sólo números)");
         panelCrearUsuario.add(lblid, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 345, -1, -1));
 
-        lblPassword.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        lblPassword.setForeground(new java.awt.Color(170, 80, 0));
+        lblPassword.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblPassword.setText("Password");
         panelCrearUsuario.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 372, -1, -1));
 
@@ -140,22 +146,20 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(lblimagenUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 70, 80));
 
         lblimagenAdoptante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/adoptar.png"))); // NOI18N
-        panelCrearUsuario.add(lblimagenAdoptante, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, -1, -1));
+        panelCrearUsuario.add(lblimagenAdoptante, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, -1, -1));
 
         lblCuna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/casaCuna.png"))); // NOI18N
         panelCrearUsuario.add(lblCuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 30, 140, -1));
 
         checkAdoptante.setBackground(new java.awt.Color(190, 160, 100));
-        checkAdoptante.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        checkAdoptante.setForeground(new java.awt.Color(170, 80, 0));
+        checkAdoptante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         checkAdoptante.setText("Adoptante");
         panelCrearUsuario.add(checkAdoptante, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 173, -1, -1));
 
         checkCasaCuna.setBackground(new java.awt.Color(190, 160, 100));
-        checkCasaCuna.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        checkCasaCuna.setForeground(new java.awt.Color(170, 80, 0));
+        checkCasaCuna.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         checkCasaCuna.setText("Casa Cuna");
-        panelCrearUsuario.add(checkCasaCuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, -1, -1));
+        panelCrearUsuario.add(checkCasaCuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, -1, -1));
 
         btnCancelar.setBackground(new java.awt.Color(255, 153, 0));
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
@@ -165,6 +169,72 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
         btnCancelar.setMinimumSize(new java.awt.Dimension(63, 23));
         btnCancelar.setPreferredSize(new java.awt.Dimension(63, 23));
         panelCrearUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 100, 50));
+
+        lblUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblUbicacion.setText("Ubicación");
+        panelCrearUsuario.add(lblUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, -1));
+
+        lblTipoResidencia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblTipoResidencia.setText("Tipo de Residencia");
+        panelCrearUsuario.add(lblTipoResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, -1, -1));
+
+        fieldUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        fieldUbicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldUbicacionActionPerformed(evt);
+            }
+        });
+        panelCrearUsuario.add(fieldUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 160, -1));
+
+        fieldTipoResidencia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        fieldTipoResidencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldTipoResidenciaActionPerformed(evt);
+            }
+        });
+        panelCrearUsuario.add(fieldTipoResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 160, -1));
+
+        lblTamano.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblTamano.setText("Donación");
+        panelCrearUsuario.add(lblTamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, -1, -1));
+
+        lblCantidadMascotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblCantidadMascotas.setText("Cantidad de Mascotas");
+        panelCrearUsuario.add(lblCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, -1, -1));
+
+        boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Perro", "Gato", "Pájaro", "Tortuga", "Roedor Pequeño", "Conejo" }));
+        panelCrearUsuario.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 110, -1));
+
+        boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Menor a 20cm", "De 20cm a 50cm", "De 50cm a 80cm", "Mayor a 1m" }));
+        panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, 110, -1));
+
+        lblTamano1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblTamano1.setText("Tamaño");
+        panelCrearUsuario.add(lblTamano1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, -1, -1));
+
+        boxDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        boxDonacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comida", "Shampoo", "Talco", "Medicamentos", "Pulgicidas", "Dinero" }));
+        panelCrearUsuario.add(boxDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 360, 110, -1));
+
+        checkDonacion.setBackground(new java.awt.Color(190, 160, 100));
+        checkDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        checkDonacion.setText("Recibir Donaciones");
+        checkDonacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkDonacionActionPerformed(evt);
+            }
+        });
+        panelCrearUsuario.add(checkDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, -1, -1));
+
+        lblEspecie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblEspecie.setText("Especie");
+        panelCrearUsuario.add(lblEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, -1, -1));
+
+        boxCantidadMascotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        boxCantidadMascotas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
+        panelCrearUsuario.add(boxCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 260, 40, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -188,26 +258,51 @@ public class ventanaCrearUsuario extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_field_IDActionPerformed
 
+    private void fieldUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldUbicacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldUbicacionActionPerformed
+
+    private void fieldTipoResidenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldTipoResidenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldTipoResidenciaActionPerformed
+
+    private void checkDonacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkDonacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkDonacionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox boxCantidadMascotas;
+    private javax.swing.JComboBox boxDonacion;
+    private javax.swing.JComboBox boxEspecie;
+    private javax.swing.JComboBox boxTamaño;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCrear;
     private javax.swing.JCheckBox checkAdoptante;
     private javax.swing.JCheckBox checkCasaCuna;
+    private javax.swing.JCheckBox checkDonacion;
     private javax.swing.JTextField fieldApellido1;
     private javax.swing.JTextField fieldApellido2;
     private javax.swing.JTextField fieldEmail;
     private javax.swing.JTextField fieldNombre;
     private javax.swing.JTextField fieldPassword;
     private javax.swing.JTextField fieldTelefono;
+    private javax.swing.JTextField fieldTipoResidencia;
+    private javax.swing.JTextField fieldUbicacion;
     private javax.swing.JTextField field_ID;
     private javax.swing.JLabel lblApellido1;
     private javax.swing.JLabel lblApellido2;
+    private javax.swing.JLabel lblCantidadMascotas;
     private javax.swing.JLabel lblCuna;
     private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblEspecie;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblTamano;
+    private javax.swing.JLabel lblTamano1;
     private javax.swing.JLabel lblTelefono;
+    private javax.swing.JLabel lblTipoResidencia;
+    private javax.swing.JLabel lblUbicacion;
     private javax.swing.JLabel lblid;
     private javax.swing.JLabel lblimagenAdoptante;
     private javax.swing.JLabel lblimagenUsuario;
