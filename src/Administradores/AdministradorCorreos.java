@@ -21,12 +21,12 @@ import javax.mail.internet.MimeMessage;
  * 
  * @author Adrian
  */
-public class administradorCorreos
+public class AdministradorCorreos
 {
 	
 	// Métodos
 	// Constructor
-	public administradorCorreos(){}
+	public AdministradorCorreos(){}
 	
 	/**
 	 * simpleMail
