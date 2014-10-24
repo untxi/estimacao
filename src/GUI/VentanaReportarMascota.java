@@ -33,7 +33,7 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
         lblImagenMascota = new javax.swing.JLabel();
         lblCaracteristicasLugar = new javax.swing.JLabel();
         lblCaracteristicas = new javax.swing.JLabel();
-        lblNombreReportante = new javax.swing.JLabel();
+        lbidReportante = new javax.swing.JLabel();
         fieldIdChip = new javax.swing.JTextField();
         lblEspecia = new javax.swing.JLabel();
         lblRaza = new javax.swing.JLabel();
@@ -59,9 +59,10 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
         fieldNombreMascota = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        buscarFecha = new com.toedter.calendar.JDateChooser();
 
         setResizable(true);
-        setTitle("Buscar Mascota - Estimação");
+        setTitle("Reportar Mascota - Estimação");
 
         panelVentanaBuscar.setBackground(new java.awt.Color(190, 160, 100));
         panelVentanaBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -84,9 +85,11 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
         lblCaracteristicas.setText("Características de la Mascota");
         panelVentanaBuscar.add(lblCaracteristicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        lblNombreReportante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblNombreReportante.setText("Nombre del Reportante");
-        panelVentanaBuscar.add(lblNombreReportante, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+        lbidReportante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lbidReportante.setText("ID del Reportante");
+        panelVentanaBuscar.add(lbidReportante, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
+
+        fieldIdChip.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldIdChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 130, -1));
 
         lblEspecia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -101,15 +104,15 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
         lblTamano.setText("Tamaño");
         panelVentanaBuscar.add(lblTamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
-        boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Menor a 20cm", "De 20cm a 50cm", "De 50cm a 80cm", "Mayor a 1m" }));
         panelVentanaBuscar.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 130, -1));
 
-        boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Perro", "Gato", "Pájaro", "Tortuga", "Roedor Pequeño", "Conejo" }));
         panelVentanaBuscar.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 130, -1));
 
-        boxRaza.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        boxRaza.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         boxRaza.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione Especie" }));
         panelVentanaBuscar.add(boxRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
 
@@ -117,26 +120,28 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
         lblOjos.setText("Color de Ojos");
         panelVentanaBuscar.add(lblOjos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
 
-        fieldOjos.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldOjos.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldOjos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 100, -1));
 
         lblPelaje.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblPelaje.setText("Color de Pelaje");
         panelVentanaBuscar.add(lblPelaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
-        fieldPelaje.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldPelaje.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldPelaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 100, -1));
 
         lblidChip.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblidChip.setText("ID Chip");
         panelVentanaBuscar.add(lblidChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        fieldNombreReportante.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldNombreReportante, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 240, -1));
 
         lblUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblUbicacion.setText("Ubicación donde se encontró la mascota");
         panelVentanaBuscar.add(lblUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, -1, -1));
 
-        fieldUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldUbicacion.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldUbicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldUbicacionActionPerformed(evt);
@@ -152,15 +157,15 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
         lblNotas.setText("Notas");
         panelVentanaBuscar.add(lblNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
 
-        fieldNotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        fieldNotas.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 240, 60));
 
-        btnCancelar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Cancelar");
         panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 90, 40));
 
-        btnBuscar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
         btnBuscar.setText("Reportar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -172,11 +177,13 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
 
         lblFecha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblFecha.setText("Fecha de encontrado");
-        panelVentanaBuscar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+        panelVentanaBuscar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, -1, -1));
 
         lblNombreMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblNombreMascota.setText("Nombre");
         panelVentanaBuscar.add(lblNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        fieldNombreMascota.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 130, -1));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -185,6 +192,9 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/buscarImagen.png"))); // NOI18N
         panelVentanaBuscar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
+
+        buscarFecha.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        panelVentanaBuscar.add(buscarFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,6 +225,7 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox boxTamaño;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
+    private com.toedter.calendar.JDateChooser buscarFecha;
     private javax.swing.JTextField fieldIdChip;
     private javax.swing.JTextField fieldNombreMascota;
     private javax.swing.JTextField fieldNombreReportante;
@@ -224,6 +235,7 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
     private javax.swing.JTextField fieldUbicacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lbidReportante;
     private javax.swing.JLabel lblCaracteristicas;
     private javax.swing.JLabel lblCaracteristicasLugar;
     private javax.swing.JLabel lblEjemplodireccion;
@@ -232,7 +244,6 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblImagenBuscar;
     private javax.swing.JLabel lblImagenMascota;
     private javax.swing.JLabel lblNombreMascota;
-    private javax.swing.JLabel lblNombreReportante;
     private javax.swing.JLabel lblNotas;
     private javax.swing.JLabel lblOjos;
     private javax.swing.JLabel lblPelaje;

@@ -99,12 +99,12 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 372, -1, -1));
 
         btnCrear.setBackground(new java.awt.Color(255, 153, 0));
-        btnCrear.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        btnCrear.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCrear.setForeground(new java.awt.Color(170, 80, 0));
         btnCrear.setText("Crear");
         panelCrearUsuario.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 110, 50));
 
-        fieldNombre.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldNombre.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldNombre.setToolTipText("");
         fieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,23 +113,23 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         });
         panelCrearUsuario.add(fieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 202, 204, -1));
 
-        fieldApellido2.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldApellido2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldApellido2.setToolTipText("");
         panelCrearUsuario.add(fieldApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 261, 204, -1));
 
-        fieldTelefono.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldTelefono.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldTelefono.setToolTipText("");
         panelCrearUsuario.add(fieldTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 288, 205, -1));
 
-        fieldApellido1.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldApellido1.setToolTipText("");
         panelCrearUsuario.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 234, 204, -1));
 
-        fieldEmail.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldEmail.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldEmail.setToolTipText("");
         panelCrearUsuario.add(fieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 315, 204, -1));
 
-        field_ID.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        field_ID.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         field_ID.setToolTipText("");
         field_ID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,7 +138,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         });
         panelCrearUsuario.add(field_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 342, 204, -1));
 
-        fieldPassword.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldPassword.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldPassword.setToolTipText("");
         panelCrearUsuario.add(fieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 369, 204, -1));
 
@@ -162,7 +162,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(checkCasaCuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, -1, -1));
 
         btnCancelar.setBackground(new java.awt.Color(255, 153, 0));
-        btnCancelar.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Cancelar");
         btnCancelar.setMaximumSize(new java.awt.Dimension(63, 23));
@@ -178,7 +178,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         lblTipoResidencia.setText("Tipo de Residencia");
         panelCrearUsuario.add(lblTipoResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, -1, -1));
 
-        fieldUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        fieldUbicacion.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldUbicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldUbicacionActionPerformed(evt);
@@ -186,7 +186,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         });
         panelCrearUsuario.add(fieldUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 160, -1));
 
-        fieldTipoResidencia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        fieldTipoResidencia.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldTipoResidencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldTipoResidenciaActionPerformed(evt);

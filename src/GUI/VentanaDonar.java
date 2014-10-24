@@ -28,21 +28,95 @@ public class VentanaDonar extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblNombreDonante = new javax.swing.JLabel();
+        fieldNombreDonante = new javax.swing.JTextField();
+        lblTipoDonacion = new javax.swing.JLabel();
+        boxDonacion = new javax.swing.JComboBox();
+        lblCantidadDonacion = new javax.swing.JLabel();
+        boxMedidaDonacion = new javax.swing.JComboBox();
+        btnCancelar = new javax.swing.JButton();
+        btnDonar = new javax.swing.JButton();
+        lblMedidaDonacion = new javax.swing.JLabel();
+        fieldCantidadDonacion = new javax.swing.JTextField();
+        lblidDonante = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        lblFecha = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setTitle("Donar - Estimação");
 
         jPanel1.setBackground(new java.awt.Color(190, 160, 100));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/donar.png"))); // NOI18N
+        jLabel1.setText("     Donar");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        lblNombreDonante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblNombreDonante.setText("Nombre del Donante");
+        jPanel1.add(lblNombreDonante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        fieldNombreDonante.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jPanel1.add(fieldNombreDonante, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
+
+        lblTipoDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblTipoDonacion.setText("Tipo de Donación");
+        jPanel1.add(lblTipoDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        boxDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        boxDonacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comida", "Shampoo", "Talco", "Medicamentos", "Pulgicidas", "Dinero" }));
+        jPanel1.add(boxDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 130, 20));
+
+        lblCantidadDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblCantidadDonacion.setText("Cantidad de la Donación");
+        jPanel1.add(lblCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        boxMedidaDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        boxMedidaDonacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "gramos", "Kilogramos", "mililitros", "Litros", "Aplicaciones (Medicamentos)", "Dolares", "Colones" }));
+        jPanel1.add(boxMedidaDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 130, -1));
+
+        btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
+        btnCancelar.setText("Cancelar");
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, 40));
+
+        btnDonar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnDonar.setForeground(new java.awt.Color(170, 80, 0));
+        btnDonar.setText("Donar");
+        jPanel1.add(btnDonar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 90, 40));
+
+        lblMedidaDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblMedidaDonacion.setText("Medida de la Donación");
+        jPanel1.add(lblMedidaDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        fieldCantidadDonacion.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jPanel1.add(fieldCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 130, -1));
+
+        lblidDonante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblidDonante.setText("ID Donante");
+        jPanel1.add(lblidDonante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        jTextField1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 130, -1));
+
+        lblFecha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblFecha.setText("Fecha");
+        jPanel1.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
+
+        jDateChooser1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
         );
 
         pack();
@@ -50,6 +124,21 @@ public class VentanaDonar extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox boxDonacion;
+    private javax.swing.JComboBox boxMedidaDonacion;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnDonar;
+    private javax.swing.JTextField fieldCantidadDonacion;
+    private javax.swing.JTextField fieldNombreDonante;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblCantidadDonacion;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblMedidaDonacion;
+    private javax.swing.JLabel lblNombreDonante;
+    private javax.swing.JLabel lblTipoDonacion;
+    private javax.swing.JLabel lblidDonante;
     // End of variables declaration//GEN-END:variables
 }

@@ -41,26 +41,26 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
         panelIngresarUsuario.setBackground(new java.awt.Color(190, 160, 100));
         panelIngresarUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnIngresar.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        btnIngresar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnIngresar.setForeground(new java.awt.Color(170, 80, 0));
         btnIngresar.setText("Ingresar");
         btnIngresar.setToolTipText("");
         panelIngresarUsuario.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
-        btnCancelar.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Cancelar");
-        panelIngresarUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
+        panelIngresarUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
 
-        lblingreseID.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
+        lblingreseID.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         lblingreseID.setText("ID usuario");
         panelIngresarUsuario.add(lblingreseID, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
-        lblingresePassword.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
+        lblingresePassword.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         lblingresePassword.setText("Password");
         panelIngresarUsuario.add(lblingresePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
-        fieldID.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldID.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelIngresarUsuario.add(fieldID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 100, -1));
         panelIngresarUsuario.add(fieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 100, -1));
 

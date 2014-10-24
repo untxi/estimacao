@@ -30,17 +30,18 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame {
         panelVentanaAsignarAdministradores = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPersonas = new javax.swing.JTable();
-        scrollBarVentanaAsignarAdministradores = new javax.swing.JScrollBar();
         lblTituloAsignarAdministradores = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
 
         setTitle("Asignar Administradores - Estimação");
 
         panelVentanaAsignarAdministradores.setBackground(new java.awt.Color(190, 160, 100));
         panelVentanaAsignarAdministradores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tablaPersonas.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        tablaPersonas.setForeground(new java.awt.Color(240, 240, 240));
+        tablaPersonas.setBackground(new java.awt.Color(190, 160, 100));
+        tablaPersonas.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         tablaPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -83,10 +84,16 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        tablaPersonas.setGridColor(new java.awt.Color(0, 0, 0));
+        tablaPersonas.setName(""); // NOI18N
+        tablaPersonas.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
+                tablaPersonasMouseWheelMoved(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaPersonas);
 
-        panelVentanaAsignarAdministradores.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 580, -1));
-        panelVentanaAsignarAdministradores.add(scrollBarVentanaAsignarAdministradores, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 20, 330));
+        panelVentanaAsignarAdministradores.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 580, 200));
 
         lblTituloAsignarAdministradores.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTituloAsignarAdministradores.setText("Asignar Administradores");
@@ -95,27 +102,42 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/reporte.png"))); // NOI18N
         panelVentanaAsignarAdministradores.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, -1, -1));
 
+        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(170, 80, 0));
+        jButton1.setText("Cancelar");
+        panelVentanaAsignarAdministradores.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, 40));
+
+        btnGuardar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(170, 80, 0));
+        btnGuardar.setText("Guardar");
+        panelVentanaAsignarAdministradores.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaAsignarAdministradores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelVentanaAsignarAdministradores, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaAsignarAdministradores, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+            .addComponent(panelVentanaAsignarAdministradores, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tablaPersonasMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_tablaPersonasMouseWheelMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tablaPersonasMouseWheelMoved
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTituloAsignarAdministradores;
     private javax.swing.JPanel panelVentanaAsignarAdministradores;
-    private javax.swing.JScrollBar scrollBarVentanaAsignarAdministradores;
     private javax.swing.JTable tablaPersonas;
     // End of variables declaration//GEN-END:variables
 }
