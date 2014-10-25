@@ -11,11 +11,21 @@ package GUI;
  */
 public class VentanaReportarMascota extends javax.swing.JInternalFrame {
 
+    private static VentanaReportarMascota miVentanaReportarMascota;
     /**
      * Creates new form ventanaBuscarMascota
      */
-    public VentanaReportarMascota() {
+    private VentanaReportarMascota() {
         initComponents();
+    }
+    
+    public static VentanaReportarMascota getInstance()
+    {
+        if(miVentanaReportarMascota == null)
+        {
+            miVentanaReportarMascota = new VentanaReportarMascota();
+        }
+        return miVentanaReportarMascota;
     }
 
     /**
@@ -61,7 +71,7 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         buscarFecha = new com.toedter.calendar.JDateChooser();
 
-        setResizable(true);
+        setIconifiable(true);
         setTitle("Reportar Mascota - Estimação");
 
         panelVentanaBuscar.setBackground(new java.awt.Color(190, 160, 100));
@@ -204,7 +214,7 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
         );
 
         pack();

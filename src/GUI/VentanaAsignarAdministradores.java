@@ -9,13 +9,24 @@ package GUI;
  *
  * @author Samantha
  */
-public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame {
+public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame 
+{
+    
+    private static VentanaAsignarAdministradores miVentanaAsignarAdministradores;
 
     /**
      * Creates new form ventanaAsignarAdministradores
      */
-    public VentanaAsignarAdministradores() {
+    private VentanaAsignarAdministradores() {
         initComponents();
+    }
+    public static VentanaAsignarAdministradores getInstance()
+    {
+        if(miVentanaAsignarAdministradores == null)
+        {
+            miVentanaAsignarAdministradores = new VentanaAsignarAdministradores();
+        }
+        return miVentanaAsignarAdministradores;
     }
 
     /**
@@ -35,6 +46,7 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
 
+        setIconifiable(true);
         setTitle("Asignar Administradores - Estimação");
 
         panelVentanaAsignarAdministradores.setBackground(new java.awt.Color(190, 160, 100));
@@ -120,7 +132,7 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaAsignarAdministradores, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+            .addComponent(panelVentanaAsignarAdministradores, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
         );
 
         pack();

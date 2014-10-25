@@ -11,11 +11,22 @@ package GUI;
  */
 public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
 
+    private static VentanaIngresarCuenta miVentanaIngresarCuenta;
     /**
      * Creates new form ventanaIngresarCuenta
      */
-    public VentanaIngresarCuenta() {
+    private VentanaIngresarCuenta() 
+    {
         initComponents();
+    }
+    
+    public static VentanaIngresarCuenta getInstance()
+    {
+        if(miVentanaIngresarCuenta == null)
+        {
+            miVentanaIngresarCuenta = new VentanaIngresarCuenta();
+        }
+        return miVentanaIngresarCuenta;
     }
 
     /**
@@ -36,6 +47,7 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
         fieldPassword = new javax.swing.JPasswordField();
         lblimagenUsuario = new javax.swing.JLabel();
 
+        setIconifiable(true);
         setTitle("Ingresar - Estimação");
 
         panelIngresarUsuario.setBackground(new java.awt.Color(190, 160, 100));
@@ -75,7 +87,7 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelIngresarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+            .addComponent(panelIngresarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
         );
 
         pack();

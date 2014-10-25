@@ -11,11 +11,22 @@ package GUI;
  */
 public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
 
+    
+    private static VentanaBuscarMascota miVentanaBuscarMascota;
     /**
      * Creates new form ventanaBuscarMascota
      */
-    public VentanaBuscarMascota() {
+    private VentanaBuscarMascota() {
         initComponents();
+    }
+    
+    public static VentanaBuscarMascota getInstance()
+    {
+        if(miVentanaBuscarMascota == null)
+        {
+            miVentanaBuscarMascota = new VentanaBuscarMascota();
+        }
+        return miVentanaBuscarMascota;
     }
 
     /**
@@ -56,6 +67,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         lblTituloVentana1 = new javax.swing.JLabel();
         btnCancelar1 = new javax.swing.JButton();
 
+        setIconifiable(true);
         setResizable(true);
         setTitle("Buscar Mascota - Estimação");
 
@@ -193,16 +205,14 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
-            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(7).setResizable(false);
-        }
+        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(7).setResizable(false);
 
         panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 550, 280));
 
@@ -225,7 +235,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         pack();

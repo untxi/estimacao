@@ -11,11 +11,23 @@ package GUI;
  */
 public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
 
+    private static VentanaBuscarCasaCuna miVentanaBuscarCasaCuna;
+    
     /**
      * Creates new form ventanaCrearUsuario
      */
-    public VentanaBuscarCasaCuna() {
+    private VentanaBuscarCasaCuna() 
+    {
         initComponents();
+    }
+    
+    public static VentanaBuscarCasaCuna getInstance()
+    {
+        if(miVentanaBuscarCasaCuna == null)
+        {
+            miVentanaBuscarCasaCuna = new VentanaBuscarCasaCuna();
+        }
+        return miVentanaBuscarCasaCuna;
     }
 
     /**
@@ -51,6 +63,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         lblTitulo2Ventana = new javax.swing.JLabel();
 
         setClosable(true);
+        setIconifiable(true);
         setTitle("Buscar Casa Cuna - Estimação");
 
         panelCrearUsuario.setBackground(new java.awt.Color(190, 160, 100));
@@ -188,16 +201,14 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
-            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(5).setPreferredWidth(100);
-            tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
-        }
+        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(5).setPreferredWidth(100);
+        tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
 
         panelCrearUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 550, 280));
 
@@ -213,7 +224,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
         );
 
         pack();

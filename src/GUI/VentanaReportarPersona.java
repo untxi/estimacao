@@ -11,13 +11,22 @@ package GUI;
  */
 public class VentanaReportarPersona extends javax.swing.JInternalFrame {
 
+    private static VentanaReportarPersona miVentanaReportarPersona;
     /**
      * Creates new form ventanaBuscarMascota
      */
-    public VentanaReportarPersona() {
+    private VentanaReportarPersona() {
         initComponents();
     }
 
+    public static VentanaReportarPersona getInstance()
+    {
+        if(miVentanaReportarPersona == null)
+        {
+            miVentanaReportarPersona = new VentanaReportarPersona();
+        }
+        return miVentanaReportarPersona;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,6 +57,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         lblFecha = new javax.swing.JLabel();
 
+        setIconifiable(true);
         setTitle("Reportar Persona - Estimação");
 
         panelVentanaBuscar.setBackground(new java.awt.Color(190, 160, 100));
@@ -130,7 +140,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
         );
 
         pack();

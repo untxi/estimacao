@@ -5,17 +5,32 @@
  */
 package GUI;
 
+import java.awt.Desktop;
+import java.net.URI;
+
 /**
  *
  * @author Samantha
  */
 public class VentanaAcercade extends javax.swing.JInternalFrame {
 
+    private static VentanaAcercade miVentanaAcercade;
+    
     /**
      * Creates new form ventanaAcercade
      */
-    public VentanaAcercade() {
+    private VentanaAcercade() 
+    {
         initComponents();
+    }
+    
+    public static VentanaAcercade getInstance()
+    {
+        if(miVentanaAcercade == null)
+        {
+            miVentanaAcercade = new VentanaAcercade();
+        }
+        return miVentanaAcercade;
     }
 
     /**
@@ -40,7 +55,11 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        setIconifiable(true);
         setTitle("Acerca de Estimação");
+        setVisible(false);
 
         panelAcercade.setBackground(new java.awt.Color(190, 160, 100));
         panelAcercade.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -61,13 +80,13 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         panelAcercade.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel4.setText("www.wix/samarburola/estimacao");
+        jLabel4.setText("<html><a href=\"http://www.wix/samarburola/estimacao\">www.wix/samarburola/estimacao</a></html>");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 irWeb(evt);
             }
         });
-        panelAcercade.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, -1));
+        panelAcercade.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel5.setText("Creado por");
@@ -101,17 +120,23 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelAcercade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelAcercade, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void irWeb(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_irWeb
-        // TODO add your handling code here:
-        /*
-            Ir a la página web del Manual de Usuario
-        */
+        try {
+        if (Desktop.isDesktopSupported()) {
+        Desktop desktop = Desktop.getDesktop();
+        if (desktop.isSupported(Desktop.Action.BROWSE)) {
+        desktop.browse(new URI("http://www.gmail.com/"));
+        }
+        }
+        } catch (Exception e) {
+        e.printStackTrace();
+        }        
     }//GEN-LAST:event_irWeb
 
 

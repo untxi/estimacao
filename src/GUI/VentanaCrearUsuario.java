@@ -11,11 +11,22 @@ package GUI;
  */
 public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
 
+    private static VentanaCrearUsuario miVentanaCrearUsuario;
+    
     /**
      * Creates new form ventanaCrearUsuario
      */
-    public VentanaCrearUsuario() {
+    private VentanaCrearUsuario() {
         initComponents();
+    }
+    
+    public static VentanaCrearUsuario getInstance()
+    {
+        if(miVentanaCrearUsuario == null)
+        {
+            miVentanaCrearUsuario = new VentanaCrearUsuario();
+        }
+        return miVentanaCrearUsuario;
     }
 
     /**
@@ -62,8 +73,10 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         checkDonacion = new javax.swing.JCheckBox();
         lblEspecie = new javax.swing.JLabel();
         boxCantidadMascotas = new javax.swing.JComboBox();
+        fieldNickname = new javax.swing.JTextField();
+        lblNickname = new javax.swing.JLabel();
 
-        setClosable(true);
+        setIconifiable(true);
         setTitle("Crear Usuario Nuevo - Estimação");
 
         panelCrearUsuario.setBackground(new java.awt.Color(190, 160, 100));
@@ -72,37 +85,37 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
 
         lblNombre.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblNombre.setText("Nombre");
-        panelCrearUsuario.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 205, -1, -1));
+        panelCrearUsuario.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         lblApellido1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblApellido1.setText("Primer      Apellido");
-        panelCrearUsuario.add(lblApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 237, -1, -1));
+        panelCrearUsuario.add(lblApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         lblApellido2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblApellido2.setText("Segundo Apellido");
-        panelCrearUsuario.add(lblApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 261, -1, -1));
+        panelCrearUsuario.add(lblApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         lblTelefono.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblTelefono.setText("Teléfono");
-        panelCrearUsuario.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 291, -1, -1));
+        panelCrearUsuario.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
         lblEmail.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblEmail.setText("E-mail");
-        panelCrearUsuario.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 318, -1, -1));
+        panelCrearUsuario.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
         lblid.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblid.setText("ID (Sólo números)");
-        panelCrearUsuario.add(lblid, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 345, -1, -1));
+        lblid.setText("Cédula ");
+        panelCrearUsuario.add(lblid, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
         lblPassword.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblPassword.setText("Password");
-        panelCrearUsuario.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 372, -1, -1));
+        panelCrearUsuario.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
         btnCrear.setBackground(new java.awt.Color(255, 153, 0));
         btnCrear.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCrear.setForeground(new java.awt.Color(170, 80, 0));
         btnCrear.setText("Crear");
-        panelCrearUsuario.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 110, 50));
+        panelCrearUsuario.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 110, 50));
 
         fieldNombre.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldNombre.setToolTipText("");
@@ -111,23 +124,23 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
                 fieldNombreActionPerformed(evt);
             }
         });
-        panelCrearUsuario.add(fieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 202, 204, -1));
+        panelCrearUsuario.add(fieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 204, -1));
 
         fieldApellido2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldApellido2.setToolTipText("");
-        panelCrearUsuario.add(fieldApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 261, 204, -1));
+        panelCrearUsuario.add(fieldApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 204, -1));
 
         fieldTelefono.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldTelefono.setToolTipText("");
-        panelCrearUsuario.add(fieldTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 288, 205, -1));
+        panelCrearUsuario.add(fieldTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 205, -1));
 
         fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldApellido1.setToolTipText("");
-        panelCrearUsuario.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 234, 204, -1));
+        panelCrearUsuario.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 204, -1));
 
         fieldEmail.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldEmail.setToolTipText("");
-        panelCrearUsuario.add(fieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 315, 204, -1));
+        panelCrearUsuario.add(fieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 204, -1));
 
         field_ID.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         field_ID.setToolTipText("");
@@ -136,11 +149,11 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
                 field_IDActionPerformed(evt);
             }
         });
-        panelCrearUsuario.add(field_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 342, 204, -1));
+        panelCrearUsuario.add(field_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 204, -1));
 
         fieldPassword.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldPassword.setToolTipText("");
-        panelCrearUsuario.add(fieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 369, 204, -1));
+        panelCrearUsuario.add(fieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 204, -1));
 
         lblimagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuario.png"))); // NOI18N
         panelCrearUsuario.add(lblimagenUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 70, 80));
@@ -168,7 +181,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         btnCancelar.setMaximumSize(new java.awt.Dimension(63, 23));
         btnCancelar.setMinimumSize(new java.awt.Dimension(63, 23));
         btnCancelar.setPreferredSize(new java.awt.Dimension(63, 23));
-        panelCrearUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 100, 50));
+        panelCrearUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 100, 50));
 
         lblUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblUbicacion.setText("Ubicación");
@@ -236,6 +249,14 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         boxCantidadMascotas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
         panelCrearUsuario.add(boxCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 260, 40, -1));
 
+        fieldNickname.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        fieldNickname.setToolTipText("");
+        panelCrearUsuario.add(fieldNickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 204, -1));
+
+        lblNickname.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblNickname.setText("Nickname");
+        panelCrearUsuario.add(lblNickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -244,7 +265,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
         );
 
         pack();
@@ -284,6 +305,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JTextField fieldApellido1;
     private javax.swing.JTextField fieldApellido2;
     private javax.swing.JTextField fieldEmail;
+    private javax.swing.JTextField fieldNickname;
     private javax.swing.JTextField fieldNombre;
     private javax.swing.JTextField fieldPassword;
     private javax.swing.JTextField fieldTelefono;
@@ -296,6 +318,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCuna;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEspecie;
+    private javax.swing.JLabel lblNickname;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblTamano;

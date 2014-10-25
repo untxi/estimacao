@@ -9,13 +9,24 @@ package GUI;
  *
  * @author Samantha
  */
-public class VentanaDonar extends javax.swing.JInternalFrame {
+public class VentanaDonar extends javax.swing.JInternalFrame 
+{
+    private static VentanaDonar miVentanaDonar;
 
     /**
      * Creates new form ventanaDonar
      */
-    public VentanaDonar() {
+    private VentanaDonar() {
         initComponents();
+    }
+    
+    public static VentanaDonar getInstance()
+    {
+        if(miVentanaDonar == null)
+        {
+            miVentanaDonar = new VentanaDonar();
+        }
+        return miVentanaDonar;
     }
 
     /**
@@ -44,6 +55,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame {
         lblFecha = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
+        setIconifiable(true);
         setTitle("Donar - Estimação");
 
         jPanel1.setBackground(new java.awt.Color(190, 160, 100));
@@ -116,7 +128,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
         );
 
         pack();

@@ -5,6 +5,8 @@
  */
 package estimacao;
 
+import GUI.VentanaPrincipal;
+
 /**
  *
  * @author Samantha
@@ -14,9 +16,9 @@ public class Estimacao {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("hola, soy estimacao");
+    public static void main(String[] args)
+    {
+        VentanaPrincipal.getInstance();
         
     }
     
