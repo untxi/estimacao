@@ -4,6 +4,8 @@
  */
 package Administradores;
 
+import Estructuras.CasaCuna;
+import Estructuras.Persona;
 import Estructuras.Usuario;
 import java.util.ArrayList;
 
@@ -16,22 +18,13 @@ public class AdministradorAplicacion
     private static AdministradorAplicacion miAdministradorAplicacion;
     
     private ArrayList<Usuario> miListaUsuarios;
+    private ArrayList<Persona> miListaPersonas;
+    private ArrayList<CasaCuna> miListaCasasCuna;
+    private ArrayList<String>  miListaTiposAnimales;
+    private ArrayList<ArrayList<String>> miListaRazas;
     
     
-
-    public void setMiListaUsuarios(ArrayList<Usuario> miListaUsuarios) {
-        this.miListaUsuarios = miListaUsuarios;
-    }
-
-    public ArrayList<Usuario> getMiListaUsuarios() 
-    {
-        return miListaUsuarios;
-    }
     
-    public void agregarUsuario()
-    {
-        
-    }
     
     
     private AdministradorAplicacion(){}
