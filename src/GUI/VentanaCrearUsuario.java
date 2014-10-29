@@ -5,11 +5,16 @@
  */
 package GUI;
 
+import Controladores.ControladorSesion;
+import Interfaces.IConstantes;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Samantha
  */
-public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
+public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  IConstantes
+{
 
     private static VentanaCrearUsuario miVentanaCrearUsuario;
     
@@ -53,7 +58,6 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         fieldApellido1 = new javax.swing.JTextField();
         fieldEmail = new javax.swing.JTextField();
         field_ID = new javax.swing.JTextField();
-        fieldPassword = new javax.swing.JTextField();
         lblimagenUsuario = new javax.swing.JLabel();
         lblimagenAdoptante = new javax.swing.JLabel();
         lblCuna = new javax.swing.JLabel();
@@ -75,6 +79,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         boxCantidadMascotas = new javax.swing.JComboBox();
         fieldNickname = new javax.swing.JTextField();
         lblNickname = new javax.swing.JLabel();
+        fieldPassword = new javax.swing.JPasswordField();
 
         setIconifiable(true);
         setTitle("Crear Usuario Nuevo - Estimação");
@@ -115,15 +120,15 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         btnCrear.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCrear.setForeground(new java.awt.Color(170, 80, 0));
         btnCrear.setText("Crear");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearActionPerformed(evt);
+            }
+        });
         panelCrearUsuario.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 110, 50));
 
         fieldNombre.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldNombre.setToolTipText("");
-        fieldNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldNombreActionPerformed(evt);
-            }
-        });
         panelCrearUsuario.add(fieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 204, -1));
 
         fieldApellido2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -144,16 +149,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
 
         field_ID.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         field_ID.setToolTipText("");
-        field_ID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_IDActionPerformed(evt);
-            }
-        });
         panelCrearUsuario.add(field_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 204, -1));
-
-        fieldPassword.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        fieldPassword.setToolTipText("");
-        panelCrearUsuario.add(fieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 204, -1));
 
         lblimagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuario.png"))); // NOI18N
         panelCrearUsuario.add(lblimagenUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 70, 80));
@@ -167,11 +163,21 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         checkAdoptante.setBackground(new java.awt.Color(190, 160, 100));
         checkAdoptante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         checkAdoptante.setText("Adoptante");
+        checkAdoptante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkAdoptanteActionPerformed(evt);
+            }
+        });
         panelCrearUsuario.add(checkAdoptante, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 173, -1, -1));
 
         checkCasaCuna.setBackground(new java.awt.Color(190, 160, 100));
         checkCasaCuna.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         checkCasaCuna.setText("Casa Cuna");
+        checkCasaCuna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkCasaCunaActionPerformed(evt);
+            }
+        });
         panelCrearUsuario.add(checkCasaCuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, -1, -1));
 
         btnCancelar.setBackground(new java.awt.Color(255, 153, 0));
@@ -181,6 +187,11 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         btnCancelar.setMaximumSize(new java.awt.Dimension(63, 23));
         btnCancelar.setMinimumSize(new java.awt.Dimension(63, 23));
         btnCancelar.setPreferredSize(new java.awt.Dimension(63, 23));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         panelCrearUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 100, 50));
 
         lblUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -192,19 +203,11 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(lblTipoResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, -1, -1));
 
         fieldUbicacion.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        fieldUbicacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldUbicacionActionPerformed(evt);
-            }
-        });
+        fieldUbicacion.setEnabled(false);
         panelCrearUsuario.add(fieldUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 160, -1));
 
         fieldTipoResidencia.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        fieldTipoResidencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldTipoResidenciaActionPerformed(evt);
-            }
-        });
+        fieldTipoResidencia.setEnabled(false);
         panelCrearUsuario.add(fieldTipoResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 160, -1));
 
         lblTamano.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -217,10 +220,12 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
 
         boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Perro", "Gato", "Pájaro", "Tortuga", "Roedor Pequeño", "Conejo" }));
+        boxEspecie.setEnabled(false);
         panelCrearUsuario.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 110, -1));
 
         boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Menor a 20cm", "De 20cm a 50cm", "De 50cm a 80cm", "Mayor a 1m" }));
+        boxTamaño.setEnabled(false);
         panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, 110, -1));
 
         lblTamano1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -229,11 +234,13 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
 
         boxDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         boxDonacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comida", "Shampoo", "Talco", "Medicamentos", "Pulgicidas", "Dinero" }));
+        boxDonacion.setEnabled(false);
         panelCrearUsuario.add(boxDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 360, 110, -1));
 
         checkDonacion.setBackground(new java.awt.Color(190, 160, 100));
         checkDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         checkDonacion.setText("Recibir Donaciones");
+        checkDonacion.setEnabled(false);
         checkDonacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkDonacionActionPerformed(evt);
@@ -247,6 +254,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
 
         boxCantidadMascotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         boxCantidadMascotas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
+        boxCantidadMascotas.setEnabled(false);
         panelCrearUsuario.add(boxCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 260, 40, -1));
 
         fieldNickname.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -256,6 +264,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         lblNickname.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblNickname.setText("Nickname");
         panelCrearUsuario.add(lblNickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        panelCrearUsuario.add(fieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 210, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -265,33 +274,103 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldNombreActionPerformed
-
-    private void field_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_IDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_field_IDActionPerformed
-
-    private void fieldUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldUbicacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldUbicacionActionPerformed
-
-    private void fieldTipoResidenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldTipoResidenciaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldTipoResidenciaActionPerformed
-
     private void checkDonacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkDonacionActionPerformed
-        // TODO add your handling code here:
+        if(checkDonacion.isSelected())
+        {
+            boxDonacion.setEnabled(true);
+        }
+        else
+        {
+            boxDonacion.setEnabled(false);
+        }
     }//GEN-LAST:event_checkDonacionActionPerformed
 
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        boolean seCreoUsuario = ControladorSesion.getInstance().agregarUsuario(fieldNickname.getText(), fieldPassword.getText(),
+                Usuario, fieldNombre.getText(), fieldApellido1.getText(), fieldApellido2.getText(), fieldTelefono.getText(), 
+                fieldEmail.getText(), field_ID.getText() , checkAdoptante.isSelected(), fieldUbicacion.getText());
+        if(seCreoUsuario)
+        {
+            JOptionPane.showMessageDialog(null, "Usuario agregado con éxito");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "El número de cédula o nickname ya existen");
+        }
+        
+        
+    }//GEN-LAST:event_btnCrearActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    checkAdoptante.setSelected(false);
+    checkCasaCuna.setSelected(false);
+    checkDonacion.setSelected(false);
+    fieldApellido1.setText("");
+    fieldApellido2.setText("");
+    fieldEmail.setText("");
+    fieldNickname.setText("");
+    fieldNombre.setText("");
+    fieldPassword.setText("");
+    fieldTelefono.setText("");
+    fieldTipoResidencia.setText("");
+    fieldUbicacion.setText("");
+    field_ID.setText("");
+    this.setVisible(false);
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void checkCasaCunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCasaCunaActionPerformed
+        if(checkCasaCuna.isSelected())
+        {
+            boxCantidadMascotas.setEnabled(true);
+            boxEspecie.setEnabled(true);
+            boxTamaño.setEnabled(true);
+            activarDonacion();
+        }
+        else
+        {
+            boxCantidadMascotas.setEnabled(false);
+            boxEspecie.setEnabled(false);
+            boxTamaño.setEnabled(false);
+            activarDonacion();
+        }
+    }//GEN-LAST:event_checkCasaCunaActionPerformed
+
+    private void checkAdoptanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAdoptanteActionPerformed
+        if(checkAdoptante.isSelected())
+        {
+            fieldTipoResidencia.setEnabled(true);
+            fieldUbicacion.setEnabled(true);
+            activarDonacion();
+        }
+        else
+        {
+            fieldTipoResidencia.setEnabled(false);
+            fieldUbicacion.setEnabled(false);
+            activarDonacion();
+        }
+    }//GEN-LAST:event_checkAdoptanteActionPerformed
+
+
+    private void activarDonacion()
+    {
+        if(checkAdoptante.isSelected() | checkCasaCuna.isSelected())
+        {
+            checkDonacion.setEnabled(true);
+        }
+        else
+        {
+            checkDonacion.setEnabled(false);
+            checkDonacion.setSelected(false);
+            boxDonacion.setEnabled(false);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox boxCantidadMascotas;
     private javax.swing.JComboBox boxDonacion;
@@ -307,7 +386,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JTextField fieldEmail;
     private javax.swing.JTextField fieldNickname;
     private javax.swing.JTextField fieldNombre;
-    private javax.swing.JTextField fieldPassword;
+    private javax.swing.JPasswordField fieldPassword;
     private javax.swing.JTextField fieldTelefono;
     private javax.swing.JTextField fieldTipoResidencia;
     private javax.swing.JTextField fieldUbicacion;

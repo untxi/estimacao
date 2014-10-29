@@ -20,6 +20,22 @@ public class Persona
     private boolean adoptante;
     private String direccion;
 
+    public Persona(String nombre, String primerApellido, String segundoApellido, String telefono, String email, String cedula, boolean adoptante, String direccion) {
+        this.nombre = nombre;
+        this.primerApellido = primerApellido;
+        this.segundoApellido = segundoApellido;
+        this.telefono = telefono;
+        this.email = email;
+        this.cedula = cedula;
+        this.adoptante = adoptante;
+        this.direccion = direccion;
+    }
+
+    
+    
+    
+    
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
