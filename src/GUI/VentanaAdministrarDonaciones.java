@@ -178,7 +178,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         // TODO add your handling code here:
         // if donacion marcada con check se entrega
         // for donaciones en tabla
-        ControladorDonaciones.getInstance().entregarDonacion(miDonacionEntregada);
+        //ControladorDonaciones.getInstance().entregarDonacion(miDonacionEntregada);
     }//GEN-LAST:event_btnVerDonacionesActionPerformed
 
     private void btnRevisarCaducidadDonacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRevisarCaducidadDonacionesActionPerformed

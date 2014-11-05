@@ -38,31 +38,40 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        fieldEmail = new javax.swing.JTextField();
+        jFrame1 = new javax.swing.JFrame();
         panelVentanaBuscar = new javax.swing.JPanel();
         lblTituloVentana = new javax.swing.JLabel();
         lblImagenBuscar = new javax.swing.JLabel();
         lblImagenMascota = new javax.swing.JLabel();
         lblCaracteristicas = new javax.swing.JLabel();
         lblNombreMascota = new javax.swing.JLabel();
-        fieldTelefonoMovil = new javax.swing.JTextField();
         lblEspecia = new javax.swing.JLabel();
-        lblRaza = new javax.swing.JLabel();
-        lblTamano = new javax.swing.JLabel();
         lblOjos = new javax.swing.JLabel();
         fieldIDPersona = new javax.swing.JTextField();
-        lblPelaje = new javax.swing.JLabel();
-        fieldEmail = new javax.swing.JTextField();
         lblidChip = new javax.swing.JLabel();
         fieldNombrePersona = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         fieldApellido1 = new javax.swing.JTextField();
         fieldApellido2 = new javax.swing.JTextField();
-        fieldITelefono = new javax.swing.JTextField();
         lblTitulo2Ventana = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaBuscarMascota = new javax.swing.JTable();
         btnReportarEncontrada = new javax.swing.JButton();
+
+        fieldEmail.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setIconifiable(true);
         setTitle("Buscar Persona - Estimação");
@@ -88,20 +97,9 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         lblNombreMascota.setText("Nombre");
         panelVentanaBuscar.add(lblNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
-        fieldTelefonoMovil.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldTelefonoMovil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 130, -1));
-
         lblEspecia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblEspecia.setText("2do Apellido");
         panelVentanaBuscar.add(lblEspecia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
-
-        lblRaza.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblRaza.setText("Teléfono");
-        panelVentanaBuscar.add(lblRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
-
-        lblTamano.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblTamano.setText("Teléfono Móvil");
-        panelVentanaBuscar.add(lblTamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         lblOjos.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblOjos.setText("ID");
@@ -109,13 +107,6 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
 
         fieldIDPersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 130, -1));
-
-        lblPelaje.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblPelaje.setText("Email");
-        panelVentanaBuscar.add(lblPelaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
-
-        fieldEmail.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 130, -1));
 
         lblidChip.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblidChip.setText("1er Apellido");
@@ -126,22 +117,19 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
-        btnCancelar.setText("Cancelar");
-        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 90, 40));
+        btnCancelar.setText("Limpiar");
+        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 90, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
         btnBuscar.setText("Buscar");
-        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 90, 40));
+        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 90, 40));
 
         fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 130, -1));
 
         fieldApellido2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 130, -1));
-
-        fieldITelefono.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldITelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 130, -1));
 
         lblTitulo2Ventana.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTitulo2Ventana.setText("Personas Encontradas");
@@ -213,7 +201,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 btnReportarEncontradaActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 210, 40));
+        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 210, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,7 +211,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
         );
 
         pack();
@@ -250,9 +238,8 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     private javax.swing.JTextField fieldApellido2;
     private javax.swing.JTextField fieldEmail;
     private javax.swing.JTextField fieldIDPersona;
-    private javax.swing.JTextField fieldITelefono;
     private javax.swing.JTextField fieldNombrePersona;
-    private javax.swing.JTextField fieldTelefonoMovil;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCaracteristicas;
     private javax.swing.JLabel lblEspecia;
@@ -260,9 +247,6 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblImagenMascota;
     private javax.swing.JLabel lblNombreMascota;
     private javax.swing.JLabel lblOjos;
-    private javax.swing.JLabel lblPelaje;
-    private javax.swing.JLabel lblRaza;
-    private javax.swing.JLabel lblTamano;
     private javax.swing.JLabel lblTitulo2Ventana;
     private javax.swing.JLabel lblTituloVentana;
     private javax.swing.JLabel lblidChip;

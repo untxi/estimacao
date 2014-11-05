@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package GUI;
 
 /**
@@ -139,7 +135,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, -1));
 
         boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Menor a 20cm", "De 20cm a 50cm", "De 50cm a 80cm", "Mayor a 1m" }));
+        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande" }));
         panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 110, -1));
 
         lblTamano1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -224,7 +220,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
         );
 
         pack();

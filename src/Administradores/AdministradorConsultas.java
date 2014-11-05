@@ -1,7 +1,12 @@
 
 package Administradores;
 
-class AdministradorConsultas {
+import Estructuras.Mascota;
+import java.util.ArrayList;
+
+public  class AdministradorConsultas {
+    
+    static ArrayList<Mascota> mascotas = new ArrayList<Mascota>(); 
     private static AdministradorConsultas miAdminConsultas;
     
     //metodos 
@@ -14,9 +19,8 @@ class AdministradorConsultas {
         return miAdminConsultas;
     }
     
-    public void hola(){
-        //prueba 
-        System.out.println("Hola Mundo");
+    public void addMascota(Mascota mascota){
+        mascotas.add(mascota);
     }
     
     public void consultarMascota(){
@@ -27,8 +31,13 @@ class AdministradorConsultas {
         
     }
     
-    public void filtroChip(){
-        
+    static public ArrayList<Mascota> filtrarChip(int chip){
+        ArrayList<Mascota> resul = new ArrayList<Mascota>(); 
+        for(Mascota mascota : mascotas){
+            if(mascota.getChipID() == chip)
+                resul.add(mascota);
+        }
+        return resul;
     }
     
     public void filtroEstado(){
@@ -40,10 +49,6 @@ class AdministradorConsultas {
     }
     
     public void filtroTipo(){
-        
-    }
-    
-    public void like(){
         
     }
     
@@ -75,5 +80,8 @@ class AdministradorConsultas {
         
     }
     
-    
+    public void filtroTamaño(){
+        
+    }
+   
 }

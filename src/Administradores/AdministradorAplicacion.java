@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Administradores;
 
 import Estructuras.CasaCuna;
@@ -10,10 +7,7 @@ import Estructuras.Usuario;
 import Interfaces.IConstantes;
 import java.util.ArrayList;
 
-/**
- *
- * @author Soto
- */
+
 public class AdministradorAplicacion implements IConstantes
 {
     private static AdministradorAplicacion miAdministradorAplicacion;
