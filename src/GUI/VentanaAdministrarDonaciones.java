@@ -7,7 +7,6 @@ package GUI;
 
 import javax.swing.JOptionPane;
 import Controladores.ControladorDonaciones;
-import Estructuras.Donacion;
 
 /**
  *

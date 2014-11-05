@@ -11,4 +11,5 @@ package Estructuras;
  */
 public class Adopcion {
     
+    
 }
