@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/GUI/VentanaAdministrarDonaciones.java</file>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/Controladores/ControladorAdopciones.java</file>
-            <file>file:/C:/Users/Samantha/Documents/NetBeansProjects/estimacao/src/Administradores/AdministradorAdopciones.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/GUI/VentanaAdministrarDonaciones.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/GUI/VentanaAcercade.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/Estructuras/Mascota.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/Estructuras/Persona.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/Estructuras/CasaCuna.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/GUI/VentanaBuscarMascota.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/Estructuras/Donacion.java</file>
         </group>
     </open-files>
 </project-private>

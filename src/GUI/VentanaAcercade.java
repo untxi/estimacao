@@ -95,7 +95,7 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         panelAcercade.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel6.setText("Adrian Soto Loría");
+        jLabel6.setText("Adrián Soto Loría");
         panelAcercade.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N

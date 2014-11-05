@@ -47,6 +47,7 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
         fieldPassword = new javax.swing.JPasswordField();
         lblimagenUsuario = new javax.swing.JLabel();
 
+        setClosable(true);
         setIconifiable(true);
         setTitle("Ingresar - Estimação");
 
@@ -65,12 +66,12 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
         panelIngresarUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
 
         lblingreseID.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        lblingreseID.setText("ID usuario");
-        panelIngresarUsuario.add(lblingreseID, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        lblingreseID.setText("Usuario");
+        panelIngresarUsuario.add(lblingreseID, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         lblingresePassword.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        lblingresePassword.setText("Password");
-        panelIngresarUsuario.add(lblingresePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+        lblingresePassword.setText("Contraseña");
+        panelIngresarUsuario.add(lblingresePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
         fieldID.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelIngresarUsuario.add(fieldID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 100, -1));

@@ -40,19 +40,16 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
 
         jPanel1 = new javax.swing.JPanel();
         lblTítulo = new javax.swing.JLabel();
-        lblTipoDonacion = new javax.swing.JLabel();
-        boxDonacion = new javax.swing.JComboBox();
         lblCantidadDonacion = new javax.swing.JLabel();
-        boxMedidaDonacion = new javax.swing.JComboBox();
         btnCancelar = new javax.swing.JButton();
         btnDonar = new javax.swing.JButton();
-        lblMedidaDonacion = new javax.swing.JLabel();
         fieldCantidadDonacion = new javax.swing.JTextField();
         lblidDonante = new javax.swing.JLabel();
         fieldidDonante = new javax.swing.JTextField();
         lblFecha = new javax.swing.JLabel();
         fechaDonacion = new com.toedter.calendar.JDateChooser();
 
+        setClosable(true);
         setIconifiable(true);
         setTitle("Donar - Estimação");
 
@@ -64,26 +61,9 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         lblTítulo.setText("     Donar");
         jPanel1.add(lblTítulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        lblTipoDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblTipoDonacion.setText("Tipo de Donación");
-        jPanel1.add(lblTipoDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
-
-        boxDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxDonacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alimento", "Castración", "Champú", "Desparacitante", "Dinero", "Pulgicida", "Talco", "Vacuna" }));
-        jPanel1.add(boxDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 130, 20));
-
         lblCantidadDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblCantidadDonacion.setText("Cantidad de la Donación");
+        lblCantidadDonacion.setText("Monto de la Donación");
         jPanel1.add(lblCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
-
-        boxMedidaDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxMedidaDonacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gramos", "Kilogramos", "Mililitros", "Litros", "Aplicaciones (Medicamentos)", "Dolares", "Colones", "Modena Local*" }));
-        boxMedidaDonacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boxMedidaDonacionActionPerformed(evt);
-            }
-        });
-        jPanel1.add(boxMedidaDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 130, -1));
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
@@ -105,15 +85,16 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         });
         jPanel1.add(btnDonar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 90, 40));
 
-        lblMedidaDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblMedidaDonacion.setText("Medida de la Donación");
-        jPanel1.add(lblMedidaDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
-
         fieldCantidadDonacion.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        fieldCantidadDonacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldCantidadDonacionActionPerformed(evt);
+            }
+        });
         jPanel1.add(fieldCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 130, -1));
 
         lblidDonante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblidDonante.setText("ID Donante");
+        lblidDonante.setText("Cédula Donante");
         jPanel1.add(lblidDonante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         fieldidDonante.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -141,14 +122,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDonarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDonarActionPerformed
-        boolean donacionRegistrada = ControladorDonaciones.getInstance().crearDonacion(fieldidDonante.getText(), boxDonacion.getToolTipText(),
-               Integer.parseInt(fieldCantidadDonacion.getText()), boxMedidaDonacion.getToolTipText(), fechaDonacion.getDate());
-       if (donacionRegistrada == true){
-               JOptionPane.showMessageDialog(null, "Donación Registrada");
-       }
-       else{
-           JOptionPane.showMessageDialog(null, "Error en el registro de la donación");
-       }
+       
     }//GEN-LAST:event_btnDonarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -158,15 +132,12 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void boxMedidaDonacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMedidaDonacionActionPerformed
+    private void fieldCantidadDonacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldCantidadDonacionActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_boxMedidaDonacionActionPerformed
+    }//GEN-LAST:event_fieldCantidadDonacionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox boxDonacion;
-    private javax.swing.JComboBox boxMedidaDonacion;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnDonar;
     private com.toedter.calendar.JDateChooser fechaDonacion;
@@ -175,8 +146,6 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCantidadDonacion;
     private javax.swing.JLabel lblFecha;
-    private javax.swing.JLabel lblMedidaDonacion;
-    private javax.swing.JLabel lblTipoDonacion;
     private javax.swing.JLabel lblTítulo;
     private javax.swing.JLabel lblidDonante;
     // End of variables declaration//GEN-END:variables

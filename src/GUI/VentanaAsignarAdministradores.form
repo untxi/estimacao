@@ -2,6 +2,7 @@
 
 <Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
+    <Property name="closable" type="boolean" value="true"/>
     <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="title" type="java.lang.String" value="Asignar Administradores - Estima&#xe7;&#xe3;o"/>
   </Properties>
@@ -68,7 +69,7 @@
                   <Table columnCount="3" rowCount="20">
                     <Column editable="true" title="Persona" type="java.lang.String"/>
                     <Column editable="true" title="Administrador" type="java.lang.Boolean"/>
-                    <Column editable="false" title="Administrador Master" type="java.lang.Boolean"/>
+                    <Column editable="false" title="Administrador M&#xe1;ster" type="java.lang.Boolean"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

@@ -57,6 +57,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         lblFecha = new javax.swing.JLabel();
 
+        setClosable(true);
         setIconifiable(true);
         setTitle("Reportar Persona - Estimação");
 
@@ -82,7 +83,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         panelVentanaBuscar.add(lblApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
         lblidPersona.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblidPersona.setText("ID");
+        lblidPersona.setText("Cédula");
         panelVentanaBuscar.add(lblidPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
         fieldIDPersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -119,7 +120,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         panelVentanaBuscar.add(lblComentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
         lblidReportante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblidReportante.setText("ID del Reportante");
+        lblidReportante.setText("Cédula del Reportante");
         panelVentanaBuscar.add(lblidReportante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
         fieldNombreReportante.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -130,7 +131,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
 
         lblFecha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblFecha.setText("Fecha");
-        panelVentanaBuscar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
+        panelVentanaBuscar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

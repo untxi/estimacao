@@ -46,6 +46,7 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame
         jButton1 = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
 
+        setClosable(true);
         setIconifiable(true);
         setTitle("Asignar Administradores - Estimação");
 
@@ -78,7 +79,7 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame
                 {null, null, null}
             },
             new String [] {
-                "Persona", "Administrador", "Administrador Master"
+                "Persona", "Administrador", "Administrador Máster"
             }
         ) {
             Class[] types = new Class [] {

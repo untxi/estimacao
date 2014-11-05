@@ -46,6 +46,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaDonaciones = new javax.swing.JTable();
 
+        setClosable(true);
         setIconifiable(true);
         setTitle("Administrar Donaciones - Estimação");
 
@@ -122,7 +123,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
                 {null, null, null, null, null}
             },
             new String [] {
-                "Caducidad", "ID Donador", "Donación", "Cantidad", "Medida"
+                "Caducidad", "Cédula Donador", "Donación", "Cantidad", "Medida"
             }
         ) {
             Class[] types = new Class [] {
@@ -161,7 +162,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
         );
 
         pack();

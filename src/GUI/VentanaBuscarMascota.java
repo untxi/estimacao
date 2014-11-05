@@ -80,6 +80,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
 
         jMenuItem1.setText("jMenuItem1");
 
+        setClosable(true);
         setIconifiable(true);
         setResizable(true);
         setTitle("Buscar Mascota - Estimação");
@@ -119,10 +120,11 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         panelVentanaBuscar.add(lblTamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Perro", "Gato", "Pájaro", "Tortuga", "Roedor Pequeño", "Conejo" }));
+        boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Perro", "Gato", "Pájaro", "Tortuga", "Roedor" }));
         panelVentanaBuscar.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 130, -1));
 
         boxRaza.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        boxRaza.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione" }));
         boxRaza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxRazaActionPerformed(evt);
@@ -145,7 +147,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         panelVentanaBuscar.add(fieldPelaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 90, -1));
 
         lblidChip.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblidChip.setText("ID Chip");
+        lblidChip.setText("Chip");
         panelVentanaBuscar.add(lblidChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
         panelVentanaBuscar.add(fieldNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 130, -1));
 
@@ -201,7 +203,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "ID Chip", "Especie", "Raza", "Tamaño", "Pelaje", "Ojos", "Ubicación"
+                "Nombre", "Chip", "Especie", "Raza", "Tamaño", "Pelaje", "Ojos", "Ubicación"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -218,14 +220,16 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(7).setResizable(false);
+        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
+            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(7).setResizable(false);
+        }
 
         panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 550, 280));
 
@@ -238,7 +242,8 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         btnCancelar1.setText("Cancelar");
         panelVentanaBuscar.add(btnCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 90, 40));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande" }));
+        jComboBox1.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Pequeño", "Mediano", "Grande", "Gigante" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);

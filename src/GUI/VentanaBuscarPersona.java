@@ -59,6 +59,8 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaBuscarMascota = new javax.swing.JTable();
         btnReportarEncontrada = new javax.swing.JButton();
+        lblOjos1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         fieldEmail.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
 
@@ -73,6 +75,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        setClosable(true);
         setIconifiable(true);
         setTitle("Buscar Persona - Estimação");
 
@@ -102,10 +105,15 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         panelVentanaBuscar.add(lblEspecia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
         lblOjos.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblOjos.setText("ID");
-        panelVentanaBuscar.add(lblOjos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        lblOjos.setText("Email");
+        panelVentanaBuscar.add(lblOjos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
         fieldIDPersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        fieldIDPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldIDPersonaActionPerformed(evt);
+            }
+        });
         panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 130, -1));
 
         lblidChip.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -118,12 +126,12 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Limpiar");
-        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 90, 40));
+        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 90, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
         btnBuscar.setText("Buscar");
-        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 90, 40));
+        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 90, 40));
 
         fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 130, -1));
@@ -139,33 +147,33 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         tablaBuscarMascota.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         tablaBuscarMascota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "1er Apellido", "2do Apellido", "ID", "Teléfono", "Móvil", "Email"
+                "Nombre", "1er Apellido", "2do Apellido", "Cédula", "Email"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -178,15 +186,15 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
+        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
+            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+        }
 
-        panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 550, 280));
+        panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 550, 280));
 
         btnReportarEncontrada.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         btnReportarEncontrada.setForeground(new java.awt.Color(170, 80, 0));
@@ -201,7 +209,18 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 btnReportarEncontradaActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 210, 40));
+        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 210, 40));
+
+        lblOjos1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblOjos1.setText("Cédula");
+        panelVentanaBuscar.add(lblOjos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        panelVentanaBuscar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -229,6 +248,14 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tablaBuscarMascotaMouseWheelMoved
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void fieldIDPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldIDPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldIDPersonaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
@@ -241,12 +268,14 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     private javax.swing.JTextField fieldNombrePersona;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblCaracteristicas;
     private javax.swing.JLabel lblEspecia;
     private javax.swing.JLabel lblImagenBuscar;
     private javax.swing.JLabel lblImagenMascota;
     private javax.swing.JLabel lblNombreMascota;
     private javax.swing.JLabel lblOjos;
+    private javax.swing.JLabel lblOjos1;
     private javax.swing.JLabel lblTitulo2Ventana;
     private javax.swing.JLabel lblTituloVentana;
     private javax.swing.JLabel lblidChip;

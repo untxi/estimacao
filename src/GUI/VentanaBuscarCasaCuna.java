@@ -72,14 +72,14 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
 
         lblApellido1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblApellido1.setText("Primer      Apellido");
-        panelCrearUsuario.add(lblApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        panelCrearUsuario.add(lblApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         lblApellido2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblApellido2.setText("Segundo Apellido");
         panelCrearUsuario.add(lblApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         lblid.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblid.setText("ID ");
+        lblid.setText("Cédula");
         panelCrearUsuario.add(lblid, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         btnBuscar.setBackground(new java.awt.Color(255, 153, 0));
@@ -131,11 +131,16 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(lblCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
         boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Perro", "Gato", "Pájaro", "Tortuga", "Roedor Pequeño", "Conejo" }));
+        boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Perro", "Gato", "Pájaro", "Tortuga", "Roedor" }));
+        boxEspecie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxEspecieActionPerformed(evt);
+            }
+        });
         panelCrearUsuario.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, -1));
 
         boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande" }));
+        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Pequeño", "Mediano", "Grande", "Gigante" }));
         panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 110, -1));
 
         lblTamano1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -147,8 +152,8 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(lblEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         boxCantidadMascotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxCantidadMascotas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
-        panelCrearUsuario.add(boxCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 40, -1));
+        boxCantidadMascotas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "1", "2", "3", "4", "5" }));
+        panelCrearUsuario.add(boxCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 110, -1));
 
         lblNombre1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblNombre1.setText("Nombre");
@@ -180,7 +185,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "1er Apellido", "2do Apellido", "ID", "Especie", "Mascotas", "Tamaño"
+                "Nombre", "1er Apellido", "2do Apellido", "Cédula", "Especie", "Mascotas", "Tamaño"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -197,14 +202,16 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(5).setPreferredWidth(100);
-        tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
+        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
+            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(5).setPreferredWidth(100);
+            tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         panelCrearUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 550, 280));
 
@@ -237,6 +244,10 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
     private void tablaBuscarMascotaMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_tablaBuscarMascotaMouseWheelMoved
         // TODO add your handling code here:
     }//GEN-LAST:event_tablaBuscarMascotaMouseWheelMoved
+
+    private void boxEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEspecieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxEspecieActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
