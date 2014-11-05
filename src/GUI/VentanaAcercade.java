@@ -45,7 +45,7 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         panelAcercade = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblTitulo = new javax.swing.JLabel();
+        lblClick = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -54,6 +54,7 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -71,22 +72,23 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         jLabel2.setText("Instituto Tecnológico de Costa Rica");
         panelAcercade.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
 
-        lblTitulo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        lblTitulo.setText("Estimação");
-        panelAcercade.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
+        lblClick.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblClick.setText("CLICK");
+        panelAcercade.add(lblClick, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel3.setText("Accede al manual de Usuario");
         panelAcercade.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel4.setText("<html><a href=\"http://www.wix/samarburola/estimacao\">www.wix/samarburola/estimacao</a></html>");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/web.png"))); // NOI18N
+        jLabel4.setText("AQUÍ");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 irWeb(evt);
             }
         });
-        panelAcercade.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, -1, -1));
+        panelAcercade.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 60, 110, -1));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel5.setText("Creado por");
@@ -112,11 +114,15 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         jLabel10.setText("Ingeniería en Computación");
         panelAcercade.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
 
+        lblTitulo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblTitulo.setText("Estimação");
+        panelAcercade.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelAcercade, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+            .addComponent(panelAcercade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,7 +137,7 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         if (Desktop.isDesktopSupported()) {
         Desktop desktop = Desktop.getDesktop();
         if (desktop.isSupported(Desktop.Action.BROWSE)) {
-        desktop.browse(new URI("http://www.gmail.com/"));
+        desktop.browse(new URI("http://samarburola.wix.com/estimacao"));
         }
         }
         } catch (Exception e) {
@@ -151,6 +157,7 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblClick;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelAcercade;
     // End of variables declaration//GEN-END:variables

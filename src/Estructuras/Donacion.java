@@ -12,17 +12,20 @@ import java.util.Date;
  */
 public class Donacion 
 {
-    private Persona donante;
+    private String IdDonante;
     private String tipoDonacion;
     private int cantidad;
     private String medida;
-    private String descripcion;
     private Date fecha;
 
-    public Persona getDonante() {
-        return donante;
-    }
+    //public Persona getDonante() {
+    //    return donante;
+    //}
 
+    public String getIdDonante() {
+        return IdDonante;
+    }
+    
     public String getTipoDonacion() {
         return tipoDonacion;
     }
@@ -35,16 +38,12 @@ public class Donacion
         return medida;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
     public Date getFecha() {
         return fecha;
     }
 
-    public void setDonante(Persona donante) {
-        this.donante = donante;
+    public void setDonante(String IdDonante) {
+       this.IdDonante = IdDonante;
     }
 
     public void setTipoDonacion(String tipoDonacion) {
@@ -59,12 +58,15 @@ public class Donacion
         this.medida = medida;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
     
+    public Donacion(String IdDonante, String tipoDonacion, int cantidad, String medida, Date fecha){
+        this.IdDonante    = IdDonante;
+        this.tipoDonacion = tipoDonacion;
+        this.cantidad     = cantidad;
+        this.medida       = medida;
+        this.fecha        = fecha;
+    }
 }

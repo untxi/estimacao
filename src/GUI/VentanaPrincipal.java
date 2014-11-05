@@ -89,8 +89,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         buscarCasaCuna = new javax.swing.JMenuItem();
         menuReportar = new javax.swing.JMenu();
         reportarMascota = new javax.swing.JMenuItem();
-        reoprtarPersona = new javax.swing.JMenuItem();
-        menuAyudar = new javax.swing.JMenu();
+        reportarPersona = new javax.swing.JMenuItem();
+        menuDonar = new javax.swing.JMenu();
+        Donar = new javax.swing.JMenuItem();
+        AdministrarDonaciones = new javax.swing.JMenuItem();
         acercade = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,8 +102,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         escritorio.setName(""); // NOI18N
 
         lblLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
+        escritorio.add(lblLogo1);
         lblLogo1.setBounds(260, 60, 334, 294);
-        escritorio.add(lblLogo1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         barraMenu.setBackground(new java.awt.Color(153, 255, 153));
 
@@ -204,28 +206,45 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         menuReportar.add(reportarMascota);
 
-        reoprtarPersona.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        reoprtarPersona.setForeground(new java.awt.Color(170, 80, 0));
-        reoprtarPersona.setText("Reportar Persona");
-        reoprtarPersona.addActionListener(new java.awt.event.ActionListener() {
+        reportarPersona.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        reportarPersona.setForeground(new java.awt.Color(170, 80, 0));
+        reportarPersona.setText("Reportar Persona");
+        reportarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reoprtarPersonaActionPerformed(evt);
+                reportarPersonaActionPerformed(evt);
             }
         });
-        menuReportar.add(reoprtarPersona);
+        menuReportar.add(reportarPersona);
 
         barraMenu.add(menuReportar);
 
-        menuAyudar.setForeground(new java.awt.Color(170, 80, 0));
-        menuAyudar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/donar.png"))); // NOI18N
-        menuAyudar.setText("Donar");
-        menuAyudar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        menuAyudar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuAyudarMouseClicked(evt);
+        menuDonar.setForeground(new java.awt.Color(170, 80, 0));
+        menuDonar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/donar.png"))); // NOI18N
+        menuDonar.setText("Donaciones");
+        menuDonar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        Donar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        Donar.setForeground(new java.awt.Color(170, 80, 0));
+        Donar.setText("Donar");
+        Donar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DonarActionPerformed(evt);
             }
         });
-        barraMenu.add(menuAyudar);
+        menuDonar.add(Donar);
+
+        AdministrarDonaciones.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        AdministrarDonaciones.setForeground(new java.awt.Color(170, 80, 0));
+        AdministrarDonaciones.setText("Administrar Donaciones");
+        AdministrarDonaciones.setToolTipText("");
+        AdministrarDonaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdministrarDonacionesActionPerformed(evt);
+            }
+        });
+        menuDonar.add(AdministrarDonaciones);
+
+        barraMenu.add(menuDonar);
 
         acercade.setForeground(new java.awt.Color(170, 80, 0));
         acercade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/acerca.png"))); // NOI18N
@@ -299,18 +318,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_reportarMascotaActionPerformed
 
-    private void reoprtarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reoprtarPersonaActionPerformed
+    private void reportarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportarPersonaActionPerformed
         VentanaReportarPersona.getInstance().setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_reoprtarPersonaActionPerformed
+    }//GEN-LAST:event_reportarPersonaActionPerformed
 
-    private void menuAyudarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAyudarMouseClicked
-        VentanaDonar.getInstance().setVisible(true);
+    private void DonarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_menuAyudarMouseClicked
+        VentanaDonar.getInstance().setVisible(true);
+    }//GEN-LAST:event_DonarActionPerformed
+
+    private void AdministrarDonacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministrarDonacionesActionPerformed
+        // TODO add your handling code here:
+        VentanaAdministrarDonaciones.getInstance().setVisible(true);
+    }//GEN-LAST:event_AdministrarDonacionesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AdministrarDonaciones;
+    private javax.swing.JMenuItem Donar;
     private javax.swing.JMenu acercade;
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JMenuItem buscarCasaCuna;
@@ -322,11 +348,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem ingresarCuenta;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel lblLogo1;
-    private javax.swing.JMenu menuAyudar;
     private javax.swing.JMenu menuBusqueda;
+    private javax.swing.JMenu menuDonar;
     private javax.swing.JMenu menuReportar;
     private javax.swing.JMenu menuUsuario;
-    private javax.swing.JMenuItem reoprtarPersona;
     private javax.swing.JMenuItem reportarMascota;
+    private javax.swing.JMenuItem reportarPersona;
     // End of variables declaration//GEN-END:variables
 }
