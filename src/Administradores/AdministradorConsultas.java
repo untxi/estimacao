@@ -1,4 +1,3 @@
-
 package Administradores;
 
 import Estructuras.Mascota;
@@ -6,7 +5,7 @@ import java.util.ArrayList;
 
 public  class AdministradorConsultas {
     
-    static ArrayList<Mascota> mascotas = new ArrayList<Mascota>(); 
+    static ArrayList<Mascota> mascotas = new ArrayList<>(); 
     private static AdministradorConsultas miAdminConsultas;
     
     //metodos 
@@ -19,19 +18,59 @@ public  class AdministradorConsultas {
         return miAdminConsultas;
     }
     
+    //metodo temporal pruebas 
     public void addMascota(Mascota mascota){
         mascotas.add(mascota);
     }
+       
+    public void calcularCalificacionAdoptante(int pCalificacion){
+        
+    }
     
+    //metodos  para consultas
     public void consultarMascota(){
         
     }
     
-    public void filtroLugar(){
+    public void consultarDonaciones(String pDonacion){
         
     }
     
-    static public ArrayList<Mascota> filtrarChip(int chip){
+    public void consultarUsuario(String pUsuario){
+        
+    }
+    
+    public void consultarAdoptante(String pAdoptante){
+        
+    }
+   
+    //Metodos para filtrar en buscar persona 
+     public void filtroCedula(String pCedula){
+        
+    }
+     
+     public void filtroNombre(String pNombre){
+        
+    }
+     
+     public void filtroPrimerApellido(String pApellido){
+        
+    }
+     
+     public void filtroSegundoApellido(String pApellido){
+         
+     }
+     
+     public void filtroEmail(String pEmail){
+         
+     }
+     
+     //Metodos para filtrar en buscar mascota
+     public void filtroLugar(String pLugar){
+        
+    }
+     
+     static public ArrayList<Mascota> filtrarChip(int chip){
         ArrayList<Mascota> resul = new ArrayList<Mascota>(); 
         for(Mascota mascota : mascotas){
             if(mascota.getChipID() == chip)
@@ -39,49 +78,19 @@ public  class AdministradorConsultas {
         }
         return resul;
     }
-    
-    public void filtroEstado(){
+     
+     public void filtroRaza(String pRaza){
         
     }
-    
-    public void filtroRaza(){
+      
+     public void filtroEspecie(String pEspecie){
         
     }
-    
-    public void filtroTipo(){
+     
+     public void filtroTamaño(String pTamaño){
         
     }
-    
-    public void calcularCalificacionAdoptante(){
-        
-    }
-    
-    public void consultarDonaciones(){
-        
-    }
-    
-    public void consultarUsuario(){
-        
-    }
-    
-    public void filtroNombre(){
-        
-    }
-    
-    public void filtroPrimerApellido(){
-        
-    }
-    
-    public void filtroCedula(){
-        
-    }
-    
-    public void consultarAdoptante(){
-        
-    }
-    
-    public void filtroTamaño(){
-        
-    }
-   
+     
+     
+      
 }

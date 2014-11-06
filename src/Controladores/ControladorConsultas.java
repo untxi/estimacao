@@ -1,4 +1,6 @@
-
+/*  Esta clase conecta la interfaz de busquedas con el administrador consultas
+    Quien contiene los metodos de filtros. 
+*/
 package Controladores;
 
 import GUI.*;
@@ -7,10 +9,9 @@ import Administradores.AdministradorAplicacion;
 import java.util.ArrayList;
 
 public class ControladorConsultas {
+    
     private static ControladorConsultas miControladorConsultas;
-    
-
-    
+   
     private ControladorConsultas(){
         
     }
