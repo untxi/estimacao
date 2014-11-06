@@ -4,7 +4,7 @@ import Estructuras.Mascota;
 import java.util.ArrayList;
 
 public  class AdministradorConsultas {
-    
+    static ArrayList<String> especies = new ArrayList<>();
     static ArrayList<Mascota> mascotas = new ArrayList<>(); 
     private static AdministradorConsultas miAdminConsultas;
     
@@ -66,12 +66,18 @@ public  class AdministradorConsultas {
      }
      
      //Metodos para filtrar en buscar mascota
-     public void filtroLugar(String pLugar){
-        
+     static public  ArrayList<Mascota> filtroLugar(String pLugar){
+        ArrayList<Mascota> resul = new ArrayList<>(); 
+        for(Mascota mascota : mascotas){
+            if(mascota.getUbicacion().equals(pLugar)){
+                resul.add(mascota); 
+            }
+        }
+        return resul;
     }
      
-     static public ArrayList<Mascota> filtrarChip(int chip){
-        ArrayList<Mascota> resul = new ArrayList<Mascota>(); 
+     static public ArrayList<Mascota> filtroChip(int chip){
+        ArrayList<Mascota> resul = new ArrayList<>(); 
         for(Mascota mascota : mascotas){
             if(mascota.getChipID() == chip)
                 resul.add(mascota);
@@ -79,18 +85,27 @@ public  class AdministradorConsultas {
         return resul;
     }
      
-     public void filtroRaza(String pRaza){
-        
+     static public  ArrayList<Mascota> filtroRaza(String pRaza){
+        ArrayList<Mascota> resul = new ArrayList<>();
+        for (Mascota mascota : mascotas){
+            if(mascota.getEspecie().equals(pRaza)){
+                resul.add(mascota);
+            }
+        }
+        return resul;
     }
       
-     public void filtroEspecie(String pEspecie){
-        
+     static public ArrayList<Mascota> filtroEspecie(String pEspecie){
+         ArrayList<Mascota> resul = new ArrayList<>();
+         for (Mascota mascota : mascotas){
+            if(mascota.getEspecie().equals(pEspecie)){
+                resul.add(mascota);
+            }
+        }
+        return resul;
     }
-     
-     public void filtroTamaño(String pTamaño){
-        
-    }
-     
-     
-      
 }
+     
+     
+ 
+
