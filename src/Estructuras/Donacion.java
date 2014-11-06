@@ -12,61 +12,45 @@ import java.util.Date;
  */
 public class Donacion 
 {
+    //Atributos de la Clase
     private String IdDonante;
-    private String tipoDonacion;
-    private int cantidad;
-    private String medida;
-    private Date fecha;
-
-    //public Persona getDonante() {
-    //    return donante;
-    //}
-
-    public String getIdDonante() {
-        return IdDonante;
-    }
-    
-    public String getTipoDonacion() {
-        return tipoDonacion;
+    private int monto;
+    private Date fechaRecibido;
+    private Date fechaEntrega;
+    //Get & Set de los atributos
+    public int getMonto() {
+        return monto;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public Date getFechaRecibido() {
+        return fechaRecibido;
     }
 
-    public String getMedida() {
-        return medida;
+    public Date getFechaEntrega() {
+        return fechaEntrega;
     }
 
-    public Date getFecha() {
-        return fecha;
+      public void setIdDonante(String IdDonante) {
+        this.IdDonante = IdDonante;
     }
 
-    public void setDonante(String IdDonante) {
-       this.IdDonante = IdDonante;
+    public void setMonto(int monto) {
+        this.monto = monto;
     }
 
-    public void setTipoDonacion(String tipoDonacion) {
-        this.tipoDonacion = tipoDonacion;
+    public void setFechaRecibido(Date fechaRecibido) {
+        this.fechaRecibido = fechaRecibido;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setFechaEntrega(Date fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
+    }
+    // Constructor
+    public Donacion(String IdDonante, int monto, Date fechaRecibido) {
+        this.IdDonante = IdDonante;
+        this.monto = monto;
+        this.fechaRecibido = fechaRecibido;
+        this.fechaEntrega = fechaEntrega;
     }
 
-    public void setMedida(String medida) {
-        this.medida = medida;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-    
-    public Donacion(String IdDonante, String tipoDonacion, int cantidad, String medida, Date fecha){
-        this.IdDonante    = IdDonante;
-        this.tipoDonacion = tipoDonacion;
-        this.cantidad     = cantidad;
-        this.medida       = medida;
-        this.fecha        = fecha;
-    }
 }

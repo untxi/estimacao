@@ -16,7 +16,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  
  ImageIcon portada = new ImageIcon(VentanaPrincipal.class.getResource("/Recursos/ImagenesGUI/Logo Adrian.png"));
    lblNewLabel_1.setIcon(new ImageIcon(portada.getImage().getScaledInstance(lblNewLabel_1.getWidth(), lblNewLabel_1.getHeight(), Image.SCALE_SMOOTH)));
-		
+        
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
@@ -26,24 +26,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     private VentanaPrincipal() {
         initComponents();
-		try {
-			setDefaultLookAndFeelDecorated(true);
-			JDialog.setDefaultLookAndFeelDecorated(true);
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (UnsupportedLookAndFeelException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        try {
+            setDefaultLookAndFeelDecorated(true);
+            JDialog.setDefaultLookAndFeelDecorated(true);
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         escritorio.add(VentanaAcercade.getInstance());
+        escritorio.add(VentanaAdministrarDonaciones.getInstance());
         escritorio.add(VentanaAsignarAdministradores.getInstance());
         escritorio.add(VentanaBuscarCasaCuna.getInstance());
         escritorio.add(VentanaBuscarMascota.getInstance());
