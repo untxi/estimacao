@@ -13,6 +13,7 @@ public class AdministradorAplicacion implements IConstantes
     private static AdministradorAplicacion miAdministradorAplicacion;
     
     private ArrayList<Usuario> miListaUsuarios;
+    private Usuario miUsuarioActual;
     private ArrayList<Persona> miListaPersonas;
     private ArrayList<CasaCuna> miListaCasasCuna;
     private ArrayList<String>  miListaTiposAnimales;
@@ -58,7 +59,21 @@ public class AdministradorAplicacion implements IConstantes
           {
               existe = true;
           }
-          System.out.println(miListaUsuarios.get(i).getNickName());
+        }
+        return existe;
+    }
+    
+    public boolean existeUsuario(String pIdUsuario, String pPassword)
+    {
+        boolean existe = false;
+        for (int i = 0; i < miListaUsuarios.size(); i++)
+        {
+          if(miListaUsuarios.get(i).getNickName().compareToIgnoreCase(pIdUsuario) == 0 &&
+             miListaUsuarios.get(i).getPassword().compareToIgnoreCase(pPassword) == 0  )
+          {
+              existe = true;
+              miUsuarioActual = miListaUsuarios.get(i);
+          }
         }
         return existe;
     }
@@ -70,6 +85,14 @@ public class AdministradorAplicacion implements IConstantes
             miAdministradorAplicacion = new AdministradorAplicacion();
         }
         return miAdministradorAplicacion;
+    }
+
+    public Usuario getMiUsuarioActual() {
+        return miUsuarioActual;
+    }
+
+    public void setMiUsuarioActual(Usuario miUsuarioActual) {
+        this.miUsuarioActual = miUsuarioActual;
     }
     
     

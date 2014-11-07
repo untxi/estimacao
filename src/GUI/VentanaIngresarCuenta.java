@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import Controladores.ControladorSesion;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Samantha
@@ -47,7 +50,6 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
         fieldPassword = new javax.swing.JPasswordField();
         lblimagenUsuario = new javax.swing.JLabel();
 
-        setClosable(true);
         setIconifiable(true);
         setTitle("Ingresar - Estimação");
 
@@ -58,11 +60,21 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
         btnIngresar.setForeground(new java.awt.Color(170, 80, 0));
         btnIngresar.setText("Ingresar");
         btnIngresar.setToolTipText("");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
         panelIngresarUsuario.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         panelIngresarUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
 
         lblingreseID.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -93,6 +105,28 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        
+        setVisible(false);
+        fieldID.setText("");
+        fieldPassword.setText("");
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        boolean esUsuario = ControladorSesion.getInstance().ingresarCuenta(fieldID.getText(), fieldPassword.getText());
+        if(esUsuario)
+        {
+            JOptionPane.showMessageDialog(null, "Bienvenido");
+            VentanaPrincipal.getInstance().desbloquearPantalla();
+            setVisible(false);
+            btnCancelarActionPerformed(evt);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "El nombre de usuario o contraseña es incorrecto");
+        }
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -79,7 +79,6 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
         lblNickname = new javax.swing.JLabel();
         fieldPassword = new javax.swing.JPasswordField();
 
-        setClosable(true);
         setIconifiable(true);
         setTitle("Crear Usuario Nuevo - Estimação");
 
@@ -292,13 +291,12 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
         if(seCreoUsuario)
         {
             JOptionPane.showMessageDialog(null, "Usuario agregado con éxito");
+            btnCancelarActionPerformed(evt);
         }
         else
         {
             JOptionPane.showMessageDialog(null, "El número de cédula o nickname ya existen");
         }
-        
-        
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

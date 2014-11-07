@@ -37,4 +37,9 @@ public class ControladorSesion
                 primerApellido, segundoApellido, telefono, email, cedula, adoptante, direccion));
     }
     
+    public boolean ingresarCuenta(String pIdUsuario, String pPassword)
+    {
+       return AdministradorAplicacion.getInstance().existeUsuario(pIdUsuario, pPassword);
+    }
+    
 }

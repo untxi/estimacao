@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import Administradores.AdministradorAplicacion;
+import Interfaces.IConstantes;
 import javax.swing.JDialog;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -18,7 +20,7 @@ import javax.swing.UnsupportedLookAndFeelException;
    lblNewLabel_1.setIcon(new ImageIcon(portada.getImage().getScaledInstance(lblNewLabel_1.getWidth(), lblNewLabel_1.getHeight(), Image.SCALE_SMOOTH)));
         
  */
-public class VentanaPrincipal extends javax.swing.JFrame {
+public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
 
     private static VentanaPrincipal miVentanaPrincipal;
     /**
@@ -104,7 +106,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lblLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
         escritorio.add(lblLogo1);
-        lblLogo1.setBounds(260, 60, 334, 294);
+        lblLogo1.setBounds(450, 180, 334, 294);
 
         barraMenu.setBackground(new java.awt.Color(153, 255, 153));
 
@@ -136,6 +138,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         crearAdministrador.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         crearAdministrador.setForeground(new java.awt.Color(170, 80, 0));
         crearAdministrador.setText("Asignar Administradores");
+        crearAdministrador.setEnabled(false);
         crearAdministrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 crearAdministradorActionPerformed(evt);
@@ -146,6 +149,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jMenuItem1.setForeground(new java.awt.Color(170, 80, 0));
         jMenuItem1.setText("Salir de mi Cuenta");
+        jMenuItem1.setEnabled(false);
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -158,6 +162,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuBusqueda.setForeground(new java.awt.Color(170, 80, 0));
         menuBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/buscar.png"))); // NOI18N
         menuBusqueda.setText("Búsqueda");
+        menuBusqueda.setEnabled(false);
         menuBusqueda.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         buscarMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -195,6 +200,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuReportar.setForeground(new java.awt.Color(170, 80, 0));
         menuReportar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/alerta.png"))); // NOI18N
         menuReportar.setText("Reportar");
+        menuReportar.setEnabled(false);
         menuReportar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         reportarMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -222,6 +228,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuDonar.setForeground(new java.awt.Color(170, 80, 0));
         menuDonar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/donar.png"))); // NOI18N
         menuDonar.setText("Donaciones");
+        menuDonar.setEnabled(false);
         menuDonar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         Donar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -264,11 +271,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 923, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 1252, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
         );
 
         pack();
@@ -276,6 +283,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void crearAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearAdministradorActionPerformed
         VentanaAsignarAdministradores.getInstance().setVisible(true);
+        VentanaAsignarAdministradores.getInstance().llenarTabla();
         // TODO add your handling code here:
     }//GEN-LAST:event_crearAdministradorActionPerformed
 
@@ -295,8 +303,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_ingresarCuentaActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        //////SALIR DE LA CUENTA
-        // TODO add your handling code here:
+        bloquearPantalla();
+        AdministradorAplicacion.getInstance().setMiUsuarioActual(null);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void buscarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMascotaActionPerformed
@@ -334,6 +342,50 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaAdministrarDonaciones.getInstance().setVisible(true);
     }//GEN-LAST:event_AdministrarDonacionesActionPerformed
 
+    
+    public void desbloquearPantalla()
+    {
+        if(AdministradorAplicacion.getInstance().getMiUsuarioActual() != null)
+        {
+            if(AdministradorAplicacion.getInstance().getMiUsuarioActual().getTipo() == AdministradorMaster)
+            {
+                crearAdministrador.setEnabled(true);
+                AdministrarDonaciones.setEnabled(true);
+                jMenuItem1.setEnabled(true);
+                menuBusqueda.setEnabled(true);
+                menuDonar.setEnabled(true);
+                menuReportar.setEnabled(true);
+            }
+            else if(AdministradorAplicacion.getInstance().getMiUsuarioActual().getTipo() == Administrador)
+            {
+                crearAdministrador.setEnabled(false);
+                AdministrarDonaciones.setEnabled(false);
+                jMenuItem1.setEnabled(true);
+                menuBusqueda.setEnabled(true);
+                menuDonar.setEnabled(true);
+                menuReportar.setEnabled(true);
+            }
+            else
+            {
+                crearAdministrador.setEnabled(false);
+                AdministrarDonaciones.setEnabled(false);
+                jMenuItem1.setEnabled(true);
+                menuBusqueda.setEnabled(true);
+                menuDonar.setEnabled(true);
+                menuReportar.setEnabled(true);
+            }
+        }
+    }
+    
+    public void bloquearPantalla()
+    {
+        crearAdministrador.setEnabled(false);
+        AdministrarDonaciones.setEnabled(false);
+        jMenuItem1.setEnabled(false);
+        menuBusqueda.setEnabled(false);
+        menuDonar.setEnabled(false);
+        menuReportar.setEnabled(false);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdministrarDonaciones;

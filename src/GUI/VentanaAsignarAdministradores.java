@@ -5,11 +5,14 @@
  */
 package GUI;
 
+import Interfaces.IConstantes;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Samantha
  */
-public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame 
+public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame implements IConstantes
 {
     
     private static VentanaAsignarAdministradores miVentanaAsignarAdministradores;
@@ -46,7 +49,6 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame
         jButton1 = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
 
-        setClosable(true);
         setIconifiable(true);
         setTitle("Asignar Administradores - Estimação");
 
@@ -57,26 +59,7 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame
         tablaPersonas.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         tablaPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Persona", "Administrador", "Administrador Máster"
@@ -85,16 +68,9 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
             };
-            boolean[] canEdit = new boolean [] {
-                true, true, false
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         tablaPersonas.setGridColor(new java.awt.Color(0, 0, 0));
@@ -118,11 +94,21 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame
         jButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(170, 80, 0));
         jButton1.setText("Cancelar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         panelVentanaAsignarAdministradores.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, 40));
 
         btnGuardar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(170, 80, 0));
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
         panelVentanaAsignarAdministradores.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,6 +129,53 @@ public class VentanaAsignarAdministradores extends javax.swing.JInternalFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_tablaPersonasMouseWheelMoved
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        setVisible(false);
+        limpiarTabla();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().size();i++)
+        {
+            if((Boolean)tablaPersonas.getValueAt(i, 1))
+            {
+                Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().get(i).setTipo(Administrador);
+            }
+            if((Boolean)tablaPersonas.getValueAt(i, 2))
+            {
+                Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().get(i).setTipo(AdministradorMaster);
+            }
+        }
+        setVisible(false);
+        limpiarTabla();
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    public void llenarTabla()
+    {
+        for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().size();i++)
+        {
+            ((DefaultTableModel)tablaPersonas.getModel()).addRow(new Object[3]);
+            tablaPersonas.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().get(i).getNombre(), i, 0);
+            if(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().get(i).getTipo() == AdministradorMaster)
+            {
+                tablaPersonas.setValueAt(false, i, 1);
+                tablaPersonas.setValueAt(true, i, 2);
+            }
+            else
+            {
+                tablaPersonas.setValueAt(true, i, 1);
+                tablaPersonas.setValueAt(false, i, 2);
+            }
+        }
+    }
+    
+    private void limpiarTabla()
+    {
+        for(int i = 0; i < tablaPersonas.getRowCount();i++)
+        {
+            ((DefaultTableModel)tablaPersonas.getModel()).removeRow(i);   
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
