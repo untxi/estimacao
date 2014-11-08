@@ -5,7 +5,6 @@
  */
 package Estructuras;
 
-import java.util.Calendar;
 
 public class Adopcion {
     private String nombre;
