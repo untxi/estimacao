@@ -1,13 +1,18 @@
 
 package GUI;
 
-/**
- *
- * @author Samantha
- */
+
 public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
 
     private static VentanaBuscarCasaCuna miVentanaBuscarCasaCuna;
+    private String nombre;
+    private String primerApellido;
+    private String segundoApellido;
+    private String cedula;
+    private String cantidadMascotas;
+    private String especie;
+    private String tamaño;
+    
     
     /**
      * Creates new form ventanaCrearUsuario
@@ -52,11 +57,12 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         boxTamaño = new javax.swing.JComboBox();
         lblTamano1 = new javax.swing.JLabel();
         lblEspecie = new javax.swing.JLabel();
-        boxCantidadMascotas = new javax.swing.JComboBox();
         lblNombre1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaBuscarMascota = new javax.swing.JTable();
         lblTitulo2Ventana = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -71,7 +77,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
         lblApellido1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblApellido1.setText("Primer      Apellido");
+        lblApellido1.setText("Primer Apellido");
         panelCrearUsuario.add(lblApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         lblApellido2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -86,6 +92,11 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
         panelCrearUsuario.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 110, 50));
 
         fieldNombre.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -124,11 +135,16 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         btnCancelar.setMaximumSize(new java.awt.Dimension(63, 23));
         btnCancelar.setMinimumSize(new java.awt.Dimension(63, 23));
         btnCancelar.setPreferredSize(new java.awt.Dimension(63, 23));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         panelCrearUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 100, 50));
 
         lblCantidadMascotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblCantidadMascotas.setText("Cantidad de Mascotas");
-        panelCrearUsuario.add(lblCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+        panelCrearUsuario.add(lblCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Perro", "Gato", "Pájaro", "Tortuga", "Roedor" }));
@@ -137,11 +153,11 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
                 boxEspecieActionPerformed(evt);
             }
         });
-        panelCrearUsuario.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, -1));
+        panelCrearUsuario.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 110, -1));
 
         boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Pequeño", "Mediano", "Grande", "Gigante" }));
-        panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 110, -1));
+        panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 110, -1));
 
         lblTamano1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblTamano1.setText("Tamaño");
@@ -149,11 +165,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
 
         lblEspecie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblEspecie.setText("Especie");
-        panelCrearUsuario.add(lblEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
-
-        boxCantidadMascotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxCantidadMascotas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "1", "2", "3", "4", "5" }));
-        panelCrearUsuario.add(boxCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 110, -1));
+        panelCrearUsuario.add(lblEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
         lblNombre1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblNombre1.setText("Nombre");
@@ -202,32 +214,34 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
-            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(5).setPreferredWidth(100);
-            tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
-        }
+        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(5).setPreferredWidth(100);
+        tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
 
         panelCrearUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 550, 280));
 
         lblTitulo2Ventana.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTitulo2Ventana.setText("CasasCuna Encontradas");
         panelCrearUsuario.add(lblTitulo2Ventana, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
+        panelCrearUsuario.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 110, -1));
+
+        jButton1.setText("Limpiar Tabla");
+        panelCrearUsuario.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 942, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
         );
 
         pack();
@@ -249,9 +263,30 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_boxEspecieActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        nombre = fieldNombre.getText();
+        primerApellido = fieldApellido1.getText();
+        segundoApellido = fieldApellido2.getText();
+        cedula = field_ID.getText();
+        especie = (String) boxEspecie.getSelectedItem();
+        tamaño = (String) boxTamaño.getSelectedItem();
+       
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+        fieldNombre.setText("");
+        fieldApellido1.setText("");
+        fieldApellido2.setText("");
+        field_ID.setText("");
+        boxEspecie.setSelectedIndex(0);
+        boxTamaño.setSelectedIndex(0);
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox boxCantidadMascotas;
     private javax.swing.JComboBox boxEspecie;
     private javax.swing.JComboBox boxTamaño;
     private javax.swing.JButton btnBuscar;
@@ -260,7 +295,9 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
     private javax.swing.JTextField fieldApellido2;
     private javax.swing.JTextField fieldNombre;
     private javax.swing.JTextField field_ID;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblApellido1;
     private javax.swing.JLabel lblApellido2;
     private javax.swing.JLabel lblCantidadMascotas;
@@ -274,4 +311,52 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
     private javax.swing.JPanel panelCrearUsuario;
     private javax.swing.JTable tablaBuscarMascota;
     // End of variables declaration//GEN-END:variables
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getPrimerApellido() {
+        return primerApellido;
+    }
+
+    public void setPrimerApellido(String primerApellido) {
+        this.primerApellido = primerApellido;
+    }
+
+    public String getSegundoApellido() {
+        return segundoApellido;
+    }
+
+    public void setSegundoApellido(String segundoApellido) {
+        this.segundoApellido = segundoApellido;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getEspecie() {
+        return especie;
+    }
+
+    public void setEspecie(String especie) {
+        this.especie = especie;
+    }
+
+    public String getTamaño() {
+        return tamaño;
+    }
+
+    public void setTamaño(String tamaño) {
+        this.tamaño = tamaño;
+    }
 }

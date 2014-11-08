@@ -3,7 +3,12 @@ package GUI;
 
 
 public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
-
+    
+    private String nombre;
+    private String primerApellido;
+    private String segundoApellido;
+    private String cedula;
+    private String email;
     private static VentanaBuscarPersona miVentanaBuscarPersona;
     
     /**
@@ -54,6 +59,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         btnReportarEncontrada = new javax.swing.JButton();
         lblOjos1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         fieldEmail.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
 
@@ -83,23 +89,23 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         panelVentanaBuscar.add(lblImagenBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 30, 30));
 
         lblImagenMascota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuario.png"))); // NOI18N
-        panelVentanaBuscar.add(lblImagenMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
+        panelVentanaBuscar.add(lblImagenMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
 
         lblCaracteristicas.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         lblCaracteristicas.setText("Datos Personales");
-        panelVentanaBuscar.add(lblCaracteristicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        panelVentanaBuscar.add(lblCaracteristicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         lblNombreMascota.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblNombreMascota.setText("Nombre");
-        panelVentanaBuscar.add(lblNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        panelVentanaBuscar.add(lblNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
         lblEspecia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblEspecia.setText("2do Apellido");
-        panelVentanaBuscar.add(lblEspecia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        panelVentanaBuscar.add(lblEspecia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         lblOjos.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblOjos.setText("Email");
-        panelVentanaBuscar.add(lblOjos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+        panelVentanaBuscar.add(lblOjos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         fieldIDPersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldIDPersona.addActionListener(new java.awt.event.ActionListener() {
@@ -107,11 +113,11 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 fieldIDPersonaActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 130, -1));
+        panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 130, -1));
 
         lblidChip.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblidChip.setText("1er Apellido");
-        panelVentanaBuscar.add(lblidChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        panelVentanaBuscar.add(lblidChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         fieldNombrePersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldNombrePersona.addActionListener(new java.awt.event.ActionListener() {
@@ -119,23 +125,33 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 fieldNombrePersonaActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(fieldNombrePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 130, -1));
+        panelVentanaBuscar.add(fieldNombrePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 130, -1));
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Limpiar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 90, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
         panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 90, 40));
 
         fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 130, -1));
+        panelVentanaBuscar.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 130, -1));
 
         fieldApellido2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 130, -1));
+        panelVentanaBuscar.add(fieldApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 130, -1));
 
         lblTitulo2Ventana.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTitulo2Ventana.setText("Personas Encontradas");
@@ -184,13 +200,11 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
-            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-        }
+        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
 
         panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 550, 280));
 
@@ -211,24 +225,29 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
 
         lblOjos1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblOjos1.setText("Cédula");
-        panelVentanaBuscar.add(lblOjos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        panelVentanaBuscar.add(lblOjos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 130, -1));
+        panelVentanaBuscar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 130, -1));
+
+        jButton2.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(170, 80, 0));
+        jButton2.setText("Limpiar Tabla");
+        panelVentanaBuscar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
         );
 
         pack();
@@ -258,6 +277,24 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNombrePersonaActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        nombre = fieldNombrePersona.getText();
+        primerApellido = fieldApellido1.getText();
+        segundoApellido = fieldApellido2.getText();
+        cedula = fieldIDPersona.getText();
+        email = fieldEmail.getText();
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+        fieldNombrePersona.setText("");
+        fieldApellido1.setText("");
+        fieldApellido2.setText("");
+        fieldIDPersona.setText("");
+        fieldEmail.setText("");
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
@@ -268,6 +305,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     private javax.swing.JTextField fieldEmail;
     private javax.swing.JTextField fieldIDPersona;
     private javax.swing.JTextField fieldNombrePersona;
+    private javax.swing.JButton jButton2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
@@ -340,4 +378,46 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     public void setFieldNombrePersona(javax.swing.JTextField fieldNombrePersona) {
         this.fieldNombrePersona = fieldNombrePersona;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getPrimerApellido() {
+        return primerApellido;
+    }
+
+    public void setPrimerApellido(String primerApellido) {
+        this.primerApellido = primerApellido;
+    }
+
+    public String getSegundoApellido() {
+        return segundoApellido;
+    }
+
+    public void setSegundoApellido(String segundoApellido) {
+        this.segundoApellido = segundoApellido;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    
 }
