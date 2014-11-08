@@ -73,6 +73,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         btnCancelar1 = new javax.swing.JButton();
         boxTamaño = new javax.swing.JComboBox();
         btnLimpiaTabla = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -191,12 +192,12 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         jLabel1.setText("(Distrito, Cantón o Barrio)");
         panelVentanaBuscar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 160, -1));
 
-        btnReportarEncontrada.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnReportarEncontrada.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnReportarEncontrada.setForeground(new java.awt.Color(170, 80, 0));
         btnReportarEncontrada.setText("Reportar Mascota Encontrada");
         panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 220, 40));
 
-        btnBuscar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -210,34 +211,41 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         tablaBuscarMascota.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         tablaBuscarMascota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Chip", "Especie", "Raza", "Tamaño", "Pelaje", "Ojos", "Ubicación"
+                "Nombre", "Chip", "Especie", "Raza", "Tamaño", "Pelaje", "Ojos", "Ubicación", "Adoptar"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -264,7 +272,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         lblTituloVentana1.setText("Buscar Mascota");
         panelVentanaBuscar.add(lblTituloVentana1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
-        btnCancelar1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnCancelar1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar1.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar1.setText("Limpiar");
         btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
@@ -291,7 +299,12 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
                 btnLimpiaTablaActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnLimpiaTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 410, 130, 40));
+        panelVentanaBuscar.add(btnLimpiaTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 410, 130, 40));
+
+        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(170, 80, 0));
+        jButton1.setText("Adoptar");
+        panelVentanaBuscar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -486,6 +499,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
     private javax.swing.JTextField fieldOjos;
     private javax.swing.JTextField fieldPelaje;
     private javax.swing.JTextField fieldUbicacion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPopupMenu jPopupMenu1;
