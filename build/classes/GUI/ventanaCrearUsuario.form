@@ -430,14 +430,7 @@
               <Font name="Century Gothic" size="11" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="Seleccione"/>
-                <StringItem index="1" value="Perro"/>
-                <StringItem index="2" value="Gato"/>
-                <StringItem index="3" value="P&#xe1;jaro"/>
-                <StringItem index="4" value="Tortuga"/>
-                <StringItem index="5" value="Roedor"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -456,12 +449,11 @@
               <Font name="Century Gothic" size="11" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Seleccione"/>
-                <StringItem index="1" value="Peque&#xf1;o"/>
-                <StringItem index="2" value="Mediano"/>
-                <StringItem index="3" value="Grande"/>
-                <StringItem index="4" value="Gigante"/>
+              <StringArray count="4">
+                <StringItem index="0" value="Peque&#xf1;o"/>
+                <StringItem index="1" value="Mediano"/>
+                <StringItem index="2" value="Grande"/>
+                <StringItem index="3" value="Gigante"/>
               </StringArray>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
@@ -524,13 +516,12 @@
               <Font name="Century Gothic" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="Seleccione"/>
-                <StringItem index="1" value="1"/>
-                <StringItem index="2" value="2"/>
-                <StringItem index="3" value="3"/>
-                <StringItem index="4" value="4"/>
-                <StringItem index="5" value="5"/>
+              <StringArray count="5">
+                <StringItem index="0" value="1"/>
+                <StringItem index="1" value="2"/>
+                <StringItem index="2" value="3"/>
+                <StringItem index="3" value="4"/>
+                <StringItem index="4" value="5"/>
               </StringArray>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>

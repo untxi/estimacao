@@ -19,6 +19,7 @@ public class Persona
     private String cedula;
     private boolean adoptante;
     private String direccion;
+    private String tipoResidencia;
 
     public Persona(String nombre, String primerApellido, String segundoApellido, String telefono, String email, String cedula, boolean adoptante, String direccion) {
         this.nombre = nombre;
@@ -29,6 +30,14 @@ public class Persona
         this.cedula = cedula;
         this.adoptante = adoptante;
         this.direccion = direccion;
+    }
+
+    public String getTipoResidencia() {
+        return tipoResidencia;
+    }
+
+    public void setTipoResidencia(String tipoResidencia) {
+        this.tipoResidencia = tipoResidencia;
     }
 
     

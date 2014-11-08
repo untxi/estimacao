@@ -7,6 +7,7 @@ package GUI;
 
 import Controladores.ControladorSesion;
 import Interfaces.IConstantes;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,8 +22,10 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
     /**
      * Creates new form ventanaCrearUsuario
      */
-    private VentanaCrearUsuario() {
+    private VentanaCrearUsuario() 
+    {
         initComponents();
+        boxEspecie.setModel(new DefaultComboBoxModel(Especies));
     }
     
     public static VentanaCrearUsuario getInstance()
@@ -213,7 +216,6 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
         panelCrearUsuario.add(lblCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, -1, -1));
 
         boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Perro", "Gato", "Pájaro", "Tortuga", "Roedor" }));
         boxEspecie.setEnabled(false);
         boxEspecie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,7 +225,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
         panelCrearUsuario.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 110, -1));
 
         boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Pequeño", "Mediano", "Grande", "Gigante" }));
+        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande", "Gigante" }));
         boxTamaño.setEnabled(false);
         panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, 110, -1));
 
@@ -247,7 +249,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
         panelCrearUsuario.add(lblEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, -1, -1));
 
         boxCantidadMascotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxCantidadMascotas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "1", "2", "3", "4", "5" }));
+        boxCantidadMascotas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
         boxCantidadMascotas.setEnabled(false);
         panelCrearUsuario.add(boxCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 110, -1));
 
@@ -291,6 +293,11 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
         if(seCreoUsuario)
         {
             JOptionPane.showMessageDialog(null, "Usuario agregado con éxito");
+            ControladorSesion.getInstance().setearDatosAdoptante(checkAdoptante.isSelected(), fieldTipoResidencia.getText(),
+                                                                 fieldUbicacion.getText());
+            ControladorSesion.getInstance().setearDatosCasaCuna(checkCasaCuna.isSelected(), boxEspecie.getSelectedItem().toString(),
+                                                                Integer.parseInt(boxCantidadMascotas.getSelectedItem().toString()),
+                                                                boxTamaño.getSelectedItem().toString(), checkDonacion.isSelected());
             btnCancelarActionPerformed(evt);
         }
         else

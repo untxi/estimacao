@@ -15,12 +15,25 @@ public class CasaCuna
     private String tamanoMascota;
     private String tipoMascota;
     private boolean recibirDonacion;
-    private Donacion donacion;
+    private boolean donacion;
     private int cantidadMascotas;
     private int camposDisponibles;
     private ArrayList<Integer> idMascotas;
     private String descripcion;
     private ArrayList<String> fotosCasaCuna;
+    private Persona dueñoCasaCuna;
+
+    public void setDueñoCasaCuna(Persona dueñoCasaCuna) {
+        this.dueñoCasaCuna = dueñoCasaCuna;
+    }
+
+    public boolean isDonacion() {
+        return donacion;
+    }
+
+    public Persona getDueñoCasaCuna() {
+        return dueñoCasaCuna;
+    }
 
     public String getTamanoMascota() {
         return tamanoMascota;
@@ -34,7 +47,7 @@ public class CasaCuna
         return recibirDonacion;
     }
 
-    public Donacion getDonacion() {
+    public boolean getDonacion() {
         return donacion;
     }
 
@@ -70,7 +83,7 @@ public class CasaCuna
         this.recibirDonacion = recibirDonacion;
     }
 
-    public void setDonacion(Donacion donacion) {
+    public void setDonacion(boolean donacion) {
         this.donacion = donacion;
     }
 

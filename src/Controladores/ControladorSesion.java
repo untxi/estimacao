@@ -5,6 +5,7 @@
 package Controladores;
 
 import Administradores.AdministradorAplicacion;
+import Estructuras.CasaCuna;
 import Estructuras.Usuario;
 
 /**
@@ -40,6 +41,37 @@ public class ControladorSesion
     public boolean ingresarCuenta(String pIdUsuario, String pPassword)
     {
        return AdministradorAplicacion.getInstance().existeUsuario(pIdUsuario, pPassword);
+    }
+    
+    public void setearDatosAdoptante(boolean pEsAdoptante,String pTipoDeResidencia,String pUbicacion )
+    {
+        if(pEsAdoptante)
+        {
+            int indice =  AdministradorAplicacion.getInstance().getMiListaUsuarios().size() - 1;
+            AdministradorAplicacion.getInstance().getMiListaUsuarios().get(indice).setAdoptante(pEsAdoptante);
+            AdministradorAplicacion.getInstance().getMiListaUsuarios().get(indice).setDireccion(pUbicacion);
+            AdministradorAplicacion.getInstance().getMiListaUsuarios().get(indice).setTipoResidencia(pTipoDeResidencia);
+        }
+    }
+    public void setearDatosCasaCuna(boolean pEsCasaCuna,String pEspecie, int pCantidadMascotas,String pTamañoMascotas,
+                                    boolean pConDonacion)
+    {
+        int indice =  AdministradorAplicacion.getInstance().getMiListaUsuarios().size() - 1;
+        if(pEsCasaCuna)
+        {
+            CasaCuna miCasaCuna = new CasaCuna();
+            miCasaCuna.setCantidadMascotas(pCantidadMascotas);
+            miCasaCuna.setTamanoMascota(pTamañoMascotas);
+            miCasaCuna.setTipoMascota(pEspecie);
+            if(pConDonacion)
+            {
+                miCasaCuna.setRecibirDonacion(pConDonacion);
+            }
+            miCasaCuna.setDueñoCasaCuna(AdministradorAplicacion.getInstance().getMiListaUsuarios().get(indice));
+            AdministradorAplicacion.getInstance().getMiListaCasasCuna().add(miCasaCuna);
+        }
+        
+        
     }
     
 }

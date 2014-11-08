@@ -3,6 +3,7 @@ package Administradores;
 
 import Estructuras.CasaCuna;
 import Estructuras.Persona;
+import Estructuras.Reporte;
 import Estructuras.Usuario;
 import Interfaces.IConstantes;
 import java.util.ArrayList;
@@ -16,8 +17,7 @@ public class AdministradorAplicacion implements IConstantes
     private Usuario miUsuarioActual;
     private ArrayList<Persona> miListaPersonas;
     private ArrayList<CasaCuna> miListaCasasCuna;
-    private ArrayList<String>  miListaTiposAnimales;
-    private ArrayList<ArrayList<String>> miListaRazas;
+    private ArrayList<Reporte> miListaReportes;
     private AdministradorConsultas miAdministradorConsultas;
     private AdministradorCorreos miAdministradorCorreos;
 
@@ -25,6 +25,7 @@ public class AdministradorAplicacion implements IConstantes
     private AdministradorAplicacion()
     {
         miListaUsuarios = new ArrayList<Usuario>();
+        miListaCasasCuna= new ArrayList<CasaCuna>();
     }
     
     public boolean agregarUsuario(Usuario pUsuario)
@@ -94,6 +95,14 @@ public class AdministradorAplicacion implements IConstantes
     public void setMiUsuarioActual(Usuario miUsuarioActual) {
         this.miUsuarioActual = miUsuarioActual;
     }
+
+    public void setMiListaReportes(ArrayList<Reporte> miListaReportes) {
+        this.miListaReportes = miListaReportes;
+    }
+
+    public ArrayList<Reporte> getMiListaReportes() {
+        return miListaReportes;
+    }
     
     
     
@@ -114,13 +123,6 @@ public class AdministradorAplicacion implements IConstantes
         return miListaCasasCuna;
     }
 
-    public ArrayList<String> getMiListaTiposAnimales() {
-        return miListaTiposAnimales;
-    }
-
-    public ArrayList<ArrayList<String>> getMiListaRazas() {
-        return miListaRazas;
-    }
 
     public AdministradorConsultas getMiAdministradorConsultas() {
         return miAdministradorConsultas;
@@ -146,13 +148,6 @@ public class AdministradorAplicacion implements IConstantes
         this.miListaCasasCuna = miListaCasasCuna;
     }
 
-    public void setMiListaTiposAnimales(ArrayList<String> miListaTiposAnimales) {
-        this.miListaTiposAnimales = miListaTiposAnimales;
-    }
-
-    public void setMiListaRazas(ArrayList<ArrayList<String>> miListaRazas) {
-        this.miListaRazas = miListaRazas;
-    }
 
     public void setMiAdministradorConsultas(AdministradorConsultas miAdministradorConsultas) {
         this.miAdministradorConsultas = miAdministradorConsultas;
