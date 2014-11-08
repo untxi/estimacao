@@ -67,6 +67,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setTitle("Buscar Casa Cuna - Estimação");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
 
         panelCrearUsuario.setBackground(new java.awt.Color(190, 160, 100));
         panelCrearUsuario.setToolTipText("");
@@ -214,14 +215,16 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(5).setPreferredWidth(100);
-        tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
+        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
+            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(5).setPreferredWidth(100);
+            tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         panelCrearUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 550, 280));
 
@@ -241,7 +244,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
         );
 
         pack();

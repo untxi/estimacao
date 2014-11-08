@@ -77,6 +77,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setTitle("Buscar Persona - Estimação");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
 
         panelVentanaBuscar.setBackground(new java.awt.Color(190, 160, 100));
         panelVentanaBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -200,11 +201,13 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
+            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 550, 280));
 

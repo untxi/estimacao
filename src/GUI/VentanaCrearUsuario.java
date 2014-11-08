@@ -84,6 +84,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
 
         setIconifiable(true);
         setTitle("Crear Usuario Nuevo - Estimação");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
 
         panelCrearUsuario.setBackground(new java.awt.Color(190, 160, 100));
         panelCrearUsuario.setToolTipText("");

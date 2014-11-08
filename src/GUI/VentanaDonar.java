@@ -52,6 +52,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         setClosable(true);
         setIconifiable(true);
         setTitle("Donar - Estimação");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(190, 160, 100));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

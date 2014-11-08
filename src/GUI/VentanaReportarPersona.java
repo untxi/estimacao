@@ -60,6 +60,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setTitle("Reportar Persona - Estimação");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
 
         panelVentanaBuscar.setBackground(new java.awt.Color(190, 160, 100));
         panelVentanaBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
