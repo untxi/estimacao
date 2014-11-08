@@ -57,7 +57,6 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         lblFecha = new javax.swing.JLabel();
 
-        setClosable(true);
         setIconifiable(true);
         setTitle("Reportar Persona - Estimação");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N

@@ -46,7 +46,6 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaDonaciones = new javax.swing.JTable();
 
-        setClosable(true);
         setIconifiable(true);
         setTitle("Administrar Donaciones - Estimação");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N

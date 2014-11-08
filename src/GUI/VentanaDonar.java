@@ -49,7 +49,6 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         lblFecha = new javax.swing.JLabel();
         fechaDonacion = new com.toedter.calendar.JDateChooser();
 
-        setClosable(true);
         setIconifiable(true);
         setTitle("Donar - Estimação");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N

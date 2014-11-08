@@ -64,7 +64,6 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        setClosable(true);
         setIconifiable(true);
         setTitle("Buscar Casa Cuna - Estimação");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N

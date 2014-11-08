@@ -74,7 +74,6 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        setClosable(true);
         setIconifiable(true);
         setTitle("Buscar Persona - Estimação");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
