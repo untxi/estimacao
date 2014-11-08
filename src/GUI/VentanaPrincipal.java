@@ -97,6 +97,7 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
         Donar = new javax.swing.JMenuItem();
         AdministrarDonaciones = new javax.swing.JMenuItem();
         acercade = new javax.swing.JMenu();
+        salirPrograma = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Estimação");
@@ -265,6 +266,16 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
         });
         barraMenu.add(acercade);
 
+        salirPrograma.setForeground(new java.awt.Color(170, 80, 0));
+        salirPrograma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/salir.png"))); // NOI18N
+        salirPrograma.setText("Salir");
+        salirPrograma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirProgramaMouseClicked(evt);
+            }
+        });
+        barraMenu.add(salirPrograma);
+
         setJMenuBar(barraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -275,7 +286,7 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
         );
 
         pack();
@@ -342,6 +353,10 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
         VentanaAdministrarDonaciones.getInstance().setVisible(true);
     }//GEN-LAST:event_AdministrarDonacionesActionPerformed
 
+    private void salirProgramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirProgramaMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_salirProgramaMouseClicked
+
     
     public void desbloquearPantalla()
     {
@@ -407,5 +422,6 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
     private javax.swing.JMenu menuUsuario;
     private javax.swing.JMenuItem reportarMascota;
     private javax.swing.JMenuItem reportarPersona;
+    private javax.swing.JMenu salirPrograma;
     // End of variables declaration//GEN-END:variables
 }
