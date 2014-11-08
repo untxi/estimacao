@@ -93,13 +93,13 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
 
         lblTitulo2Ventana.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTitulo2Ventana.setText("Mascotas Encontradas");
-        panelVentanaBuscar.add(lblTitulo2Ventana, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, 20));
+        panelVentanaBuscar.add(lblTitulo2Ventana, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, -1, 20));
 
         lblImagenBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/buscar.png"))); // NOI18N
         panelVentanaBuscar.add(lblImagenBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, 30));
 
         lblImagenMascota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/adoptar.png"))); // NOI18N
-        panelVentanaBuscar.add(lblImagenMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
+        panelVentanaBuscar.add(lblImagenMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 140, 130));
 
         lblCaracteristicas.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         lblCaracteristicas.setText("Características de la Mascota");
@@ -195,7 +195,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         btnReportarEncontrada.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnReportarEncontrada.setForeground(new java.awt.Color(170, 80, 0));
         btnReportarEncontrada.setText("Reportar Mascota Encontrada");
-        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 220, 40));
+        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, 220, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
@@ -211,36 +211,36 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         tablaBuscarMascota.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         tablaBuscarMascota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Chip", "Especie", "Raza", "Tamaño", "Pelaje", "Ojos", "Ubicación", "Adoptar"
+                "Nombre", "Chip", "Especie", "Raza", "Tamaño", "Pelaje", "Ojos", "Ubicación", "Estado", "Adoptar"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, true
+                false, false, false, false, false, false, false, false, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -266,7 +266,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
         tablaBuscarMascota.getColumnModel().getColumn(7).setResizable(false);
 
-        panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 560, 320));
+        panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 660, 320));
 
         lblTituloVentana1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTituloVentana1.setText("Buscar Mascota");
@@ -299,12 +299,12 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
                 btnLimpiaTablaActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnLimpiaTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 410, 130, 40));
+        panelVentanaBuscar.add(btnLimpiaTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, 130, 40));
 
         jButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(170, 80, 0));
         jButton1.setText("Adoptar");
-        panelVentanaBuscar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 90, 40));
+        panelVentanaBuscar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 370, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
