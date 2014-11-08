@@ -6,10 +6,6 @@ package Estructuras;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Soto
- */
 public class CasaCuna 
 {
     private String tamanoMascota;

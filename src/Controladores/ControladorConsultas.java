@@ -9,7 +9,7 @@ import Administradores.AdministradorAplicacion;
 import java.util.ArrayList;
 
 public class ControladorConsultas {
-    
+   
     private static ControladorConsultas miControladorConsultas;
    
     private ControladorConsultas(){

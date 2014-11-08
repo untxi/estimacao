@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package GUI;
 
-/**
- *
- * @author Samantha
- */
+
 public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
 
     private static VentanaBuscarPersona miVentanaBuscarPersona;
@@ -121,6 +114,11 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         panelVentanaBuscar.add(lblidChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         fieldNombrePersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        fieldNombrePersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldNombrePersonaActionPerformed(evt);
+            }
+        });
         panelVentanaBuscar.add(fieldNombrePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 130, -1));
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -256,6 +254,10 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldIDPersonaActionPerformed
 
+    private void fieldNombrePersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombrePersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldNombrePersonaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
@@ -282,4 +284,60 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     private javax.swing.JPanel panelVentanaBuscar;
     private javax.swing.JTable tablaBuscarMascota;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getBtnBuscar() {
+        return btnBuscar;
+    }
+
+    public void setBtnBuscar(javax.swing.JButton btnBuscar) {
+        this.btnBuscar = btnBuscar;
+    }
+
+    public javax.swing.JButton getBtnReportarEncontrada() {
+        return btnReportarEncontrada;
+    }
+
+    public void setBtnReportarEncontrada(javax.swing.JButton btnReportarEncontrada) {
+        this.btnReportarEncontrada = btnReportarEncontrada;
+    }
+
+    public javax.swing.JTextField getFieldApellido1() {
+        return fieldApellido1;
+    }
+
+    public void setFieldApellido1(javax.swing.JTextField fieldApellido1) {
+        this.fieldApellido1 = fieldApellido1;
+    }
+
+    public javax.swing.JTextField getFieldApellido2() {
+        return fieldApellido2;
+    }
+
+    public void setFieldApellido2(javax.swing.JTextField fieldApellido2) {
+        this.fieldApellido2 = fieldApellido2;
+    }
+
+    public javax.swing.JTextField getFieldEmail() {
+        return fieldEmail;
+    }
+
+    public void setFieldEmail(javax.swing.JTextField fieldEmail) {
+        this.fieldEmail = fieldEmail;
+    }
+
+    public javax.swing.JTextField getFieldIDPersona() {
+        return fieldIDPersona;
+    }
+
+    public void setFieldIDPersona(javax.swing.JTextField fieldIDPersona) {
+        this.fieldIDPersona = fieldIDPersona;
+    }
+
+    public javax.swing.JTextField getFieldNombrePersona() {
+        return fieldNombrePersona;
+    }
+
+    public void setFieldNombrePersona(javax.swing.JTextField fieldNombrePersona) {
+        this.fieldNombrePersona = fieldNombrePersona;
+    }
 }

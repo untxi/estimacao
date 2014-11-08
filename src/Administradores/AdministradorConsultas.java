@@ -1,11 +1,20 @@
 package Administradores;
 
+import Estructuras.CasaCuna;
+import Estructuras.Donacion;
 import Estructuras.Mascota;
+import Estructuras.Persona;
 import java.util.ArrayList;
 
 public  class AdministradorConsultas {
+    // Listas de pruebas
+    static ArrayList<Donacion> donaciones = new ArrayList<>();
+    static ArrayList<Persona> resul1 = new ArrayList<>();
+    static ArrayList<Mascota> resul = new ArrayList<>(); 
     static ArrayList<String> especies = new ArrayList<>();
     static ArrayList<Mascota> mascotas = new ArrayList<>(); 
+    static ArrayList<Persona> personas = new ArrayList<>(); 
+    static ArrayList<CasaCuna> casaCunas = new ArrayList<>(); 
     private static AdministradorConsultas miAdminConsultas;
     
     //metodos 
@@ -45,48 +54,77 @@ public  class AdministradorConsultas {
     }
    
     //Metodos para filtrar en buscar persona 
-     public void filtroCedula(String pCedula){
+     public ArrayList<Persona> filtroCedula(String pCedula){
+         for(Persona persona : personas){
+             if(persona.getCedula().contains(pCedula)){
+                 System.out.println(persona);
+             }
+         }
+         return resul1;
         
     }
      
-     public void filtroNombre(String pNombre){
-        
+     public ArrayList<Persona> filtroNombre(String pNombre){
+        for(Persona persona : personas){
+            if(persona.getNombre().contains(pNombre)){
+                System.out.println(persona);
+            }
+        }
+        return resul1;
     }
      
-     public void filtroPrimerApellido(String pApellido){
-        
+     public ArrayList<Persona> filtroPrimerApellido(String pApellido){
+         for (Persona persona : personas){
+             if (persona.getPrimerApellido().contains(pApellido)){
+                 System.out.println(persona);
+             }
+         }
+        return resul1;
     }
      
-     public void filtroSegundoApellido(String pApellido){
-         
+     public ArrayList<Persona> filtroSegundoApellido(String pApellido){
+     for(Persona persona : personas){
+         if(persona.getSegundoApellido().contains(pApellido)){
+             System.out.println(persona);
+         }
+     }
+     return resul1;
      }
      
-     public void filtroEmail(String pEmail){
-         
+     public ArrayList<Persona> filtroEmail(String pEmail){
+         for(Persona persona : personas){
+           if( persona.getEmail().contains(pEmail))
+           {
+               System.out.println(persona);
+           }
+         }
+         System.out.println(resul1);
+         return resul1;
      }
      
      //Metodos para filtrar en buscar mascota
      static public  ArrayList<Mascota> filtroLugar(String pLugar){
-        ArrayList<Mascota> resul = new ArrayList<>(); 
-        for(Mascota mascota : mascotas){
-            if(mascota.getUbicacion().equals(pLugar)){
+         for(Mascota mascota : mascotas){
+            if(mascota.getUbicacion().contains(pLugar)){
                 resul.add(mascota); 
             }
         }
         return resul;
     }
      
-     static public ArrayList<Mascota> filtroChip(int chip){
-        ArrayList<Mascota> resul = new ArrayList<>(); 
-        for(Mascota mascota : mascotas){
-            if(mascota.getChipID() == chip)
-                resul.add(mascota);
-        }
+     static public ArrayList<Mascota> filtroChip(int pChip){
+         String temp = Integer.toString(pChip) ;
+         for(Mascota mascota : mascotas){
+             String temp2 = Integer.toString(mascota.getChipID());
+             if( temp2.contains(temp)){
+                 System.out.println(mascota);
+                 resul.add(mascota);
+             }
+         }
         return resul;
     }
      
      static public  ArrayList<Mascota> filtroRaza(String pRaza){
-        ArrayList<Mascota> resul = new ArrayList<>();
         for (Mascota mascota : mascotas){
             if(mascota.getEspecie().equals(pRaza)){
                 resul.add(mascota);
@@ -96,9 +134,8 @@ public  class AdministradorConsultas {
     }
       
      static public ArrayList<Mascota> filtroEspecie(String pEspecie){
-         ArrayList<Mascota> resul = new ArrayList<>();
          for (Mascota mascota : mascotas){
-            if(mascota.getEspecie().equals(pEspecie)){
+            if(mascota.getEspecie().contains(pEspecie)){
                 resul.add(mascota);
             }
         }
