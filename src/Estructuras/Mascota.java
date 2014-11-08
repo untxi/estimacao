@@ -22,7 +22,14 @@ public class Mascota {
     private Calendar fecha;
     
     //constructor 
-    
+    public Calendar getFecha() {    
+        return fecha;
+    }
+
+    public void setFecha(Calendar fecha) {
+        this.fecha = fecha;
+    }
+
     //métodos getters y setters
     public String getNombre() {
         return nombre;

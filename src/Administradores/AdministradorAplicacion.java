@@ -2,6 +2,7 @@
 package Administradores;
 
 import Estructuras.CasaCuna;
+import Estructuras.Mascota;
 import Estructuras.Persona;
 import Estructuras.Reporte;
 import Estructuras.Usuario;
@@ -17,7 +18,7 @@ public class AdministradorAplicacion implements IConstantes
     private Usuario miUsuarioActual;
     private ArrayList<Persona> miListaPersonas;
     private ArrayList<CasaCuna> miListaCasasCuna;
-    private ArrayList<Reporte> miListaReportes;
+    private ArrayList<Mascota> miListaMascotas;
     private AdministradorConsultas miAdministradorConsultas;
     private AdministradorCorreos miAdministradorCorreos;
 
@@ -26,6 +27,7 @@ public class AdministradorAplicacion implements IConstantes
     {
         miListaUsuarios = new ArrayList<Usuario>();
         miListaCasasCuna= new ArrayList<CasaCuna>();
+        miListaMascotas = new ArrayList<Mascota>();
     }
     
     public boolean agregarUsuario(Usuario pUsuario)
@@ -96,13 +98,14 @@ public class AdministradorAplicacion implements IConstantes
         this.miUsuarioActual = miUsuarioActual;
     }
 
-    public void setMiListaReportes(ArrayList<Reporte> miListaReportes) {
-        this.miListaReportes = miListaReportes;
+    public ArrayList<Mascota> getMiListaMascotas() {
+        return miListaMascotas;
     }
 
-    public ArrayList<Reporte> getMiListaReportes() {
-        return miListaReportes;
+    public void setMiListaMascotas(ArrayList<Mascota> miListaMascotas) {
+        this.miListaMascotas = miListaMascotas;
     }
+
     
     
     
