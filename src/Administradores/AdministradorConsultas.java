@@ -27,11 +27,6 @@ public  class AdministradorConsultas {
         return miAdminConsultas;
     }
     
-    //metodo temporal pruebas 
-    public void addMascota(Mascota mascota){
-        mascotas.add(mascota);
-    }
-       
     public void calcularCalificacionAdoptante(int pCalificacion){
         
     }
@@ -54,92 +49,88 @@ public  class AdministradorConsultas {
     }
    
     //Metodos para filtrar en buscar persona 
-     public ArrayList<Persona> filtroCedula(String pCedula){
-         for(Persona persona : personas){
+     public ArrayList<Persona> filtroCedula(String pCedula, ArrayList<Persona> resultado){
+         for(Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
              if(persona.getCedula().contains(pCedula)){
-                 System.out.println(persona);
+                 resultado.add(persona);
              }
          }
-         return resul1;
-        
+         return resultado;
     }
      
-     public ArrayList<Persona> filtroNombre(String pNombre){
-        for(Persona persona : personas){
+     public ArrayList<Persona> filtroNombre(String pNombre, ArrayList<Persona> resultado){
+        for(Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
             if(persona.getNombre().contains(pNombre)){
-                System.out.println(persona);
+                resultado.add(persona);
             }
         }
-        return resul1;
+        return resultado;
     }
      
-     public ArrayList<Persona> filtroPrimerApellido(String pApellido){
-         for (Persona persona : personas){
+     public ArrayList<Persona> filtroPrimerApellido(String pApellido, ArrayList<Persona> resultado){
+         for (Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
              if (persona.getPrimerApellido().contains(pApellido)){
-                 System.out.println(persona);
+                 resultado.add(persona);
              }
          }
-        return resul1;
+        return resultado;
     }
      
-     public ArrayList<Persona> filtroSegundoApellido(String pApellido){
-     for(Persona persona : personas){
+     public ArrayList<Persona> filtroSegundoApellido(String pApellido, ArrayList<Persona> resultado){
+     for(Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
          if(persona.getSegundoApellido().contains(pApellido)){
-             System.out.println(persona);
+             resultado.add(persona);
          }
      }
-     return resul1;
+     return resultado;
      }
      
-     public ArrayList<Persona> filtroEmail(String pEmail){
-         for(Persona persona : personas){
+     public ArrayList<Persona> filtroEmail(String pEmail, ArrayList<Persona> resultado){
+         for(Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
            if( persona.getEmail().contains(pEmail))
            {
-               System.out.println(persona);
+               resultado.add(persona);
            }
          }
-         System.out.println(resul1);
-         return resul1;
+         return resultado;
      }
      
      //Metodos para filtrar en buscar mascota
-     static public  ArrayList<Mascota> filtroLugar(String pLugar){
-         for(Mascota mascota : mascotas){
+     static public  ArrayList<Mascota> filtroLugar(String pLugar, ArrayList<Mascota> resultado){
+         for(Mascota mascota : AdministradorAplicacion.getInstance().getMiListaMascotas()){
             if(mascota.getUbicacion().contains(pLugar)){
-                resul.add(mascota); 
+                resultado.add(mascota); 
             }
         }
-        return resul;
+        return resultado;
     }
      
-     static public ArrayList<Mascota> filtroChip(int pChip){
-         String temp = Integer.toString(pChip) ;
-         for(Mascota mascota : mascotas){
+     static public ArrayList<Mascota> filtroChip(String pChip, ArrayList<Mascota> resultado){
+         for(Mascota mascota : AdministradorAplicacion.getInstance().getMiListaMascotas()){
              String temp2 = Integer.toString(mascota.getChipID());
-             if( temp2.contains(temp)){
-                 System.out.println(mascota);
-                 resul.add(mascota);
+             if( temp2.contains(pChip)){
+                 resultado.add(mascota);
              }
          }
-        return resul;
+        return resultado;
     }
      
-     static public  ArrayList<Mascota> filtroRaza(String pRaza){
-        for (Mascota mascota : mascotas){
-            if(mascota.getEspecie().equals(pRaza)){
-                resul.add(mascota);
+     static public  ArrayList<Mascota> filtroRaza(String pRaza, ArrayList<Mascota> resultado){
+        for (Mascota mascota : AdministradorAplicacion.getInstance().getMiListaMascotas()){
+            if(mascota.getEspecie().contains(pRaza)){
+                resultado.add(mascota);
             }
         }
-        return resul;
+        return resultado;
     }
       
-     static public ArrayList<Mascota> filtroEspecie(String pEspecie){
-         for (Mascota mascota : mascotas){
+     static public ArrayList<Mascota> filtroEspecie(String pEspecie, ArrayList<Mascota> resultado){
+         for (Mascota mascota : AdministradorAplicacion.getInstance().getMiListaMascotas()){
             if(mascota.getEspecie().contains(pEspecie)){
-                resul.add(mascota);
+                resultado.add(mascota);
             }
         }
-        return resul;
+        return resultado;
     }
 }
      
