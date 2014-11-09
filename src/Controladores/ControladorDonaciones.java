@@ -51,7 +51,7 @@ public class ControladorDonaciones {
         Donacion miDonacion;
         miDonacion = new Donacion(Administradores.AdministradorAplicacion.getInstance().getMiUsuarioActual().getCedula()  , monto, fechaRecibido);
         Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().add(miDonacion);
-        ordenarDonacionesPorFechaRecibido(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion());
+        //ordenarDonacionesPorFechaRecibido(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion());
         return true;
     }
     

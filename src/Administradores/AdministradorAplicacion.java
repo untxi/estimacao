@@ -11,6 +11,7 @@ import Interfaces.IConstantes;
 import java.util.ArrayList;
 
 
+
 public class AdministradorAplicacion implements IConstantes
 {
     private static AdministradorAplicacion miAdministradorAplicacion;
@@ -24,6 +25,7 @@ public class AdministradorAplicacion implements IConstantes
     private ArrayList<Donacion> miListaDonacion;
     private AdministradorConsultas miAdministradorConsultas;
     private AdministradorCorreos miAdministradorCorreos;
+    private int montoDonaciones;
     
 
     
@@ -32,6 +34,7 @@ public class AdministradorAplicacion implements IConstantes
         miListaUsuarios = new ArrayList<Usuario>();
         miListaCasasCuna= new ArrayList<CasaCuna>();
         miListaMascotas = new ArrayList<Mascota>();
+        miListaDonacion = new ArrayList<Donacion>();
     }
     
     public boolean agregarUsuario(Usuario pUsuario)
@@ -85,6 +88,19 @@ public class AdministradorAplicacion implements IConstantes
         return existe;
     }
     
+    public Usuario buscarUsuario(String pCedula)
+    {
+        Usuario miUsuario = null;
+        for (int i = 0; i < miListaUsuarios.size(); i++)
+        {
+          if(miListaUsuarios.get(i).getCedula().compareToIgnoreCase(pCedula) == 0)
+          {
+              miUsuario = miListaUsuarios.get(i);
+          }
+        }
+        return miUsuario;
+    }
+    
     public static AdministradorAplicacion getInstance()
     {
         if(miAdministradorAplicacion == null)
@@ -100,6 +116,14 @@ public class AdministradorAplicacion implements IConstantes
 
     public void setMiUsuarioActual(Usuario miUsuarioActual) {
         this.miUsuarioActual = miUsuarioActual;
+    }
+
+    public void setMontoDonaciones(int montoDonaciones) {
+        this.montoDonaciones = montoDonaciones;
+    }
+
+    public int getMontoDonaciones() {
+        return montoDonaciones;
     }
 
     public ArrayList<Mascota> getMiListaMascotas() {

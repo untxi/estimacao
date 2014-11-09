@@ -7,6 +7,8 @@ package GUI;
 
 import javax.swing.JOptionPane;
 import Controladores.ControladorDonaciones;
+import static Interfaces.IConstantes.AdministradorMaster;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,6 +16,8 @@ import Controladores.ControladorDonaciones;
  */
 public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
     private static VentanaAdministrarDonaciones miVentanaDonar;
+    
+    
     private VentanaAdministrarDonaciones() {
         initComponents();
     }
@@ -42,7 +46,6 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         btnCerrar = new javax.swing.JButton();
         btnEntregarDonaciones = new javax.swing.JButton();
         btnVerDonaciones = new javax.swing.JButton();
-        btnRevisarCaducidadDonaciones = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaDonaciones = new javax.swing.JTable();
 
@@ -56,7 +59,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         lblTítulo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTítulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/donar.png"))); // NOI18N
         lblTítulo.setText("Admistrar Donaciones Recibidas");
-        jPanel1.add(lblTítulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, -1));
+        jPanel1.add(lblTítulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         btnCerrar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCerrar.setForeground(new java.awt.Color(170, 80, 0));
@@ -71,12 +74,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         btnEntregarDonaciones.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnEntregarDonaciones.setForeground(new java.awt.Color(170, 80, 0));
         btnEntregarDonaciones.setText("Entregar Donación");
-        btnEntregarDonaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEntregarDonacionesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnEntregarDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, 40));
+        jPanel1.add(btnEntregarDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, 40));
 
         btnVerDonaciones.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnVerDonaciones.setForeground(new java.awt.Color(170, 80, 0));
@@ -86,51 +84,22 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
                 btnVerDonacionesActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 150, 40));
-
-        btnRevisarCaducidadDonaciones.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        btnRevisarCaducidadDonaciones.setForeground(new java.awt.Color(170, 80, 0));
-        btnRevisarCaducidadDonaciones.setText("Revisar Caducidad");
-        btnRevisarCaducidadDonaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRevisarCaducidadDonacionesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnRevisarCaducidadDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 150, 40));
+        jPanel1.add(btnVerDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 150, 40));
 
         tablaDonaciones.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
         tablaDonaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "Caducidad", "Cédula Donador", "Donación", "Cantidad", "Medida"
+                "Fecha", "Cédula Donador", "Cantidad"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -142,27 +111,18 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
             }
         });
         jScrollPane1.setViewportView(tablaDonaciones);
-        if (tablaDonaciones.getColumnModel().getColumnCount() > 0) {
-            tablaDonaciones.getColumnModel().getColumn(0).setResizable(false);
-            tablaDonaciones.getColumnModel().getColumn(1).setResizable(false);
-            tablaDonaciones.getColumnModel().getColumn(2).setResizable(false);
-            tablaDonaciones.getColumnModel().getColumn(3).setResizable(false);
-            tablaDonaciones.getColumnModel().getColumn(4).setResizable(false);
-        }
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, 220));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 4, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
         );
 
         pack();
@@ -173,9 +133,18 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnVerDonacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDonacionesActionPerformed
-        // if donacion marcada con check se entrega
-        // for donaciones en tabla
-        //ControladorDonaciones.getInstance().entregarDonacion(miDonacionEntregada);
+        for(int i = 0; i < tablaDonaciones.getRowCount();i++)
+        {
+            ((DefaultTableModel)tablaDonaciones.getModel()).removeRow(i);   
+        }
+        for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().size();i++)
+        {
+            ((DefaultTableModel)tablaDonaciones.getModel()).addRow(new Object[3]);
+            
+            tablaDonaciones.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().get(i).getFechaRecibido().toString(), i, 0);
+            tablaDonaciones.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().get(i).getIdDonante(), i, 1);
+            tablaDonaciones.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().get(i).getMonto(), i, 2);
+        }
     }//GEN-LAST:event_btnVerDonacionesActionPerformed
 
     private void btnEntregarDonaciones1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntregarDonaciones1ActionPerformed
@@ -184,15 +153,14 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
 
     private void btnInformeDonacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformeDonacionesMouseClicked
         // TODO add your handling code here:
-        int totalDonacion = ControladorDonaciones.getInstance().informeDonaciones();
-        JOptionPane.showMessageDialog(null, "Monto Total de Donaciones:" + totalDonacion);
+        //int totalDonacion = ControladorDonaciones.getInstance().informeDonaciones();
+        //JOptionPane.showMessageDialog(null, "Monto Total de Donaciones:" + totalDonacion);
     }//GEN-LAST:event_btnInformeDonacionesMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnEntregarDonaciones;
-    private javax.swing.JButton btnRevisarCaducidadDonaciones;
     private javax.swing.JButton btnVerDonaciones;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

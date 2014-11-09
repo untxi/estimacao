@@ -20,6 +20,10 @@ public class Donacion
         return fechaRecibido;
     }
 
+    public String getIdDonante() {
+        return IdDonante;
+    }
+
     public Date getFechaEntrega() {
         return fechaEntrega;
     }
