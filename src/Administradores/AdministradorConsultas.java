@@ -8,13 +8,7 @@ import java.util.ArrayList;
 
 public  class AdministradorConsultas {
     // Listas de pruebas
-    static ArrayList<Donacion> donaciones = new ArrayList<>();
-    static ArrayList<Persona> resul1 = new ArrayList<>();
-    static ArrayList<Mascota> resul = new ArrayList<>(); 
-    static ArrayList<String> especies = new ArrayList<>();
-    static ArrayList<Mascota> mascotas = new ArrayList<>(); 
-    static ArrayList<Persona> personas = new ArrayList<>(); 
-    static ArrayList<CasaCuna> casaCunas = new ArrayList<>(); 
+ 
     private static AdministradorConsultas miAdminConsultas;
     
     //metodos 
