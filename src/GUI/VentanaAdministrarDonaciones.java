@@ -5,9 +5,14 @@
  */
 package GUI;
 
+import Administradores.AdministradorAplicacion;
 import javax.swing.JOptionPane;
 import Controladores.ControladorDonaciones;
 import static Interfaces.IConstantes.AdministradorMaster;
+import static Interfaces.IConstantes.Especies;
+import javax.swing.DefaultCellEditor;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -74,6 +79,11 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         btnEntregarDonaciones.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnEntregarDonaciones.setForeground(new java.awt.Color(170, 80, 0));
         btnEntregarDonaciones.setText("Entregar Donación");
+        btnEntregarDonaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntregarDonacionesActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnEntregarDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, 40));
 
         btnVerDonaciones.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -92,14 +102,14 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
 
             },
             new String [] {
-                "Fecha", "Cédula Donador", "Cantidad"
+                "Fecha", "Cédula Donador", "Cantidad", "Entregar a"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -133,6 +143,9 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnVerDonacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDonacionesActionPerformed
+        JComboBox prueba = new JComboBox();
+        prueba.setModel(new DefaultComboBoxModel(AdministradorAplicacion.getInstance().demeUsuariosQueAceptanDonacion()));
+        tablaDonaciones.getColumnModel().getColumn(3).setCellEditor(new DefaultCellEditor(prueba));
         for(int i = 0; i < tablaDonaciones.getRowCount();i++)
         {
             ((DefaultTableModel)tablaDonaciones.getModel()).removeRow(i);   
@@ -144,6 +157,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
             tablaDonaciones.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().get(i).getFechaRecibido().toString(), i, 0);
             tablaDonaciones.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().get(i).getIdDonante(), i, 1);
             tablaDonaciones.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().get(i).getMonto(), i, 2);
+            //tablaDonaciones.setValueAt(prueba, i, 3);
         }
     }//GEN-LAST:event_btnVerDonacionesActionPerformed
 
@@ -156,6 +170,17 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         //int totalDonacion = ControladorDonaciones.getInstance().informeDonaciones();
         //JOptionPane.showMessageDialog(null, "Monto Total de Donaciones:" + totalDonacion);
     }//GEN-LAST:event_btnInformeDonacionesMouseClicked
+
+    private void btnEntregarDonacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntregarDonacionesActionPerformed
+        for(int i = 0;i < tablaDonaciones.getRowCount();i++)
+        {
+            if(!tablaDonaciones.getValueAt(i, 3).toString().isEmpty())
+            {
+                System.out.println(tablaDonaciones.getValueAt(i, 3).toString());
+            }
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEntregarDonacionesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

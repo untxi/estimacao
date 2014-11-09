@@ -367,7 +367,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
 
     private void activarDonacion()
     {
-        if(checkAdoptante.isSelected() | checkCasaCuna.isSelected())
+        if(checkCasaCuna.isSelected())
         {
             checkDonacion.setEnabled(true);
         }

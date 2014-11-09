@@ -2,6 +2,7 @@
 package estimacao;
 
 import Administradores.AdministradorAplicacion;
+import Controladores.ControladorSesion;
 import Estructuras.Usuario;
 import GUI.VentanaPrincipal;
 
@@ -18,9 +19,10 @@ public class Estimacao {
         Usuario miUsuario4 = new Usuario("d", "d",2, "Adrian4","Soto4", "Loría4", "83262014","sotoadrian4@gmail.com","113790394" ,false, "",false);
         
         AdministradorAplicacion.getInstance().agregarUsuario(miUsuario1);
-        AdministradorAplicacion.getInstance().agregarUsuario(miUsuario1);
         AdministradorAplicacion.getInstance().agregarUsuario(miUsuario2);
+        ControladorSesion.getInstance().setearDatosCasaCuna(true, "", 1, "", true);
         AdministradorAplicacion.getInstance().agregarUsuario(miUsuario3);
+        ControladorSesion.getInstance().setearDatosCasaCuna(true, "", 1, "", true);
         AdministradorAplicacion.getInstance().agregarUsuario(miUsuario4);
         
     }

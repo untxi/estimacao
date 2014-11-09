@@ -101,6 +101,26 @@ public class AdministradorAplicacion implements IConstantes
         return miUsuario;
     }
     
+    public String[] demeUsuariosQueAceptanDonacion()
+    {
+        ArrayList<String> temp = new ArrayList<String>();
+        for(int i =0; i < miListaCasasCuna.size();i++)
+        {
+            if(miListaCasasCuna.get(i).isRecibirDonacion())
+            {
+                temp.add(miListaCasasCuna.get(i).getDueñoCasaCuna().getNombre());
+            }
+        }
+        String[] temp1 = new String[temp.size()+1];
+        temp1[0] = "";
+
+        for(int i =0; i < temp.size();i++)
+        {
+                temp1[i+1] = miListaCasasCuna.get(i).getDueñoCasaCuna().getNombre();
+        }
+        return temp1;
+    } 
+    
     public static AdministradorAplicacion getInstance()
     {
         if(miAdministradorAplicacion == null)
