@@ -11,17 +11,20 @@ package Estructuras;
  */
 public class Persona 
 {
-    private String nombre;
-    private String primerApellido;
-    private String segundoApellido;
-    private String telefono;
-    private String email;
-    private String cedula;
+    private String  nombre;
+    private String  primerApellido;
+    private String  segundoApellido;
+    private String  telefono;
+    private String  email;
+    private String  cedula;
     private boolean adoptante;
-    private String direccion;
-    private String tipoResidencia;
+    private String  direccion;
+    private String  tipoResidencia;
+    private boolean listaNegra;
 
-    public Persona(String nombre, String primerApellido, String segundoApellido, String telefono, String email, String cedula, boolean adoptante, String direccion) {
+    public Persona(String nombre, String primerApellido, String segundoApellido,
+            String telefono, String email, String cedula, boolean adoptante, 
+            String direccion, boolean listaNegra) {
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
@@ -30,6 +33,7 @@ public class Persona
         this.cedula = cedula;
         this.adoptante = adoptante;
         this.direccion = direccion;
+        this.listaNegra = listaNegra;
     }
 
     public String getTipoResidencia() {
@@ -39,11 +43,6 @@ public class Persona
     public void setTipoResidencia(String tipoResidencia) {
         this.tipoResidencia = tipoResidencia;
     }
-
-    
-    
-    
-    
     
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -108,5 +107,14 @@ public class Persona
     public String getDireccion() {
         return direccion;
     }
+
+    public boolean isListaNegra() {
+        return listaNegra;
+    }
+
+    public void setListaNegra(boolean listaNegra) {
+        this.listaNegra = listaNegra;
+    }
+    
     
 }

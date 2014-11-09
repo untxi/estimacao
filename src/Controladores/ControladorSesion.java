@@ -31,11 +31,11 @@ public class ControladorSesion
     }
     
     public boolean agregarUsuario(String nickName, String password, int tipo, String nombre, String primerApellido, 
-            String segundoApellido, String telefono, String email, String cedula, boolean adoptante, String direccion)
+            String segundoApellido, String telefono, String email, String cedula, boolean adoptante, String direccion, boolean listaNegra)
     {
         
         return AdministradorAplicacion.getInstance().agregarUsuario(new Usuario(nickName, password,tipo, nombre,
-                primerApellido, segundoApellido, telefono, email, cedula, adoptante, direccion));
+                primerApellido, segundoApellido, telefono, email, cedula, adoptante, direccion, false));
     }
     
     public boolean ingresarCuenta(String pIdUsuario, String pPassword)

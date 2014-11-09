@@ -290,7 +290,7 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         boolean seCreoUsuario = ControladorSesion.getInstance().agregarUsuario(fieldNickname.getText(), fieldPassword.getText(),
                 Usuario, fieldNombre.getText(), fieldApellido1.getText(), fieldApellido2.getText(), fieldTelefono.getText(), 
-                fieldEmail.getText(), field_ID.getText() , checkAdoptante.isSelected(), fieldUbicacion.getText());
+                fieldEmail.getText(), field_ID.getText() , checkAdoptante.isSelected(), fieldUbicacion.getText(), false);
         if(seCreoUsuario)
         {
             JOptionPane.showMessageDialog(null, "Usuario agregado con éxito");

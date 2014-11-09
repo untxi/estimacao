@@ -52,8 +52,6 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         fieldApellido2 = new javax.swing.JTextField();
         fieldComentarios = new javax.swing.JTextField();
         lblComentarios = new javax.swing.JLabel();
-        lblidReportante = new javax.swing.JLabel();
-        fieldNombreReportante = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         lblFecha = new javax.swing.JLabel();
 
@@ -99,12 +97,17 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Cancelar");
-        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 90, 40));
+        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
-        btnBuscar.setText("Buscar");
-        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 90, 40));
+        btnBuscar.setText("Reportar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 90, 40));
 
         fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 130, -1));
@@ -119,19 +122,12 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         lblComentarios.setText("Comentarios");
         panelVentanaBuscar.add(lblComentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
-        lblidReportante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblidReportante.setText("Cédula del Reportante");
-        panelVentanaBuscar.add(lblidReportante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
-
-        fieldNombreReportante.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldNombreReportante, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 130, -1));
-
         jDateChooser1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, -1));
+        panelVentanaBuscar.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, -1));
 
         lblFecha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblFecha.setText("Fecha");
-        panelVentanaBuscar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
+        panelVentanaBuscar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,11 +137,15 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // el reportante es miUsuarioActual
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -156,7 +156,6 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
     private javax.swing.JTextField fieldComentarios;
     private javax.swing.JTextField fieldIDPersona;
     private javax.swing.JTextField fieldNombrePersona;
-    private javax.swing.JTextField fieldNombreReportante;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel lblApellido1;
     private javax.swing.JLabel lblApellido2;
@@ -167,7 +166,6 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblNombrePersona;
     private javax.swing.JLabel lblTituloVentana;
     private javax.swing.JLabel lblidPersona;
-    private javax.swing.JLabel lblidReportante;
     private javax.swing.JPanel panelVentanaBuscar;
     // End of variables declaration//GEN-END:variables
 }

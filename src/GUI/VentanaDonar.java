@@ -6,8 +6,6 @@
 package GUI;
 
 import javax.swing.JOptionPane;
-import Controladores.ControladorDonaciones;
-import Estructuras.Donacion;
 
 /**
  *
@@ -44,8 +42,6 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         btnCancelar = new javax.swing.JButton();
         btnDonar = new javax.swing.JButton();
         fieldCantidadDonacion = new javax.swing.JTextField();
-        lblidDonante = new javax.swing.JLabel();
-        fieldidDonante = new javax.swing.JTextField();
         lblFecha = new javax.swing.JLabel();
         fechaDonacion = new com.toedter.calendar.JDateChooser();
 
@@ -63,7 +59,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
 
         lblCantidadDonacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblCantidadDonacion.setText("Monto de la Donación");
-        jPanel1.add(lblCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        jPanel1.add(lblCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
@@ -73,7 +69,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
                 btnCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, 40));
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, 40));
 
         btnDonar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnDonar.setForeground(new java.awt.Color(170, 80, 0));
@@ -83,7 +79,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
                 btnDonarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDonar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 90, 40));
+        jPanel1.add(btnDonar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 90, 40));
 
         fieldCantidadDonacion.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldCantidadDonacion.addActionListener(new java.awt.event.ActionListener() {
@@ -91,14 +87,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
                 fieldCantidadDonacionActionPerformed(evt);
             }
         });
-        jPanel1.add(fieldCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 130, -1));
-
-        lblidDonante.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblidDonante.setText("Cédula Donante");
-        jPanel1.add(lblidDonante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
-
-        fieldidDonante.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        jPanel1.add(fieldidDonante, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 130, -1));
+        jPanel1.add(fieldCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 130, -1));
 
         lblFecha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblFecha.setText("Fecha");
@@ -115,19 +104,18 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDonarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDonarActionPerformed
-       
+        Controladores.ControladorDonaciones.getInstance().crearDonacion(Integer.parseInt(fieldCantidadDonacion.getText()), fechaDonacion.getDate());
     }//GEN-LAST:event_btnDonarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         JOptionPane.showMessageDialog(null, "Donación Cancelada");
-        fieldidDonante.setText("");
         fieldCantidadDonacion.setText("");
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
@@ -142,11 +130,9 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
     private javax.swing.JButton btnDonar;
     private com.toedter.calendar.JDateChooser fechaDonacion;
     private javax.swing.JTextField fieldCantidadDonacion;
-    private javax.swing.JTextField fieldidDonante;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCantidadDonacion;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblTítulo;
-    private javax.swing.JLabel lblidDonante;
     // End of variables declaration//GEN-END:variables
 }

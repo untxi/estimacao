@@ -7,6 +7,8 @@ package Controladores;
 
 import Administradores.AdministradorAplicacion;
 import Estructuras.Mascota;
+import Estructuras.Persona;
+import Estructuras.ReportarPersona;
 import java.util.Calendar;
 
 /**
@@ -55,6 +57,11 @@ public class ControladorReportes
         AdministradorAplicacion.getInstance().getMiListaMascotas().add(miMascota);
     }
     
+    public void ReportarPersonaListaNegra(ReportarPersona miReporte){
+        if (Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().contains(miReporte.getReportado())){
+            Administradores.AdministradorAplicacion.getInstance().getMiListaNegra().add(miReporte);
+        }
+    }
     
     
     

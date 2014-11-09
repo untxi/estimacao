@@ -8,8 +8,8 @@ public class Usuario extends Persona
     private String password;
     private int tipo;
 
-    public Usuario(String nickName, String password, int tipo, String nombre, String primerApellido, String segundoApellido, String telefono, String email, String cedula, boolean adoptante, String direccion) {
-        super(nombre, primerApellido, segundoApellido, telefono, email, cedula, adoptante, direccion);
+    public Usuario(String nickName, String password, int tipo, String nombre, String primerApellido, String segundoApellido, String telefono, String email, String cedula, boolean adoptante, String direccion,boolean listaNegra) {
+        super(nombre, primerApellido, segundoApellido, telefono, email, cedula, adoptante, direccion, listaNegra);
         this.nickName = nickName;
         this.password = password;
         this.tipo = tipo;
