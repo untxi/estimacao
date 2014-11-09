@@ -2,8 +2,6 @@ package Controladores;
 import java.util.Date;
 import Estructuras.Donacion;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 /**
  * Modelo Vista-Controlador
@@ -28,42 +26,30 @@ public class ControladorDonaciones {
         }
         return miControladorDonaciones;
     }
-    
-    /**
-     * Atributos del Controlador de Donaciones
-     * @param IdDonante     : Número de cédula para identificar al donante 
-     * @param monto         : Monto donado
-     * @param fechaRecibido : Fecha en que se ingresa la donació al sistema
-     * @return              : true, para reportar a la interfaz gráfica que 
-     *                          el proceso concluyó con éxito
-     * 
-     * Métodos del Controlador de Donaciones
-     * Crear     la donación: crearDonacion
-     * Entregar  la donación: entregarDonación
-     * Revisión de caducidad: revisarCaducidadDonacion
-     */
 
     public void ordenarDonacionesPorFechaEntrega(ArrayList<Donacion> miListaDonaciones){
-        Collections.sort(miListaDonaciones, new Comparator<Donacion>() {
-            @Override
-            public int compare(Donacion donacion1, Donacion donacion2){
-                return  donacion1.getFechaEntrega().compareTo(donacion2.getFechaEntrega());
+        for(int i = 0; i < miListaDonaciones.size(); i++){
+            if(miListaDonaciones.get(i).getFechaEntrega().after(miListaDonaciones.get(i+1).getFechaEntrega())){
+                Donacion temporalParaOrdenar = miListaDonaciones.get(i);
+                miListaDonaciones.set(i, miListaDonaciones.get(i+1));
+                miListaDonaciones.set(i+1, temporalParaOrdenar);
             }
-         });
+        }
     }
  
     public void ordenarDonacionesPorFechaRecibido(ArrayList<Donacion> miListaDonaciones){
-        Collections.sort(miListaDonaciones, new Comparator<Donacion>() {
-            @Override
-            public int compare(Donacion donacion1, Donacion donacion2){
-                return  donacion1.getFechaRecibido().compareTo(donacion2.getFechaRecibido());
+        for(int i = 0; i < miListaDonaciones.size(); i++){
+            if(miListaDonaciones.get(i).getFechaRecibido().after(miListaDonaciones.get(i+1).getFechaRecibido())){
+                Donacion temporalParaOrdenar = miListaDonaciones.get(i);
+                miListaDonaciones.set(i, miListaDonaciones.get(i+1));
+                miListaDonaciones.set(i+1, temporalParaOrdenar);
             }
-         });
+        }
     }
     
-    public boolean crearDonacion(String IdDonante, int monto, Date fechaRecibido){
+    public boolean crearDonacion(int monto, Date fechaRecibido){
         Donacion miDonacion;
-        miDonacion = new Donacion(IdDonante, monto, fechaRecibido);
+        miDonacion = new Donacion(Administradores.AdministradorAplicacion.getInstance().getMiUsuarioActual().getCedula()  , monto, fechaRecibido);
         Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().add(miDonacion);
         ordenarDonacionesPorFechaRecibido(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion());
         return true;

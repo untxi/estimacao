@@ -4,7 +4,6 @@ package Administradores;
 import Estructuras.CasaCuna;
 import Estructuras.Mascota;
 import Estructuras.Persona;
-import Estructuras.Reporte;
 import Estructuras.Usuario;
 import Estructuras.Donacion;
 import Interfaces.IConstantes;
