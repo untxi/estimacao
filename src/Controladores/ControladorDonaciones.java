@@ -54,6 +54,7 @@ public class ControladorDonaciones {
     public boolean entregarDonacion(Donacion donacionEntregada){
         donacionesEntregadas.add(donacionEntregada);
         boolean donacionEntregable = contenedorDonaciones.remove(donacionEntregada);
+        
         return true;
     }
     

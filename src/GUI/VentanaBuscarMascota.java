@@ -304,6 +304,11 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         jButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(170, 80, 0));
         jButton1.setText("Adoptar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         panelVentanaBuscar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 370, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -410,6 +415,12 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         clearTable(tablaBuscarMascota);
     }//GEN-LAST:event_btnLimpiaTablaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        //LLama al controlador
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void clearTable(final JTable table) {
         for (int i = 0; i < table.getRowCount(); i++){
