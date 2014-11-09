@@ -1,6 +1,7 @@
-
 package Controladores;
+
 import Estructuras.Adopcion;
+import Estructuras.Persona;
 import Administradores.AdministradorAplicacion;
 /**
  *

@@ -19,6 +19,8 @@ public interface IConstantes
     
     public static String []   Especies = {"Perro","Gato","Pájaro","Tortuga","Roedor"};
     
+    public static final String []   estadosMascota = {"Perdido","Encontrado","Recien Nacido","Fallecido","Reportado","Adoptado"};
+    
     public static String [][] Razas = {
     {"Bóxer", "Bulldog Americano", "Chihuahueño", "Collie","Dálmata", "Dobermann","Husky siberiano", "Labrador","Pastor alemán", "Pekinés", "Pitbull", "Otro"},
     {"Abisinio", "Bengala", "Ceylon", "Cymric","Chartreux", "Habana brown","Himalayo", "Korat","Ocicat", "Oriental", "Siamés", "Otro"},

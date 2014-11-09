@@ -257,14 +257,16 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tablaBuscarMascota);
-        tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
-        tablaBuscarMascota.getColumnModel().getColumn(7).setResizable(false);
+        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
+            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(7).setResizable(false);
+        }
 
         panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 660, 320));
 
@@ -418,7 +420,10 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        //LLama al controlador
+        //if Check == true
+        //Controladores.ControladorAdopciones.getInstance().adoptarMascota(null);//En lugar de null va de donde extra la mascota
+        //poner un Else
+        JOptionPanel.showMessageDialog(null, "Esta mascota no puede ser adoptada");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
