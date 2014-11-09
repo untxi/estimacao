@@ -1,7 +1,10 @@
 
 package GUI;
 
+import static Interfaces.IConstantes.AdministradorMaster;
 import javax.swing.JTable;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
     private String petName = "";
@@ -423,10 +426,37 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         //if Check == true
         //Controladores.ControladorAdopciones.getInstance().adoptarMascota(null);//En lugar de null va de donde extra la mascota
         //poner un Else
-        JOptionPanel.showMessageDialog(null, "Esta mascota no puede ser adoptada");
+        JOptionPane.showMessageDialog(null, "Esta mascota no puede ser adoptada");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+        public void llenarTabla()
+    {
+        for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().size();i++)
+        {
+            ((DefaultTableModel)tablaBuscarMascota.getModel()).addRow(new Object[3]);
+            tablaBuscarMascota.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().get(i).getNombre(), i, 0);
+            if(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().get(i).getTipo() == AdministradorMaster)
+            {
+                tablaBuscarMascota.setValueAt(false, i, 1);
+                tablaBuscarMascota.setValueAt(true, i, 2);
+            }
+            else
+            {
+                tablaBuscarMascota.setValueAt(true, i, 1);
+                tablaBuscarMascota.setValueAt(false, i, 2);
+            }
+        }
+    }
+    
+    private void limpiarTabla()
+    {
+        for(int i = 0; i < tablaBuscarMascota.getRowCount();i++)
+        {
+            ((DefaultTableModel)tablaBuscarMascota.getModel()).removeRow(i);   
+        }
+    }
+    
     public static void clearTable(final JTable table) {
         for (int i = 0; i < table.getRowCount(); i++){
             for(int j = 0; j < table.getColumnCount(); j++) {
