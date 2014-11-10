@@ -88,6 +88,11 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
                 fieldCantidadDonacionActionPerformed(evt);
             }
         });
+        fieldCantidadDonacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fieldCantidadDonacionKeyTyped(evt);
+            }
+        });
         jPanel1.add(fieldCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 130, -1));
 
         lblFecha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -126,6 +131,16 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
     private void fieldCantidadDonacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldCantidadDonacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldCantidadDonacionActionPerformed
+
+    private void fieldCantidadDonacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldCantidadDonacionKeyTyped
+        char c=evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
+        }
+    }//GEN-LAST:event_fieldCantidadDonacionKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

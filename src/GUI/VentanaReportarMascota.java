@@ -109,6 +109,11 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
         panelVentanaBuscar.add(lbidReportante, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
         fieldIdChip.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        fieldIdChip.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fieldIdChipKeyTyped(evt);
+            }
+        });
         panelVentanaBuscar.add(fieldIdChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 130, -1));
 
         lblEspecia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -282,6 +287,16 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
     private void boxRazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxRazaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_boxRazaActionPerformed
+
+    private void fieldIdChipKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIdChipKeyTyped
+        char c=evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
+        }
+    }//GEN-LAST:event_fieldIdChipKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

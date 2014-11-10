@@ -139,6 +139,11 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
 
         fieldTelefono.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldTelefono.setToolTipText("");
+        fieldTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fieldTelefonoKeyTyped(evt);
+            }
+        });
         panelCrearUsuario.add(fieldTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 205, -1));
 
         fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -151,6 +156,11 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
 
         field_ID.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         field_ID.setToolTipText("");
+        field_ID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                field_IDKeyTyped(evt);
+            }
+        });
         panelCrearUsuario.add(field_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 204, -1));
 
         lblimagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuario.png"))); // NOI18N
@@ -363,6 +373,26 @@ public class VentanaCrearUsuario extends javax.swing.JInternalFrame implements  
     private void boxEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEspecieActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_boxEspecieActionPerformed
+
+    private void fieldTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldTelefonoKeyTyped
+        char c=evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
+        }
+    }//GEN-LAST:event_fieldTelefonoKeyTyped
+
+    private void field_IDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_field_IDKeyTyped
+        char c=evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
+        }
+    }//GEN-LAST:event_field_IDKeyTyped
 
 
     private void activarDonacion()

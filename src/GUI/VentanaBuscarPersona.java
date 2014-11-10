@@ -1,6 +1,8 @@
 
 package GUI;
 
+import javax.swing.JOptionPane;
+
 
 public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     
@@ -111,6 +113,11 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         fieldIDPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldIDPersonaActionPerformed(evt);
+            }
+        });
+        fieldIDPersona.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fieldIDPersonaKeyTyped(evt);
             }
         });
         panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 130, -1));
@@ -296,6 +303,16 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         fieldIDPersona.setText("");
         fieldEmail.setText("");
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void fieldIDPersonaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIDPersonaKeyTyped
+        char c=evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
+        }
+    }//GEN-LAST:event_fieldIDPersonaKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,6 +1,10 @@
 
 package GUI;
 
+import static Interfaces.IConstantes.Especies;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 
 public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
 
@@ -20,6 +24,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
     private VentanaBuscarCasaCuna() 
     {
         initComponents();
+        boxEspecie.setModel(new DefaultComboBoxModel(Especies));
     }
     
     public static VentanaBuscarCasaCuna getInstance()
@@ -123,6 +128,11 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
                 field_IDActionPerformed(evt);
             }
         });
+        field_ID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                field_IDKeyTyped(evt);
+            }
+        });
         panelCrearUsuario.add(field_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 204, -1));
 
         lblimagenAdoptante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/buscar.png"))); // NOI18N
@@ -147,17 +157,16 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         panelCrearUsuario.add(lblCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Perro", "Gato", "Pájaro", "Tortuga", "Roedor" }));
         boxEspecie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxEspecieActionPerformed(evt);
             }
         });
-        panelCrearUsuario.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 110, -1));
+        panelCrearUsuario.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 110, -1));
 
         boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Pequeño", "Mediano", "Grande", "Gigante" }));
-        panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 110, -1));
+        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Grande", "Mediano", "Pequeño" }));
+        panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 110, -1));
 
         lblTamano1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblTamano1.setText("Tamaño");
@@ -230,6 +239,12 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         lblTitulo2Ventana.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTitulo2Ventana.setText("CasasCuna Encontradas");
         panelCrearUsuario.add(lblTitulo2Ventana, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
+
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
         panelCrearUsuario.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 110, -1));
 
         jButton1.setText("Limpiar Tabla");
@@ -285,6 +300,26 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         boxEspecie.setSelectedIndex(0);
         boxTamaño.setSelectedIndex(0);
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        char c=evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
+        }
+     }//GEN-LAST:event_jTextField1KeyTyped
+
+    private void field_IDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_field_IDKeyTyped
+        char c=evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
+        }
+    }//GEN-LAST:event_field_IDKeyTyped
 
     
 

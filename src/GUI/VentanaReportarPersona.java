@@ -69,6 +69,11 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         panelVentanaBuscar.add(lblidPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         fieldIDPersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        fieldIDPersona.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fieldIDPersonaKeyTyped(evt);
+            }
+        });
         panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 130, -1));
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -118,6 +123,16 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         fieldIDPersona.setText("");
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void fieldIDPersonaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIDPersonaKeyTyped
+        char c=evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
+        }
+    }//GEN-LAST:event_fieldIDPersonaKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

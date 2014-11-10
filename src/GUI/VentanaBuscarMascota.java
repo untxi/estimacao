@@ -2,6 +2,9 @@
 package GUI;
 
 import static Interfaces.IConstantes.AdministradorMaster;
+import static Interfaces.IConstantes.Especies;
+import static Interfaces.IConstantes.Razas;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -26,6 +29,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
      */
     private VentanaBuscarMascota() {
         initComponents();
+        boxEspecie.setModel(new DefaultComboBoxModel(Especies));
     }
     
     public static VentanaBuscarMascota getInstance()
@@ -117,6 +121,11 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
                 fieldIdChipActionPerformed(evt);
             }
         });
+        fieldIdChip.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fieldIdChipKeyTyped(evt);
+            }
+        });
         panelVentanaBuscar.add(fieldIdChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 130, -1));
 
         lblEspecia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -132,11 +141,14 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         panelVentanaBuscar.add(lblTamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        boxEspecie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Perro", "Gato", "Pájaro", "Tortuga", "Roedor" }));
+        boxEspecie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxEspecieActionPerformed(evt);
+            }
+        });
         panelVentanaBuscar.add(boxEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 130, -1));
 
         boxRaza.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        boxRaza.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "zaguate" }));
         boxRaza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxRazaActionPerformed(evt);
@@ -429,6 +441,20 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(null, "Esta mascota no puede ser adoptada");
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void fieldIdChipKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIdChipKeyTyped
+        char c=evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
+        }
+    }//GEN-LAST:event_fieldIdChipKeyTyped
+
+    private void boxEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEspecieActionPerformed
+        boxRaza.setModel(new DefaultComboBoxModel(Razas[boxEspecie.getSelectedIndex()]));
+    }//GEN-LAST:event_boxEspecieActionPerformed
 
         public void llenarTabla()
     {
