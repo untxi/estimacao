@@ -19,6 +19,14 @@ private static ArrayList<CasaCuna> filtroCasaCuna = new ArrayList<>();
    
     private static ControladorConsultas miControladorConsultas;
 
+    public static ControladorConsultas getMiControladorConsultas() {
+        return miControladorConsultas;
+    }
+
+    public static void setMiControladorConsultas(ControladorConsultas miControladorConsultas) {
+        ControladorConsultas.miControladorConsultas = miControladorConsultas;
+    }
+
     public static ArrayList<Mascota> getFiltroMascotas() {
         return filtroMascotas;
     }
@@ -55,9 +63,25 @@ private static ArrayList<CasaCuna> filtroCasaCuna = new ArrayList<>();
        return miControladorConsultas;
    }
     
-  public void matchPersona(){
-     
-  }
+  public void matchPersona(String pNombre, String apellido1, String apellido2, String pID, String pEmail){
+      ;
+      if((pNombre.equals("") && apellido1.equals("") &&
+              apellido2.equals("") && id.equals("") && pEmail.equals("") ){
+      return AdministradorAplicacion.getInstance().getMiListaUsuarios();
+      }
+      
+      for(Usuario persona : AdministradorAplicacion.getInstance().getMiListaUsuarios()){
+            if( (persona.getEmail().contains(pEmail) || pEmail.equals("")  ) &&
+                   (persona.getNombre().contains(pNombre) || pNombre.equals("") ) &&
+                   (persona.getPrimerApellido().contains(apellido1) ||apellido1.equals("")) &&
+                    (persona.getSegundoApellido().contains(apellido2) || apellido2.equals("") &&
+                    persona.getCedula().contains(pID) ||pID.equals("")) ) {
+                filtroUsuarios.add(persona);
+            }
+      }
+         
+               return filtroUsuarios;
+      }
       
   public void matchMascota(){
       

@@ -1,6 +1,8 @@
 
 package GUI;
 
+import Controladores.ControladorConsultas;
+import Estructuras.Persona;
 import Estructuras.Usuario;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -9,6 +11,7 @@ import javax.swing.JTable;
 
 public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     
+    ControladorConsultas miConsulta;
     private String nombre;
     private String primerApellido;
     private String segundoApellido;
@@ -78,7 +81,7 @@ public void llenarTablaPersonas(ArrayList<Usuario> lista)
         tablaUsuario = new javax.swing.JTable();
         btnReportarEncontrada = new javax.swing.JButton();
         lblOjos1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        espacioCorreo = new javax.swing.JTextField();
         limpiarTable = new javax.swing.JButton();
 
         fieldEmail.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
@@ -254,12 +257,12 @@ public void llenarTablaPersonas(ArrayList<Usuario> lista)
         lblOjos1.setText("Cédula");
         panelVentanaBuscar.add(lblOjos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        espacioCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                espacioCorreoActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 130, -1));
+        panelVentanaBuscar.add(espacioCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 130, -1));
 
         limpiarTable.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         limpiarTable.setForeground(new java.awt.Color(170, 80, 0));
@@ -297,9 +300,9 @@ public void llenarTablaPersonas(ArrayList<Usuario> lista)
         // TODO add your handling code here:
     }//GEN-LAST:event_tablaUsuarioMouseWheelMoved
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void espacioCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_espacioCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_espacioCorreoActionPerformed
 
     private void fieldIDPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldIDPersonaActionPerformed
         // TODO add your handling code here:
@@ -315,10 +318,13 @@ public void llenarTablaPersonas(ArrayList<Usuario> lista)
         primerApellido = fieldApellido1.getText();
         segundoApellido = fieldApellido2.getText();
         cedula = fieldIDPersona.getText();
-        email = fieldEmail.getText();
+        email = espacioCorreo.getText();
+
+        
         
         llenarTablaPersonas(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios());
         //llenarTablaPersonas(Controladores.ControladorConsultas.getFiltroUsuarios());
+        miConsulta.matchPersona();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -327,7 +333,7 @@ public void llenarTablaPersonas(ArrayList<Usuario> lista)
         fieldApellido1.setText("");
         fieldApellido2.setText("");
         fieldIDPersona.setText("");
-        fieldEmail.setText("");
+        espacioCorreo.setText("");
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void fieldIDPersonaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIDPersonaKeyTyped
@@ -350,6 +356,7 @@ public void llenarTablaPersonas(ArrayList<Usuario> lista)
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnReportarEncontrada;
+    private javax.swing.JTextField espacioCorreo;
     private javax.swing.JTextField fieldApellido1;
     private javax.swing.JTextField fieldApellido2;
     private javax.swing.JTextField fieldEmail;
@@ -357,7 +364,6 @@ public void llenarTablaPersonas(ArrayList<Usuario> lista)
     private javax.swing.JTextField fieldNombrePersona;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblCaracteristicas;
     private javax.swing.JLabel lblEspecia;
     private javax.swing.JLabel lblImagenBuscar;
