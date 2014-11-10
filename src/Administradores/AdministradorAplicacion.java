@@ -87,42 +87,6 @@ public class AdministradorAplicacion implements IConstantes
         return existe;
     }
     
-     public boolean agregarMascota(Mascota pMascota)
-    {
-        if(miListaMascotas.isEmpty())
-        {
-            pMascota.setTipo(AdministradorMaster);
-            miListaMascotas.add(pMascota);
-            return true;
-        }
-        else
-        {
-            if(existeMascota(pMascota))
-            {
-                return false;
-            }
-            else
-            {
-                miListaMascotas.add(pMascota);
-                return true;
-            }
-        }
-    }
-    
-    private boolean existeMascota(Mascota pMascota)
-    {
-        boolean existe = false;
-        for (int i = 0; i < miListaMascotas.size(); i++)
-        {
-          if(miListaMascotas.get(i).getNombre().compareToIgnoreCase(pMascota.getNombre()) == 0 ||
-             miListaMascotas.get(i).getRaza().compareToIgnoreCase(pMascota.getRaza()) == 0  )
-          {
-              existe = true;
-          }
-        }
-        return existe;
-    }
-    
     public Usuario buscarUsuario(String pCedula)
     {
         Usuario miUsuario = null;

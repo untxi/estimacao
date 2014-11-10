@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Soto/Documents/NetBeansProjects/estimacao/src/GUI/VentanaReportarMascota.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/GUI/VentanaBuscarMascota.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/Controladores/ControladorAdopciones.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/Administradores/AdministradorAplicacion.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/estimacao/src/Estructuras/Mascota.java</file>
         </group>
     </open-files>
 </project-private>

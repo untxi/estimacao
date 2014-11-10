@@ -1,9 +1,10 @@
 
 package GUI;
 
-import static Interfaces.IConstantes.AdministradorMaster;
+import Estructuras.Mascota;
 import static Interfaces.IConstantes.Especies;
 import static Interfaces.IConstantes.Razas;
+import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import javax.swing.JOptionPane;
@@ -18,16 +19,14 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
     private String colorPelaje = "";
     private String colorOjos = "";
     private String ubicacion = "";
-
-    
-       
-
-    
+    private final String estado;
     private static VentanaBuscarMascota miVentanaBuscarMascota;
+    
     /**
      * Creates new form ventanaBuscarMascota
      */
     private VentanaBuscarMascota() {
+        this.estado = "";
         initComponents();
         boxEspecie.setModel(new DefaultComboBoxModel(Especies));
     }
@@ -410,8 +409,10 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         System.out.println("Color del pelaje " + colorPelaje);
         System.out.println("el tamaño es: " + tamaño);
         System.out.println("el lugar es: " +ubicacion);
+        System.out.println("el estado es: " +estado);
         
         
+        llenarTablaMascotas(Administradores.AdministradorAplicacion.getInstance().getMiListaMascotas());
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
@@ -456,31 +457,21 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         boxRaza.setModel(new DefaultComboBoxModel(Razas[boxEspecie.getSelectedIndex()]));
     }//GEN-LAST:event_boxEspecieActionPerformed
 
-    //esto es lo del master??to cambielo a mascotas esto fue lo que me dijo adri que pusiera porque esto él lo habia echo,yo lo cambie para mascotas!!!
-        public void llenarTabla()
+        private void llenarTablaMascotas(ArrayList<Mascota> lista)
     {
-        for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getmiListaMascotas().size();i++)
-        {
-            ((DefaultTableModel)tablaBuscarMascota.getModel()).addRow(new Object[3]);
-            tablaBuscarMascota.setValueAt(Administradores.AdministradorAplicacion.getInstance().getmiListaMascotas().get(i).getNombre(), i, 0);
-            if(Administradores.AdministradorAplicacion.getInstance().getmiListaMascotas().get(i).getTipo() == AdministradorMaster)//cambi aqui la info por la de las mascotas y me saivisa
-            {
-                tablaBuscarMascota.setValueAt(false, i, 1);
-                tablaBuscarMascota.setValueAt(true, i, 2);
-            }
-            else
-            {
-                tablaBuscarMascota.setValueAt(true, i, 1);
-                tablaBuscarMascota.setValueAt(false, i, 2);
-            }
-        }
-    }
-    
-    private void limpiarTabla()
-    {
-        for(int i = 0; i < tablaBuscarMascota.getRowCount();i++)
-        {
-            ((DefaultTableModel)tablaBuscarMascota.getModel()).removeRow(i);   
+        int i = 0;
+        for(Mascota mascota : lista){
+            tablaBuscarMascota.setValueAt(mascota.getNombre(), i, 0);
+            tablaBuscarMascota.setValueAt(mascota.getChip(), i, 1);
+            tablaBuscarMascota.setValueAt(mascota.getEspecie(), i, 2);
+            tablaBuscarMascota.setValueAt(mascota.getRaza(), i, 3);
+            tablaBuscarMascota.setValueAt(mascota.getTamaño(), i, 4);
+            tablaBuscarMascota.setValueAt(mascota.getColorPelaje(), i, 5);
+            tablaBuscarMascota.setValueAt(mascota.getColorOjos(), i, 6);
+            tablaBuscarMascota.setValueAt(mascota.getUbicacion(), i, 7);
+            tablaBuscarMascota.setValueAt(mascota.getEstado(), i, 8);
+            tablaBuscarMascota.setValueAt(mascota.getAdoptar(), i, 9);
+            i++;
         }
     }
     
@@ -596,4 +587,5 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
     private javax.swing.JPanel panelVentanaBuscar;
     private javax.swing.JTable tablaBuscarMascota;
     // End of variables declaration//GEN-END:variables
+
 }
