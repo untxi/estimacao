@@ -6,7 +6,6 @@ import Estructuras.Mascota;
 import Estructuras.Persona;
 import Estructuras.Usuario;
 import Estructuras.Donacion;
-import Estructuras.ReportarPersona;
 import Interfaces.IConstantes;
 import java.util.ArrayList;
 
@@ -19,7 +18,7 @@ public class AdministradorAplicacion implements IConstantes
     private ArrayList<Usuario> miListaUsuarios;
     private Usuario miUsuarioActual;
     private ArrayList<Persona> miListaPersonas;
-    private ArrayList<ReportarPersona> miListaNegra;
+    private ArrayList<Persona> miListaNegra;
     private ArrayList<CasaCuna> miListaCasasCuna;
     private ArrayList<Mascota> miListaMascotas;
     private ArrayList<Donacion> miListaDonacion;
@@ -229,11 +228,11 @@ public class AdministradorAplicacion implements IConstantes
         this.miAdministradorCorreos = miAdministradorCorreos;
     }
 
-    public ArrayList<ReportarPersona> getMiListaNegra() {
+    public ArrayList<Persona> getMiListaNegra() {
         return miListaNegra;
     }
 
-    public void setMiListaNegra(ArrayList<ReportarPersona> miListaNegra) {
+    public void setMiListaNegra(ArrayList<Persona> miListaNegra) {
         this.miListaNegra = miListaNegra;
     }
     

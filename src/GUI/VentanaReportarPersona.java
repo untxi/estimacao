@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Samantha
@@ -40,20 +42,10 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         lblTituloVentana = new javax.swing.JLabel();
         lblImagenBuscar = new javax.swing.JLabel();
         lblImagenMascota = new javax.swing.JLabel();
-        lblNombrePersona = new javax.swing.JLabel();
-        lblApellido2 = new javax.swing.JLabel();
         lblidPersona = new javax.swing.JLabel();
         fieldIDPersona = new javax.swing.JTextField();
-        lblApellido1 = new javax.swing.JLabel();
-        fieldNombrePersona = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
-        fieldApellido1 = new javax.swing.JTextField();
-        fieldApellido2 = new javax.swing.JTextField();
-        fieldComentarios = new javax.swing.JTextField();
-        lblComentarios = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        lblFecha = new javax.swing.JLabel();
 
         setIconifiable(true);
         setTitle("Reportar Persona - Estimação");
@@ -72,32 +64,22 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         lblImagenMascota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuario.png"))); // NOI18N
         panelVentanaBuscar.add(lblImagenMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
 
-        lblNombrePersona.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblNombrePersona.setText("Nombre");
-        panelVentanaBuscar.add(lblNombrePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        lblApellido2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblApellido2.setText("2do Apellido");
-        panelVentanaBuscar.add(lblApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
-
         lblidPersona.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblidPersona.setText("Cédula");
-        panelVentanaBuscar.add(lblidPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        lblidPersona.setText("Cédula de la persona para reportar");
+        panelVentanaBuscar.add(lblidPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         fieldIDPersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 130, -1));
-
-        lblApellido1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblApellido1.setText("1er Apellido");
-        panelVentanaBuscar.add(lblApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-
-        fieldNombrePersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldNombrePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 130, -1));
+        panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 130, -1));
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
         btnCancelar.setText("Cancelar");
-        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, 40));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 90, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
@@ -107,27 +89,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 90, 40));
-
-        fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 130, -1));
-
-        fieldApellido2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 130, -1));
-
-        fieldComentarios.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(fieldComentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 270, 50));
-
-        lblComentarios.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblComentarios.setText("Comentarios");
-        panelVentanaBuscar.add(lblComentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
-
-        jDateChooser1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        panelVentanaBuscar.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, -1));
-
-        lblFecha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblFecha.setText("Fecha");
-        panelVentanaBuscar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, -1));
+        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,33 +99,33 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // el reportante es miUsuarioActual
+        //if(stringNumerico.isNumeric(fieldIDPersona.getText())){
+        Controladores.ControladorReportes.getInstance().ReportarPersonaListaNegra(fieldIDPersona.getText());
+        JOptionPane.showMessageDialog(null, "Reporte realizado con éxito");
+        //}else{
+        //JOptionPane.showMessageDialog(null, "El espacio para la Cédula sólo recibe números");
+        //}
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        fieldIDPersona.setText("");
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JTextField fieldApellido1;
-    private javax.swing.JTextField fieldApellido2;
-    private javax.swing.JTextField fieldComentarios;
     private javax.swing.JTextField fieldIDPersona;
-    private javax.swing.JTextField fieldNombrePersona;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private javax.swing.JLabel lblApellido1;
-    private javax.swing.JLabel lblApellido2;
-    private javax.swing.JLabel lblComentarios;
-    private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblImagenBuscar;
     private javax.swing.JLabel lblImagenMascota;
-    private javax.swing.JLabel lblNombrePersona;
     private javax.swing.JLabel lblTituloVentana;
     private javax.swing.JLabel lblidPersona;
     private javax.swing.JPanel panelVentanaBuscar;

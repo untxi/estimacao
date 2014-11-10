@@ -8,7 +8,6 @@ package Controladores;
 import Administradores.AdministradorAplicacion;
 import Estructuras.Mascota;
 import Estructuras.Persona;
-import Estructuras.ReportarPersona;
 import java.util.Calendar;
 
 /**
@@ -57,10 +56,17 @@ public class ControladorReportes
         AdministradorAplicacion.getInstance().getMiListaMascotas().add(miMascota);
     }
     
-    public void ReportarPersonaListaNegra(ReportarPersona miReporte){
-        if (Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().contains(miReporte.getReportado())){
-            Administradores.AdministradorAplicacion.getInstance().getMiListaNegra().add(miReporte);
+    public boolean ReportarPersonaListaNegra(String cedulaPersonaReportada){
+        boolean bandera = false;
+        for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().size(); i++){
+            if(Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().get(i).getCedula() == cedulaPersonaReportada){
+                Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().get(i).setListaNegra(true);
+                Administradores.AdministradorAplicacion.getInstance().getMiListaNegra().add(
+                        Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().get(i));
+                bandera = true;
+            }
         }
+        return bandera;
     }
     
     
