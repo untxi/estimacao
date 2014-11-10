@@ -20,12 +20,17 @@ public class ControladorAdopciones {
         return miControladorAdopciones;
     }
     
-    public void estadoMascota(){}
     public void adoptarMascota(Adopcion miAdopcion){
         // Cuando Adopto una mascota, sale de la lista de mascotas
-        //if (estado != perdida && checkBox == true)
-        Adopcion mascotaAdoptada = miAdopcion;
-        Administradores.AdministradorAplicacion.getInstance().getMiListaMascotas().remove(miAdopcion);
-        // mandar correos y bla bla       
+        if(!"Perdida".equals(miAdopcion.getMascotaAdoptada().getEstado()) &&
+                !"Fallecida".equals(miAdopcion.getMascotaAdoptada().getEstado())){
+            boolean remove = Administradores.AdministradorAplicacion.getInstance().getMiListaMascotas().remove(miAdopcion);
+        }
+        /*
+        Administradores.AdministradorCorreos.simpleMail(
+                Administradores.AdministradorAplicacion.getInstance().getMiUsuarioActual().getEmail(),
+                asuntoAdopcion, mensajeAdopcion);*/
     }
+
+
 }
