@@ -263,7 +263,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReportarEncontradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportarEncontradaActionPerformed
-        // TODO add your handling code here:
+        VentanaReportarPersona.getInstance().setVisible(true);
     }//GEN-LAST:event_btnReportarEncontradaActionPerformed
 
     private void btnReportarEncontradaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReportarEncontradaMouseClicked

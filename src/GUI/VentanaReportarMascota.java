@@ -260,13 +260,26 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
     }//GEN-LAST:event_fieldUbicacionActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        ControladorReportes.getInstance().reportarMascota(fieldNombreMascota.getText(),
-        boxRaza.getSelectedItem().toString(), boxEspecie.getSelectedItem().toString(), boxTamaño1.getSelectedItem().toString(),
-        fieldPelaje.getText(), fieldOjos.getText(),fieldUbicacion.getText(), boxTamaño.getSelectedItem().toString(),
-        fieldNotas.getText(), " ", Integer.parseInt(fieldIdChip.getText()), false, buscarFecha.getCalendar());
-        
-        JOptionPane.showMessageDialog(null, "Reporte realizado con éxito");
-        btnCancelarActionPerformed(evt);
+        if(fieldIdChip.getText().isEmpty() || fieldNombreMascota.getText().isEmpty() ||
+           fieldNombreReportante.getText().isEmpty() || fieldNotas.getText().isEmpty() ||
+           fieldOjos.getText().isEmpty() || fieldPelaje.getText().isEmpty() ||
+           fieldUbicacion.getText().isEmpty() || boxEspecie.getSelectedIndex() == -1   ||
+           boxRaza.getSelectedIndex() == -1 || boxTamaño.getSelectedIndex() == -1 ||
+           boxTamaño1.getSelectedIndex() == -1 )
+        {
+           JOptionPane.showMessageDialog(null, "Debe llenar todos los campos \n"+
+                                         "Si no conoce el dato ingrese '--' "); 
+        }
+        else
+        {
+            ControladorReportes.getInstance().reportarMascota(fieldNombreMascota.getText(),
+            boxRaza.getSelectedItem().toString(), boxEspecie.getSelectedItem().toString(), boxTamaño1.getSelectedItem().toString(),
+            fieldPelaje.getText(), fieldOjos.getText(),fieldUbicacion.getText(), boxTamaño.getSelectedItem().toString(),
+            fieldNotas.getText(), " ", Integer.parseInt(fieldIdChip.getText()), false, buscarFecha.getCalendar());
+
+            JOptionPane.showMessageDialog(null, "Reporte realizado con éxito");
+            btnCancelarActionPerformed(evt);
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -299,6 +312,7 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
     }//GEN-LAST:event_fieldIdChipKeyTyped
 
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox boxEspecie;
     private javax.swing.JComboBox boxRaza;
