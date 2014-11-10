@@ -3,13 +3,13 @@
 */
 package Controladores;
 
-import GUI.*;
-import Administradores.AdministradorConsultas;
-import Administradores.AdministradorAplicacion;
 import Estructuras.CasaCuna;
 import Estructuras.Mascota;
+import Estructuras.Persona;
 import Estructuras.Usuario;
 import java.util.ArrayList;
+
+
 
 public class ControladorConsultas {
     
@@ -61,33 +61,17 @@ private static ArrayList<CasaCuna> filtroCasaCuna = new ArrayList<>();
            miControladorConsultas = new ControladorConsultas();
        }
        return miControladorConsultas;
-   }
-    
-  public ArrayList<Usuario> matchPersona(String pNombre, String apellido1, String apellido2, String pID, String pEmail){
-      filtroUsuarios.clear();
-      if((pNombre.equals(null) && apellido1.equals(null) &&
-              apellido2.equals(null) && id.equals(null) && pEmail.equals(null) )){
-      return AdministradorAplicacion.getInstance().getMiListaUsuarios();
-      }
-      
-      for(Usuario persona : AdministradorAplicacion.getInstance().getMiListaUsuarios()){
-            if( (persona.getEmail().contains(pEmail) || pEmail.equals("")  ) &&
-                   (persona.getNombre().contains(pNombre) || pNombre.equals("") ) &&
-                   (persona.getPrimerApellido().contains(apellido1) ||apellido1.equals("")) &&
-                    (persona.getSegundoApellido().contains(apellido2) || apellido2.equals("") &&
-                    persona.getCedula().contains(pID) ||pID.equals("")) ) {
-                filtroUsuarios.add(persona);
-            }
-      }
-         
-               return filtroUsuarios;
-      }
-      
-  public void matchMascota(String nombre, String Chip, String especie, String raza, String tamaño, String pelaje, String ojos, String lugar ){
+   } public void matchMascota(Mascota pet)
+   {
       
   }
   
-  public void matchCasaCuna(String nombre, String primerApellido, String segundoApellido, String cedula, String cantMascotas, String especie, String tamaño){
+  public void matchCasaCuna()
+  {
+      
+  }
+  
+  public void matchUsuario(Persona persona){
       
   }
   
