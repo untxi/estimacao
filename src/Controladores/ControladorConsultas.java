@@ -72,11 +72,11 @@ private static ArrayList<CasaCuna> filtroCasaCuna = new ArrayList<>();
   }
   public ArrayList<Usuario> matchUsuario(Persona persona){
       filtroUsuarios.clear();
-      if(persona.getNombre() == null &&
-              persona.getPrimerApellido() == null &&
-              persona.getSegundoApellido() == null &&
-              persona.getCedula() == null &&
-              persona.getEmail() == null){
+      if(persona.getNombre().equals("") &&
+              persona.getPrimerApellido().equals("") &&
+              persona.getSegundoApellido().equals("") &&
+              persona.getCedula().equals("") &&
+              persona.getEmail().equals("")){
           return Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios();
       }
       for(Usuario user : Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios()){

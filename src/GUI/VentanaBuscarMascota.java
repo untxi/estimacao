@@ -412,19 +412,6 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         raza = (String) boxRaza.getSelectedItem();
         tamaño = (String) boxTamaño.getSelectedItem();
       
-        
-        //Pruebas para obtener elementos. 
-        System.out.println("El nombre es: " + petName);
-        System.out.println("ChipId: " + chipID);
-        System.out.println( "La especie es: " + especie);
-        System.out.println("la raza es: " + raza);
-        System.out.println( "El color de ojos es: " + colorOjos);
-        System.out.println("Color del pelaje " + colorPelaje);
-        System.out.println("el tamaño es: " + tamaño);
-        System.out.println("el lugar es: " +ubicacion);
-        System.out.println("el estado es: " +estado);
-        
-        
         llenarTablaMascotas(Administradores.AdministradorAplicacion.getInstance().getMiListaMascotas());
     }//GEN-LAST:event_btnBuscarActionPerformed
 

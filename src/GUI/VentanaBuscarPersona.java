@@ -324,6 +324,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         clearTable(tablaUsuario);
         llenarTablaPersonas(miConsulta.matchUsuario(miPersona));
         
+        
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed

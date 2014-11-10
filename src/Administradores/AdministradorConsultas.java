@@ -62,14 +62,14 @@ public  class AdministradorConsultas {
      return resultado;
      }
      
-     public boolean filtroEmail(String pEmail, ArrayList<Usuario> resultado){
+     public ArrayList<Usuario> filtroEmail(String pEmail, ArrayList<Usuario> resultado){
          
          }
-         r;
+         
      }
      
      //Metodos para filtrar en buscar mascota
-     static public  boolean filtroLugar(String pLugar, ArrayList<Mascota> resultado){
+     static public  ArrayList<Mascota> filtroLugar(String pLugar, ArrayList<Mascota> resultado){
          for(Mascota mascota : AdministradorAplicacion.getInstance().getMiListaMascotas()){
             if(mascota.getUbicacion().contains(pLugar)){
                 resultado.add(mascota); 
@@ -78,7 +78,7 @@ public  class AdministradorConsultas {
         return false;
     }
      
-     static public boolean filtroChip(String pChip, ArrayList<Mascota> resultado){
+     static public ArrayList<Mascota> filtroChip(String pChip, ArrayList<Mascota> resultado){
          for(Mascota mascota : AdministradorAplicacion.getInstance().getMiListaMascotas()){
              String temp2 = Integer.toString(mascota.getChipID());
              if( temp2.contains(pChip)){
