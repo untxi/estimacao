@@ -1,6 +1,9 @@
 package Controladores;
+import Estructuras.CasaCuna;
 import java.util.Date;
 import Estructuras.Donacion;
+import Estructuras.Persona;
+import static Interfaces.IConstantes.Usuario;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -102,5 +105,20 @@ public class ControladorDonaciones {
             totalDonacionesEntregadas += donacionesEntregadas.get(i).getMonto();
         }
         return Integer.toString(totalDonacionesEntregadas);
+    }
+    
+    public CasaCuna inscribirAsociaciones(String nombre, String razonSocial, String telefono, String sitioWeb, String cedula, String direccion){
+        Persona informacionAsociacion = null;
+        informacionAsociacion.setNombre(nombre);
+        informacionAsociacion.setPrimerApellido(razonSocial);
+        informacionAsociacion.setTelefono(telefono);
+        informacionAsociacion.setEmail(sitioWeb);
+        informacionAsociacion.setCedula(cedula);
+        informacionAsociacion.setDireccion(direccion);
+        CasaCuna nuevaAsociacion = null;
+        nuevaAsociacion.setRecibirDonacion(true);
+        nuevaAsociacion.setDonacion(true);
+        nuevaAsociacion.setDueñoCasaCuna(informacionAsociacion);
+        return nuevaAsociacion;
     }
 }

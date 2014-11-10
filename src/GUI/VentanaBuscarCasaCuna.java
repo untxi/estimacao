@@ -56,18 +56,19 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         fieldApellido1 = new javax.swing.JTextField();
         field_ID = new javax.swing.JTextField();
         lblimagenAdoptante = new javax.swing.JLabel();
-        btnCancelar = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         lblCantidadMascotas = new javax.swing.JLabel();
         boxEspecie = new javax.swing.JComboBox();
         boxTamaño = new javax.swing.JComboBox();
-        lblTamano1 = new javax.swing.JLabel();
+        lblTamano = new javax.swing.JLabel();
         lblEspecie = new javax.swing.JLabel();
         lblNombre1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaBuscarMascota = new javax.swing.JTable();
+        tablaBuscarCasaCuna = new javax.swing.JTable();
         lblTitulo2Ventana = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        fieldCantidadMascotas = new javax.swing.JTextField();
+        btnLimpiarTabla = new javax.swing.JButton();
+        btnLimpiarCaracteristicas = new javax.swing.JButton();
 
         setIconifiable(true);
         setTitle("Buscar Casa Cuna - Estimação");
@@ -138,23 +139,23 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         lblimagenAdoptante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/buscar.png"))); // NOI18N
         panelCrearUsuario.add(lblimagenAdoptante, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        btnCancelar.setBackground(new java.awt.Color(255, 153, 0));
-        btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
-        btnCancelar.setText("Cancelar");
-        btnCancelar.setMaximumSize(new java.awt.Dimension(63, 23));
-        btnCancelar.setMinimumSize(new java.awt.Dimension(63, 23));
-        btnCancelar.setPreferredSize(new java.awt.Dimension(63, 23));
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrar.setBackground(new java.awt.Color(255, 153, 0));
+        btnCerrar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(170, 80, 0));
+        btnCerrar.setText("Cerrar");
+        btnCerrar.setMaximumSize(new java.awt.Dimension(63, 23));
+        btnCerrar.setMinimumSize(new java.awt.Dimension(63, 23));
+        btnCerrar.setPreferredSize(new java.awt.Dimension(63, 23));
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
-        panelCrearUsuario.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 100, 50));
+        panelCrearUsuario.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 360, 100, 50));
 
         lblCantidadMascotas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblCantidadMascotas.setText("Cantidad de Mascotas");
-        panelCrearUsuario.add(lblCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        panelCrearUsuario.add(lblCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         boxEspecie.addActionListener(new java.awt.event.ActionListener() {
@@ -168,9 +169,9 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Grande", "Mediano", "Pequeño" }));
         panelCrearUsuario.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 110, -1));
 
-        lblTamano1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblTamano1.setText("Tamaño");
-        panelCrearUsuario.add(lblTamano1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+        lblTamano.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblTamano.setText("Tamaño");
+        panelCrearUsuario.add(lblTamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         lblEspecie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblEspecie.setText("Especie");
@@ -180,9 +181,9 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         lblNombre1.setText("Nombre");
         panelCrearUsuario.add(lblNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        tablaBuscarMascota.setBackground(new java.awt.Color(190, 160, 100));
-        tablaBuscarMascota.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        tablaBuscarMascota.setModel(new javax.swing.table.DefaultTableModel(
+        tablaBuscarCasaCuna.setBackground(new java.awt.Color(190, 160, 100));
+        tablaBuscarCasaCuna.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        tablaBuscarCasaCuna.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -217,21 +218,21 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        tablaBuscarMascota.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+        tablaBuscarCasaCuna.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
             public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
-                tablaBuscarMascotaMouseWheelMoved(evt);
+                tablaBuscarCasaCunaMouseWheelMoved(evt);
             }
         });
-        jScrollPane1.setViewportView(tablaBuscarMascota);
-        if (tablaBuscarMascota.getColumnModel().getColumnCount() > 0) {
-            tablaBuscarMascota.getColumnModel().getColumn(0).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(1).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(2).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(3).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(4).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
-            tablaBuscarMascota.getColumnModel().getColumn(5).setPreferredWidth(100);
-            tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
+        jScrollPane1.setViewportView(tablaBuscarCasaCuna);
+        if (tablaBuscarCasaCuna.getColumnModel().getColumnCount() > 0) {
+            tablaBuscarCasaCuna.getColumnModel().getColumn(0).setResizable(false);
+            tablaBuscarCasaCuna.getColumnModel().getColumn(1).setResizable(false);
+            tablaBuscarCasaCuna.getColumnModel().getColumn(2).setResizable(false);
+            tablaBuscarCasaCuna.getColumnModel().getColumn(3).setResizable(false);
+            tablaBuscarCasaCuna.getColumnModel().getColumn(4).setResizable(false);
+            tablaBuscarCasaCuna.getColumnModel().getColumn(5).setResizable(false);
+            tablaBuscarCasaCuna.getColumnModel().getColumn(5).setPreferredWidth(100);
+            tablaBuscarCasaCuna.getColumnModel().getColumn(6).setResizable(false);
         }
 
         panelCrearUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 550, 280));
@@ -240,15 +241,37 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         lblTitulo2Ventana.setText("CasasCuna Encontradas");
         panelCrearUsuario.add(lblTitulo2Ventana, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
 
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        fieldCantidadMascotas.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        fieldCantidadMascotas.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField1KeyTyped(evt);
+                fieldCantidadMascotasKeyTyped(evt);
             }
         });
-        panelCrearUsuario.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 110, -1));
+        panelCrearUsuario.add(fieldCantidadMascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, -1));
 
-        jButton1.setText("Limpiar Tabla");
-        panelCrearUsuario.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, -1, -1));
+        btnLimpiarTabla.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnLimpiarTabla.setForeground(new java.awt.Color(170, 80, 0));
+        btnLimpiarTabla.setText("Limpiar Tabla");
+        btnLimpiarTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarTablaActionPerformed(evt);
+            }
+        });
+        panelCrearUsuario.add(btnLimpiarTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, -1, -1));
+
+        btnLimpiarCaracteristicas.setBackground(new java.awt.Color(255, 153, 0));
+        btnLimpiarCaracteristicas.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnLimpiarCaracteristicas.setForeground(new java.awt.Color(170, 80, 0));
+        btnLimpiarCaracteristicas.setText("Limpiar");
+        btnLimpiarCaracteristicas.setMaximumSize(new java.awt.Dimension(63, 23));
+        btnLimpiarCaracteristicas.setMinimumSize(new java.awt.Dimension(63, 23));
+        btnLimpiarCaracteristicas.setPreferredSize(new java.awt.Dimension(63, 23));
+        btnLimpiarCaracteristicas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarCaracteristicasActionPerformed(evt);
+            }
+        });
+        panelCrearUsuario.add(btnLimpiarCaracteristicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 100, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -272,9 +295,9 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_field_IDActionPerformed
 
-    private void tablaBuscarMascotaMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_tablaBuscarMascotaMouseWheelMoved
+    private void tablaBuscarCasaCunaMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_tablaBuscarCasaCunaMouseWheelMoved
         // TODO add your handling code here:
-    }//GEN-LAST:event_tablaBuscarMascotaMouseWheelMoved
+    }//GEN-LAST:event_tablaBuscarCasaCunaMouseWheelMoved
 
     private void boxEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEspecieActionPerformed
         // TODO add your handling code here:
@@ -291,7 +314,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
        
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
         fieldNombre.setText("");
         fieldApellido1.setText("");
@@ -299,9 +322,10 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         field_ID.setText("");
         boxEspecie.setSelectedIndex(0);
         boxTamaño.setSelectedIndex(0);
-    }//GEN-LAST:event_btnCancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
-    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+    private void fieldCantidadMascotasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldCantidadMascotasKeyTyped
         char c=evt.getKeyChar();
         if(Character.isLetter(c))
         {
@@ -309,7 +333,7 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
         }
-     }//GEN-LAST:event_jTextField1KeyTyped
+     }//GEN-LAST:event_fieldCantidadMascotasKeyTyped
 
     private void field_IDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_field_IDKeyTyped
         char c=evt.getKeyChar();
@@ -321,32 +345,45 @@ public class VentanaBuscarCasaCuna extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_field_IDKeyTyped
 
+    private void btnLimpiarCaracteristicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCaracteristicasActionPerformed
+        fieldNombre.setText("");
+        fieldApellido1.setText("");
+        fieldApellido2.setText("");
+        field_ID.setText("");
+        boxEspecie.setSelectedIndex(0);
+        boxTamaño.setSelectedIndex(0);    }//GEN-LAST:event_btnLimpiarCaracteristicasActionPerformed
+
+    private void btnLimpiarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarTablaActionPerformed
+        //clearTable(tablaBuscarCasaCuna);
+    }//GEN-LAST:event_btnLimpiarTablaActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox boxEspecie;
     private javax.swing.JComboBox boxTamaño;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCerrar;
+    private javax.swing.JButton btnLimpiarCaracteristicas;
+    private javax.swing.JButton btnLimpiarTabla;
     private javax.swing.JTextField fieldApellido1;
     private javax.swing.JTextField fieldApellido2;
+    private javax.swing.JTextField fieldCantidadMascotas;
     private javax.swing.JTextField fieldNombre;
     private javax.swing.JTextField field_ID;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblApellido1;
     private javax.swing.JLabel lblApellido2;
     private javax.swing.JLabel lblCantidadMascotas;
     private javax.swing.JLabel lblEspecie;
     private javax.swing.JLabel lblNombre1;
-    private javax.swing.JLabel lblTamano1;
+    private javax.swing.JLabel lblTamano;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblTitulo2Ventana;
     private javax.swing.JLabel lblid;
     private javax.swing.JLabel lblimagenAdoptante;
     private javax.swing.JPanel panelCrearUsuario;
-    private javax.swing.JTable tablaBuscarMascota;
+    private javax.swing.JTable tablaBuscarCasaCuna;
     // End of variables declaration//GEN-END:variables
 
     public String getNombre() {

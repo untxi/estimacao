@@ -82,7 +82,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
-        btnCancelar.setText("Cancelar");
+        btnCancelar.setText("Cerrar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
@@ -102,7 +102,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
 
         lblCalificacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblCalificacion.setText("Calificación");
-        panelVentanaBuscar.add(lblCalificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        panelVentanaBuscar.add(lblCalificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
         fieldIDPersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldIDPersona.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -110,10 +110,10 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
                 fieldIDPersonaKeyTyped(evt);
             }
         });
-        panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 130, -1));
+        panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 130, -1));
 
         boxCalificacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-        panelVentanaBuscar.add(boxCalificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 40, -1));
+        panelVentanaBuscar.add(boxCalificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 40, -1));
 
         lblComentarios1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblComentarios1.setText("Comentarios");

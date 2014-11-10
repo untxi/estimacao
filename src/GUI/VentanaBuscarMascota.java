@@ -70,16 +70,17 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         fieldNombreMascota = new javax.swing.JTextField();
         lblUbicacion = new javax.swing.JLabel();
         fieldUbicacion = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lblUbicacion2 = new javax.swing.JLabel();
         btnReportarEncontrada = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaBuscarMascota = new javax.swing.JTable();
         lblTituloVentana1 = new javax.swing.JLabel();
-        btnCancelar1 = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         boxTamaño = new javax.swing.JComboBox();
         btnLimpiaTabla = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnAdoptar = new javax.swing.JButton();
+        btnLimpiarCaracteristicas = new javax.swing.JButton();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -115,6 +116,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         lblNombreMascota.setText("Nombre");
         panelVentanaBuscar.add(lblNombreMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
+        fieldIdChip.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldIdChip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldIdChipActionPerformed(evt);
@@ -159,7 +161,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         lblOjos.setText("Color de Ojos");
         panelVentanaBuscar.add(lblOjos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
 
-        fieldOjos.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldOjos.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldOjos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldOjosActionPerformed(evt);
@@ -171,7 +173,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         lblPelaje.setText("Color de Pelaje");
         panelVentanaBuscar.add(lblPelaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
-        fieldPelaje.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldPelaje.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldPelaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldPelajeActionPerformed(evt);
@@ -183,6 +185,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         lblidChip.setText("Chip");
         panelVentanaBuscar.add(lblidChip, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
+        fieldNombreMascota.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldNombreMascota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldNombreMascotaActionPerformed(evt);
@@ -194,7 +197,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         lblUbicacion.setText("Ubicación donde se vió por última vez");
         panelVentanaBuscar.add(lblUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
-        fieldUbicacion.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fieldUbicacion.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         fieldUbicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldUbicacionActionPerformed(evt);
@@ -202,14 +205,14 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         });
         panelVentanaBuscar.add(fieldUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 200, -1));
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel1.setText("(Distrito, Cantón o Barrio)");
-        panelVentanaBuscar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 160, -1));
+        lblUbicacion2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblUbicacion2.setText("(Distrito, Cantón o Barrio)");
+        panelVentanaBuscar.add(lblUbicacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 160, -1));
 
         btnReportarEncontrada.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnReportarEncontrada.setForeground(new java.awt.Color(170, 80, 0));
         btnReportarEncontrada.setText("Reportar Mascota Encontrada");
-        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, 220, 40));
+        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 230, 30));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
@@ -288,15 +291,15 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         lblTituloVentana1.setText("Buscar Mascota");
         panelVentanaBuscar.add(lblTituloVentana1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
-        btnCancelar1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        btnCancelar1.setForeground(new java.awt.Color(170, 80, 0));
-        btnCancelar1.setText("Limpiar");
-        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(170, 80, 0));
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelar1ActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 90, 40));
+        panelVentanaBuscar.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 420, 90, 40));
 
         boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Pequeño", "Mediano", "Grande", "Gigante" }));
@@ -315,17 +318,27 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
                 btnLimpiaTablaActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnLimpiaTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, 130, 40));
+        panelVentanaBuscar.add(btnLimpiaTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 420, 130, 40));
 
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(170, 80, 0));
-        jButton1.setText("Adoptar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAdoptar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnAdoptar.setForeground(new java.awt.Color(170, 80, 0));
+        btnAdoptar.setText("Adoptar");
+        btnAdoptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAdoptarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 370, 90, 40));
+        panelVentanaBuscar.add(btnAdoptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 90, 40));
+
+        btnLimpiarCaracteristicas.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnLimpiarCaracteristicas.setForeground(new java.awt.Color(170, 80, 0));
+        btnLimpiarCaracteristicas.setText("Limpiar");
+        btnLimpiarCaracteristicas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarCaracteristicasActionPerformed(evt);
+            }
+        });
+        panelVentanaBuscar.add(btnLimpiarCaracteristicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -415,7 +428,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         llenarTablaMascotas(Administradores.AdministradorAplicacion.getInstance().getMiListaMascotas());
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
         fieldIdChip.setText("");
         fieldNombreMascota.setText("");
@@ -426,22 +439,23 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         boxEspecie.setSelectedIndex(0);
         boxRaza.setSelectedIndex(0);
         boxTamaño.setSelectedIndex(0);
+        clearTable(tablaBuscarMascota);
         
-    }//GEN-LAST:event_btnCancelar1ActionPerformed
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnLimpiaTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiaTablaActionPerformed
         // TODO add your handling code here:
         clearTable(tablaBuscarMascota);
     }//GEN-LAST:event_btnLimpiaTablaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAdoptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdoptarActionPerformed
         // TODO add your handling code here:
         //if Check == true   donde esta lo del check??
         //Controladores.ControladorAdopciones.getInstance().adoptarMascota(null);//En lugar de null va de donde extra la mascota
         //poner un Else
         JOptionPane.showMessageDialog(null, "Esta mascota no puede ser adoptada");
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAdoptarActionPerformed
 
     private void fieldIdChipKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIdChipKeyTyped
         char c=evt.getKeyChar();
@@ -456,6 +470,10 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
     private void boxEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEspecieActionPerformed
         boxRaza.setModel(new DefaultComboBoxModel(Razas[boxEspecie.getSelectedIndex()]));
     }//GEN-LAST:event_boxEspecieActionPerformed
+
+    private void btnLimpiarCaracteristicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarCaracteristicasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpiarCaracteristicasActionPerformed
 
         private void llenarTablaMascotas(ArrayList<Mascota> lista)
     {
@@ -554,17 +572,17 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox boxEspecie;
     private javax.swing.JComboBox boxRaza;
     private javax.swing.JComboBox boxTamaño;
+    private javax.swing.JButton btnAdoptar;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnCancelar1;
+    private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnLimpiaTabla;
+    private javax.swing.JButton btnLimpiarCaracteristicas;
     private javax.swing.JButton btnReportarEncontrada;
     private javax.swing.JTextField fieldIdChip;
     private javax.swing.JTextField fieldNombreMascota;
     private javax.swing.JTextField fieldOjos;
     private javax.swing.JTextField fieldPelaje;
     private javax.swing.JTextField fieldUbicacion;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -580,6 +598,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblTitulo2Ventana;
     private javax.swing.JLabel lblTituloVentana1;
     private javax.swing.JLabel lblUbicacion;
+    private javax.swing.JLabel lblUbicacion2;
     private javax.swing.JLabel lblidChip;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;

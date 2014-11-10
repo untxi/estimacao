@@ -15,9 +15,7 @@ import javax.swing.JOptionPane;
 public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
 
     private static VentanaIngresarCuenta miVentanaIngresarCuenta;
-    /**
-     * Creates new form ventanaIngresarCuenta
-     */
+    
     private VentanaIngresarCuenta() 
     {
         initComponents();
@@ -69,7 +67,7 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
-        btnCancelar.setText("Cancelar");
+        btnCancelar.setText("Cerrar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
@@ -87,6 +85,8 @@ public class VentanaIngresarCuenta extends javax.swing.JInternalFrame {
 
         fieldID.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelIngresarUsuario.add(fieldID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 100, -1));
+
+        fieldPassword.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelIngresarUsuario.add(fieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 100, -1));
 
         lblimagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuario.png"))); // NOI18N

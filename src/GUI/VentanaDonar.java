@@ -40,7 +40,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         jPanel1 = new javax.swing.JPanel();
         lblTítulo = new javax.swing.JLabel();
         lblCantidadDonacion = new javax.swing.JLabel();
-        btnCancelar = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         btnDonar = new javax.swing.JButton();
         fieldCantidadDonacion = new javax.swing.JTextField();
         lblFecha = new javax.swing.JLabel();
@@ -62,15 +62,15 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         lblCantidadDonacion.setText("Monto de la Donación");
         jPanel1.add(lblCantidadDonacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
-        btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(170, 80, 0));
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, 40));
+        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, 40));
 
         btnDonar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnDonar.setForeground(new java.awt.Color(170, 80, 0));
@@ -122,11 +122,10 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
         fieldCantidadDonacion.setText("");
     }//GEN-LAST:event_btnDonarActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        JOptionPane.showMessageDialog(null, "Donación Cancelada");
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         fieldCantidadDonacion.setText("");
         this.setVisible(false);
-    }//GEN-LAST:event_btnCancelarActionPerformed
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void fieldCantidadDonacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldCantidadDonacionActionPerformed
         // TODO add your handling code here:
@@ -144,7 +143,7 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnDonar;
     private com.toedter.calendar.JDateChooser fechaDonacion;
     private javax.swing.JTextField fieldCantidadDonacion;

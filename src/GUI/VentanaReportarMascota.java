@@ -54,8 +54,8 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
         fieldIdChip = new javax.swing.JTextField();
         lblEspecia = new javax.swing.JLabel();
         lblRaza = new javax.swing.JLabel();
-        lblTamano = new javax.swing.JLabel();
-        boxTamaño = new javax.swing.JComboBox();
+        lblEstado = new javax.swing.JLabel();
+        boxEstado = new javax.swing.JComboBox();
         boxEspecie = new javax.swing.JComboBox();
         boxRaza = new javax.swing.JComboBox();
         lblOjos = new javax.swing.JLabel();
@@ -69,16 +69,16 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
         lblEjemplodireccion = new javax.swing.JLabel();
         lblNotas = new javax.swing.JLabel();
         fieldNotas = new javax.swing.JTextField();
-        btnCancelar = new javax.swing.JButton();
-        btnBuscar = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
+        btnReportar = new javax.swing.JButton();
         lblFecha = new javax.swing.JLabel();
         lblNombreMascota = new javax.swing.JLabel();
         fieldNombreMascota = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         buscarFecha = new com.toedter.calendar.JDateChooser();
-        boxTamaño1 = new javax.swing.JComboBox();
-        lblTamano1 = new javax.swing.JLabel();
+        boxTamano = new javax.swing.JComboBox();
+        lblTamano = new javax.swing.JLabel();
 
         setIconifiable(true);
         setTitle("Reportar Mascota - Estimação");
@@ -125,13 +125,13 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
         lblRaza.setText("Raza");
         panelVentanaBuscar.add(lblRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
-        lblTamano.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblTamano.setText("Estado");
-        panelVentanaBuscar.add(lblTamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
+        lblEstado.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblEstado.setText("Estado");
+        panelVentanaBuscar.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
-        boxTamaño.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxTamaño.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Perdido", "Encontrado" }));
-        panelVentanaBuscar.add(boxTamaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 130, -1));
+        boxEstado.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        boxEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Perdido", "Encontrado" }));
+        panelVentanaBuscar.add(boxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 130, -1));
 
         boxEspecie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         boxEspecie.addActionListener(new java.awt.event.ActionListener() {
@@ -193,25 +193,25 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
         fieldNotas.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 240, 60));
 
-        btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(170, 80, 0));
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 90, 40));
+        panelVentanaBuscar.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 90, 40));
 
-        btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
-        btnBuscar.setText("Reportar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btnReportar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnReportar.setForeground(new java.awt.Color(170, 80, 0));
+        btnReportar.setText("Reportar");
+        btnReportar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
+                btnReportarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 90, 40));
+        panelVentanaBuscar.add(btnReportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 90, 40));
 
         lblFecha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblFecha.setText("Fecha de encontrado o perdido");
@@ -234,13 +234,13 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
         buscarFecha.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(buscarFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 340, 120, -1));
 
-        boxTamaño1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        boxTamaño1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande", "Gigante" }));
-        panelVentanaBuscar.add(boxTamaño1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 130, -1));
+        boxTamano.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        boxTamano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pequeño", "Mediano", "Grande", "Gigante" }));
+        panelVentanaBuscar.add(boxTamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 130, -1));
 
-        lblTamano1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        lblTamano1.setText("Tamaño");
-        panelVentanaBuscar.add(lblTamano1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+        lblTamano.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblTamano.setText("Tamaño");
+        panelVentanaBuscar.add(lblTamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -260,13 +260,13 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldUbicacionActionPerformed
 
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    private void btnReportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportarActionPerformed
         if(fieldIdChip.getText().isEmpty() || fieldNombreMascota.getText().isEmpty() ||
            fieldNombreReportante.getText().isEmpty() || fieldNotas.getText().isEmpty() ||
            fieldOjos.getText().isEmpty() || fieldPelaje.getText().isEmpty() ||
            fieldUbicacion.getText().isEmpty() || boxEspecie.getSelectedIndex() == -1   ||
-           boxRaza.getSelectedIndex() == -1 || boxTamaño.getSelectedIndex() == -1 ||
-           boxTamaño1.getSelectedIndex() == -1 )
+           boxRaza.getSelectedIndex() == -1 || boxEstado.getSelectedIndex() == -1 ||
+           boxTamano.getSelectedIndex() == -1 )
         {
            JOptionPane.showMessageDialog(null, "Debe llenar todos los campos \n"+
                                          "Si no conoce el dato ingrese '--' \n"+
@@ -275,16 +275,16 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
         else
         {
             ControladorReportes.getInstance().reportarMascota(fieldNombreMascota.getText(),
-            boxRaza.getSelectedItem().toString(), boxEspecie.getSelectedItem().toString(), boxTamaño1.getSelectedItem().toString(),
-            fieldPelaje.getText(), fieldOjos.getText(),fieldUbicacion.getText(), boxTamaño.getSelectedItem().toString(),
+            boxRaza.getSelectedItem().toString(), boxEspecie.getSelectedItem().toString(), boxTamano.getSelectedItem().toString(),
+            fieldPelaje.getText(), fieldOjos.getText(),fieldUbicacion.getText(), boxEstado.getSelectedItem().toString(),
             fieldNotas.getText(), " ", Integer.parseInt(fieldIdChip.getText()), false, buscarFecha.getCalendar());
 
             JOptionPane.showMessageDialog(null, "Reporte realizado con éxito");
-            btnCancelarActionPerformed(evt);
+            btnCerrarActionPerformed(evt);
         }
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }//GEN-LAST:event_btnReportarActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         fieldIdChip.setText("");
         fieldNombreMascota.setText("");
         fieldNombreReportante.setText("");
@@ -293,7 +293,7 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
         fieldPelaje.setText("");
         fieldUbicacion.setText("");
         setVisible(false);
-    }//GEN-LAST:event_btnCancelarActionPerformed
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void boxEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEspecieActionPerformed
         boxRaza.setModel(new DefaultComboBoxModel(Razas[boxEspecie.getSelectedIndex()]));
@@ -317,11 +317,11 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox boxEspecie;
+    private javax.swing.JComboBox boxEstado;
     private javax.swing.JComboBox boxRaza;
-    private javax.swing.JComboBox boxTamaño;
-    private javax.swing.JComboBox boxTamaño1;
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnCancelar;
+    private javax.swing.JComboBox boxTamano;
+    private javax.swing.JButton btnCerrar;
+    private javax.swing.JButton btnReportar;
     private com.toedter.calendar.JDateChooser buscarFecha;
     private javax.swing.JTextField fieldIdChip;
     private javax.swing.JTextField fieldNombreMascota;
@@ -337,6 +337,7 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
     private javax.swing.JLabel lblCaracteristicasLugar;
     private javax.swing.JLabel lblEjemplodireccion;
     private javax.swing.JLabel lblEspecia;
+    private javax.swing.JLabel lblEstado;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblImagenBuscar;
     private javax.swing.JLabel lblImagenMascota;
@@ -346,7 +347,6 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
     private javax.swing.JLabel lblPelaje;
     private javax.swing.JLabel lblRaza;
     private javax.swing.JLabel lblTamano;
-    private javax.swing.JLabel lblTamano1;
     private javax.swing.JLabel lblTituloVentana;
     private javax.swing.JLabel lblUbicacion;
     private javax.swing.JLabel lblidChip;

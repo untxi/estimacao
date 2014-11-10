@@ -44,16 +44,16 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
 
         panelAcercade = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblUniversidad = new javax.swing.JLabel();
         lblClick = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lblAcceder = new javax.swing.JLabel();
+        lblHipervinculo = new javax.swing.JLabel();
+        lblCreadorPor = new javax.swing.JLabel();
+        lblNombreAdrian = new javax.swing.JLabel();
+        lblNombreFede = new javax.swing.JLabel();
+        lblNombreMarco = new javax.swing.JLabel();
+        lblNombreSamy = new javax.swing.JLabel();
+        lblCarrera = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
 
         setClosable(true);
@@ -68,51 +68,51 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoE.png"))); // NOI18N
         panelAcercade.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel2.setText("Instituto Tecnológico de Costa Rica");
-        panelAcercade.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+        lblUniversidad.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblUniversidad.setText("Instituto Tecnológico de Costa Rica");
+        panelAcercade.add(lblUniversidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
 
         lblClick.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblClick.setText("CLICK");
         panelAcercade.add(lblClick, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel3.setText("Accede al manual de Usuario");
-        panelAcercade.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
+        lblAcceder.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblAcceder.setText("Accede al manual de Usuario");
+        panelAcercade.add(lblAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/web.png"))); // NOI18N
-        jLabel4.setText("AQUÍ");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblHipervinculo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblHipervinculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/web.png"))); // NOI18N
+        lblHipervinculo.setText("AQUÍ");
+        lblHipervinculo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 irWeb(evt);
             }
         });
-        panelAcercade.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 60, 110, -1));
+        panelAcercade.add(lblHipervinculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 60, 110, -1));
 
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel5.setText("Creado por");
-        panelAcercade.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, -1));
+        lblCreadorPor.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblCreadorPor.setText("Creado por");
+        panelAcercade.add(lblCreadorPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel6.setText("Adrián Soto Loría");
-        panelAcercade.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, -1, -1));
+        lblNombreAdrian.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblNombreAdrian.setText("Adrián Soto Loría");
+        panelAcercade.add(lblNombreAdrian, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel7.setText("Federico Montealegre C.");
-        panelAcercade.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+        lblNombreFede.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblNombreFede.setText("Federico Montealegre C.");
+        panelAcercade.add(lblNombreFede, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel8.setText("Marco Soto Morera");
-        panelAcercade.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, -1, -1));
+        lblNombreMarco.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblNombreMarco.setText("Marco Soto Morera");
+        panelAcercade.add(lblNombreMarco, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel9.setText("Samantha Arburola León");
-        panelAcercade.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
+        lblNombreSamy.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblNombreSamy.setText("Samantha Arburola León");
+        panelAcercade.add(lblNombreSamy, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel10.setText("Ingeniería en Computación");
-        panelAcercade.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
+        lblCarrera.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblCarrera.setText("Ingeniería en Computación");
+        panelAcercade.add(lblCarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
 
         lblTitulo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblTitulo.setText("Estimação");
@@ -148,17 +148,17 @@ public class VentanaAcercade extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblAcceder;
+    private javax.swing.JLabel lblCarrera;
     private javax.swing.JLabel lblClick;
+    private javax.swing.JLabel lblCreadorPor;
+    private javax.swing.JLabel lblHipervinculo;
+    private javax.swing.JLabel lblNombreAdrian;
+    private javax.swing.JLabel lblNombreFede;
+    private javax.swing.JLabel lblNombreMarco;
+    private javax.swing.JLabel lblNombreSamy;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblUniversidad;
     private javax.swing.JPanel panelAcercade;
     // End of variables declaration//GEN-END:variables
 }

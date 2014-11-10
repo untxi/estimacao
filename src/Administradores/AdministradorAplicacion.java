@@ -21,6 +21,7 @@ public class AdministradorAplicacion implements IConstantes
     private ArrayList<Persona> miListaPersonas;
     private ArrayList<ReporteListaNegra> miListaNegra;
     private ArrayList<CasaCuna> miListaCasasCuna;
+    private ArrayList<CasaCuna>  miListaAsociaciones;
     private ArrayList<Mascota> miListaMascotas;
     private ArrayList<Donacion> miListaDonacion;
     private AdministradorConsultas miAdministradorConsultas;
@@ -145,6 +146,24 @@ public class AdministradorAplicacion implements IConstantes
         }
         return temp;
     }
+    
+    public CasaCuna buscarAQuienDonar(String pDueño)
+    {
+        for(int i = 0; i < miListaCasasCuna.size(); i++){
+            miListaAsociaciones.add(miListaCasasCuna.get(i));
+        }
+        CasaCuna temp = null;
+        for (int i = 0;i < miListaAsociaciones.size();i++)
+        {
+            if(miListaAsociaciones.get(i).getNombreDueño().compareTo(pDueño)==0)
+            {
+                temp = miListaAsociaciones.get(i);
+                break;
+            }
+        }
+        return temp;
+    }
+    
     public Usuario getMiUsuarioActual() {
         return miUsuarioActual;
     }
@@ -239,6 +258,14 @@ public class AdministradorAplicacion implements IConstantes
 
     public Object getmiListaMascotas() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ArrayList<CasaCuna> getMiListaAsociaciones() {
+        return miListaAsociaciones;
+    }
+
+    public void setMiListaAsociaciones(ArrayList<CasaCuna> miListaAsociaciones) {
+        this.miListaAsociaciones = miListaAsociaciones;
     }
 
     

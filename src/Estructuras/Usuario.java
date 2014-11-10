@@ -15,11 +15,6 @@ public class Usuario extends Persona
         this.tipo = tipo;
     }
 
-    /**
-     *
-     */
-
-
     
     
     

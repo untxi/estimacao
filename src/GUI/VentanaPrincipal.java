@@ -95,6 +95,7 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
         reportarPersona = new javax.swing.JMenuItem();
         menuDonar = new javax.swing.JMenu();
         Donar = new javax.swing.JMenuItem();
+        CrearAsociación = new javax.swing.JMenuItem();
         AdministrarDonaciones = new javax.swing.JMenuItem();
         acercade = new javax.swing.JMenu();
         salirPrograma = new javax.swing.JMenu();
@@ -242,6 +243,16 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
         });
         menuDonar.add(Donar);
 
+        CrearAsociación.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        CrearAsociación.setForeground(new java.awt.Color(170, 80, 0));
+        CrearAsociación.setText("Inscribir  Asociación");
+        CrearAsociación.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearAsociaciónActionPerformed(evt);
+            }
+        });
+        menuDonar.add(CrearAsociación);
+
         AdministrarDonaciones.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         AdministrarDonaciones.setForeground(new java.awt.Color(170, 80, 0));
         AdministrarDonaciones.setText("Administrar Donaciones");
@@ -295,22 +306,18 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
     private void crearAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearAdministradorActionPerformed
         VentanaAsignarAdministradores.getInstance().setVisible(true);
         VentanaAsignarAdministradores.getInstance().llenarTabla();
-        // TODO add your handling code here:
     }//GEN-LAST:event_crearAdministradorActionPerformed
 
     private void acercadeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_acercadeMouseClicked
       VentanaAcercade.getInstance().setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_acercadeMouseClicked
 
     private void crearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuarioActionPerformed
         VentanaCrearUsuario.getInstance().setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_crearUsuarioActionPerformed
 
     private void ingresarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarCuentaActionPerformed
         VentanaIngresarCuenta.getInstance().setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_ingresarCuentaActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -320,42 +327,39 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
 
     private void buscarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMascotaActionPerformed
         VentanaBuscarMascota.getInstance().setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_buscarMascotaActionPerformed
 
     private void buscarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarPersonaActionPerformed
         VentanaBuscarPersona.getInstance().setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_buscarPersonaActionPerformed
 
     private void buscarCasaCunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCasaCunaActionPerformed
         VentanaBuscarCasaCuna.getInstance().setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_buscarCasaCunaActionPerformed
 
     private void reportarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportarMascotaActionPerformed
         VentanaReportarMascota.getInstance().setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_reportarMascotaActionPerformed
 
     private void reportarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportarPersonaActionPerformed
         VentanaReportarPersona.getInstance().setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_reportarPersonaActionPerformed
 
     private void DonarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonarActionPerformed
-        // TODO add your handling code here:
         VentanaDonar.getInstance().setVisible(true);
     }//GEN-LAST:event_DonarActionPerformed
 
     private void AdministrarDonacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministrarDonacionesActionPerformed
-        // TODO add your handling code here:
         VentanaAdministrarDonaciones.getInstance().setVisible(true);
     }//GEN-LAST:event_AdministrarDonacionesActionPerformed
 
     private void salirProgramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirProgramaMouseClicked
         System.exit(0);
     }//GEN-LAST:event_salirProgramaMouseClicked
+
+    private void CrearAsociaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearAsociaciónActionPerformed
+        VentanaInscribirAsociacion.getInstance().setVisible(true);
+    }//GEN-LAST:event_CrearAsociaciónActionPerformed
 
     
     public void desbloquearPantalla()
@@ -404,6 +408,7 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IConstantes{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdministrarDonaciones;
+    private javax.swing.JMenuItem CrearAsociación;
     private javax.swing.JMenuItem Donar;
     private javax.swing.JMenu acercade;
     private javax.swing.JMenuBar barraMenu;

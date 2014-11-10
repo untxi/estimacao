@@ -150,7 +150,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
        {
         if(!tablaDonaciones.getValueAt(indiceFilaTabla, 3).toString().isEmpty())
         {
-             tablaDonaciones.setValueAt(AdministradorAplicacion.getInstance().buscarCasaCuna(tablaDonaciones.getValueAt(indiceFilaTabla, 3).toString()).getDonaciones(), indiceFilaTabla, 4);
+             tablaDonaciones.setValueAt(AdministradorAplicacion.getInstance().buscarAQuienDonar(tablaDonaciones.getValueAt(indiceFilaTabla, 3).toString()).getDonaciones(), indiceFilaTabla, 4);
         } 
          else
         {
