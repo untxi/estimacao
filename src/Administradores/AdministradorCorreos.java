@@ -19,13 +19,19 @@ import javax.mail.internet.MimeMessage;
  * 
  * @author Adrian
  */
-public class AdministradorCorreos
-{
-	
-	// Métodos
-	// Constructor
-	public AdministradorCorreos(){}
-	
+public class AdministradorCorreos{
+    private static AdministradorCorreos miAdministradorCorreos;
+    
+    //metodos 
+    public static AdministradorCorreos getInstance(){
+     
+        if (miAdministradorCorreos == null){
+            miAdministradorCorreos = new AdministradorCorreos();
+        }
+
+        return miAdministradorCorreos;
+    }
+   
 	/**
 	 * simpleMail
 	 * 	Función con la que se envía el correo electrónico a los préstamos vencidos 
@@ -36,7 +42,7 @@ public class AdministradorCorreos
 		    String host = "smtp.gmail.com";
 		    Properties props = System.getProperties();
 		    props.put("mail.smtp.starttls.enable",true);
-		    /* mail.smtp.ssl.trust is needed in script to avoid error "Could not convert socket to TLS"  */ 
+		    //mail.smtp.ssl.trust is needed in script to avoid error "Could not convert socket to TLS";//esta es la linea q se pasa comentando por le error
 		    props.setProperty("mail.smtp.ssl.trust", host);
 		    props.put("mail.smtp.auth", true);      
 		    props.put("mail.smtp.host", host);

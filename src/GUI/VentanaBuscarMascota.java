@@ -435,7 +435,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        //if Check == true
+        //if Check == true   donde esta lo del check??
         //Controladores.ControladorAdopciones.getInstance().adoptarMascota(null);//En lugar de null va de donde extra la mascota
         //poner un Else
         JOptionPane.showMessageDialog(null, "Esta mascota no puede ser adoptada");
@@ -456,13 +456,14 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         boxRaza.setModel(new DefaultComboBoxModel(Razas[boxEspecie.getSelectedIndex()]));
     }//GEN-LAST:event_boxEspecieActionPerformed
 
+    //esto es lo del master??to cambielo a mascotas esto fue lo que me dijo adri que pusiera porque esto él lo habia echo,yo lo cambie para mascotas!!!
         public void llenarTabla()
     {
-        for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().size();i++)
+        for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getmiListaMascotas().size();i++)
         {
             ((DefaultTableModel)tablaBuscarMascota.getModel()).addRow(new Object[3]);
-            tablaBuscarMascota.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().get(i).getNombre(), i, 0);
-            if(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios().get(i).getTipo() == AdministradorMaster)
+            tablaBuscarMascota.setValueAt(Administradores.AdministradorAplicacion.getInstance().getmiListaMascotas().get(i).getNombre(), i, 0);
+            if(Administradores.AdministradorAplicacion.getInstance().getmiListaMascotas().get(i).getTipo() == AdministradorMaster)//cambi aqui la info por la de las mascotas y me saivisa
             {
                 tablaBuscarMascota.setValueAt(false, i, 1);
                 tablaBuscarMascota.setValueAt(true, i, 2);

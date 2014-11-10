@@ -2,12 +2,11 @@
 package Administradores;
 
 import Estructuras.Adopcion;
-import Estructuras.Mascota;
 import java.util.ArrayList;
 
 class AdministradorAdopciones {
     private static AdministradorAdopciones miAdminAdopciones;
-    
+    private AdministradorAdopciones(){}
     //metodos 
     public static AdministradorAdopciones getInstance(){
      

@@ -1,8 +1,7 @@
 package Controladores;
 
 import Estructuras.Adopcion;
-import Estructuras.Persona;
-import Administradores.AdministradorAplicacion;
+import java.util.ArrayList;
 /**
  *
  * @author Soto
@@ -20,16 +19,42 @@ public class ControladorAdopciones {
         return miControladorAdopciones;
     }
     
-    public void adoptarMascota(Adopcion miAdopcion){
+    private ArrayList<Adopcion> miListaAdopciones;
+
+    public static ControladorAdopciones getMiControladorAdopciones() {
+        return miControladorAdopciones;
+    }
+
+    public static void setMiControladorAdopciones(ControladorAdopciones miControladorAdopciones) {
+        ControladorAdopciones.miControladorAdopciones = miControladorAdopciones;
+    }
+
+    public ArrayList<Adopcion> getMiListaAdopciones() {
+        return miListaAdopciones;
+    }
+
+    public void setMiListaAdopciones(ArrayList<Adopcion> miListaAdopciones) {
+        this.miListaAdopciones = miListaAdopciones;
+    }
+    
+    public void adoptarMascota(Adopcion miAdopcion) throws Exception{
+        String asuntoAdopcion = "¡Estimação le feclicita por la Adopción que ha realizado!";
+        String mensajeAdopcion = "Saludos, " + Administradores.AdministradorAplicacion.getInstance().getMiUsuarioActual().getNombre() +"\n"+
+                "Has adoptado un " + miAdopcion.getMascotaAdoptada().getEspecie() +"\n"+
+                "Estamos muy alegres de que " + miAdopcion.getMascotaAdoptada().getNombre() +" comparta con usted.\n"+
+                "Cualquier consulta, al responder este email con gusto le atenderemos.\n";
+                
         // Cuando Adopto una mascota, sale de la lista de mascotas
         if(!"Perdida".equals(miAdopcion.getMascotaAdoptada().getEstado()) &&
                 !"Fallecida".equals(miAdopcion.getMascotaAdoptada().getEstado())){
-            boolean remove = Administradores.AdministradorAplicacion.getInstance().getMiListaMascotas().remove(miAdopcion);
+            Administradores.AdministradorAplicacion.getInstance().getMiListaMascotas().remove(miAdopcion.getMascotaAdoptada());
+            //Administradores.AdministradorAdopciones.getInstance().get
+            boolean add = miListaAdopciones.add(miAdopcion);
+            
         }
-        /*
-        Administradores.AdministradorCorreos.simpleMail(
+        Administradores.AdministradorCorreos.getInstance().simpleMail(
                 Administradores.AdministradorAplicacion.getInstance().getMiUsuarioActual().getEmail(),
-                asuntoAdopcion, mensajeAdopcion);*/
+                asuntoAdopcion, mensajeAdopcion);
     }
 
 
