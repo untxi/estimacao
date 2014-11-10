@@ -34,7 +34,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         }
         return miVentanaBuscarPersona;
     }
-public void llenarTablaPersonas(ArrayList<Usuario> lista)
+    public void llenarTablaPersonas(ArrayList<Usuario> lista)
     {
         int i = 0;
         for(Usuario persona : lista){
@@ -319,12 +319,9 @@ public void llenarTablaPersonas(ArrayList<Usuario> lista)
         segundoApellido = fieldApellido2.getText();
         cedula = fieldIDPersona.getText();
         email = espacioCorreo.getText();
-
+        //llenarTablaPersonas(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios());
+        llenarTablaPersonas(Controladores.ControladorConsultas.getInstance().matchPersona(nombre, primerApellido, segundoApellido, cedula, email));
         
-        
-        llenarTablaPersonas(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios());
-        //llenarTablaPersonas(Controladores.ControladorConsultas.getFiltroUsuarios());
-        miConsulta.matchPersona();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

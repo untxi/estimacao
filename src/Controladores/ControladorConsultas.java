@@ -63,10 +63,10 @@ private static ArrayList<CasaCuna> filtroCasaCuna = new ArrayList<>();
        return miControladorConsultas;
    }
     
-  public void matchPersona(String pNombre, String apellido1, String apellido2, String pID, String pEmail){
-      ;
-      if((pNombre.equals("") && apellido1.equals("") &&
-              apellido2.equals("") && id.equals("") && pEmail.equals("") ){
+  public ArrayList<Usuario> matchPersona(String pNombre, String apellido1, String apellido2, String pID, String pEmail){
+      filtroUsuarios.clear();
+      if((pNombre.equals(null) && apellido1.equals(null) &&
+              apellido2.equals(null) && id.equals(null) && pEmail.equals(null) )){
       return AdministradorAplicacion.getInstance().getMiListaUsuarios();
       }
       
@@ -83,11 +83,11 @@ private static ArrayList<CasaCuna> filtroCasaCuna = new ArrayList<>();
                return filtroUsuarios;
       }
       
-  public void matchMascota(){
+  public void matchMascota(String nombre, String Chip, String especie, String raza, String tamaño, String pelaje, String ojos, String lugar ){
       
   }
   
-  public void matchCasaCuna(){
+  public void matchCasaCuna(String nombre, String primerApellido, String segundoApellido, String cedula, String cantMascotas, String especie, String tamaño){
       
   }
   
