@@ -7,7 +7,7 @@ package Controladores;
 
 import Administradores.AdministradorAplicacion;
 import Estructuras.Mascota;
-import Estructuras.Persona;
+import Estructuras.ReporteListaNegra;
 import java.util.Calendar;
 
 /**
@@ -33,7 +33,7 @@ public class ControladorReportes
     }
   
     
-    
+    ReporteListaNegra miReporteListaNegra;
     
     public void reportarMascota(String pNombre, String pRaza, String pEspecie,String pSize,String pColorPelaje,
     String pColorOjos,String pUbicacion,String pEstado,String pNotas, String pFoto, 
@@ -56,13 +56,16 @@ public class ControladorReportes
         AdministradorAplicacion.getInstance().getMiListaMascotas().add(miMascota);
     }
     
-    public boolean ReportarPersonaListaNegra(String cedulaPersonaReportada){
+    public boolean ReportarPersonaListaNegra(String cedulaPersonaReportada, String comentario, int calificacionNegra){
         boolean bandera = false;
         for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().size(); i++){
             if(Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().get(i).getCedula() == cedulaPersonaReportada){
                 Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().get(i).setListaNegra(true);
-                Administradores.AdministradorAplicacion.getInstance().getMiListaNegra().add(
-                        Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().get(i));
+                miReporteListaNegra.setPersonaReportada(Administradores.AdministradorAplicacion.getInstance().getMiListaPersonas().get(i));
+                miReporteListaNegra.setQuienReporta(Administradores.AdministradorAplicacion.getInstance().getMiUsuarioActual());
+                miReporteListaNegra.setComentario(comentario);
+                miReporteListaNegra.setCalificación(calificacionNegra);
+                Administradores.AdministradorAplicacion.getInstance().getMiListaNegra().add(miReporteListaNegra);
                 bandera = true;
             }
         }

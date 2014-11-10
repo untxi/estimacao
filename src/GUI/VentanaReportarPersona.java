@@ -43,9 +43,13 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         lblImagenBuscar = new javax.swing.JLabel();
         lblImagenMascota = new javax.swing.JLabel();
         lblidPersona = new javax.swing.JLabel();
-        fieldIDPersona = new javax.swing.JTextField();
+        fieldComentarios = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        lblCalificacion = new javax.swing.JLabel();
+        fieldIDPersona = new javax.swing.JTextField();
+        boxCalificacion = new javax.swing.JComboBox();
+        lblComentarios1 = new javax.swing.JLabel();
 
         setIconifiable(true);
         setTitle("Reportar Persona - Estimação");
@@ -68,13 +72,13 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
         lblidPersona.setText("Cédula de la persona para reportar");
         panelVentanaBuscar.add(lblidPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
-        fieldIDPersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
-        fieldIDPersona.addKeyListener(new java.awt.event.KeyAdapter() {
+        fieldComentarios.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        fieldComentarios.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                fieldIDPersonaKeyTyped(evt);
+                fieldComentariosKeyTyped(evt);
             }
         });
-        panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 130, -1));
+        panelVentanaBuscar.add(fieldComentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 270, 50));
 
         btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
@@ -84,7 +88,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 90, 40));
+        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 90, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
@@ -94,17 +98,36 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 90, 40));
+        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 90, 40));
+
+        lblCalificacion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblCalificacion.setText("Calificación");
+        panelVentanaBuscar.add(lblCalificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+
+        fieldIDPersona.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        fieldIDPersona.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fieldIDPersonaKeyTyped(evt);
+            }
+        });
+        panelVentanaBuscar.add(fieldIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 130, -1));
+
+        boxCalificacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        panelVentanaBuscar.add(boxCalificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 40, -1));
+
+        lblComentarios1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lblComentarios1.setText("Comentarios");
+        panelVentanaBuscar.add(lblComentarios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelVentanaBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
         );
 
         pack();
@@ -112,7 +135,7 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         //if(stringNumerico.isNumeric(fieldIDPersona.getText())){
-        Controladores.ControladorReportes.getInstance().ReportarPersonaListaNegra(fieldIDPersona.getText());
+        Controladores.ControladorReportes.getInstance().ReportarPersonaListaNegra(fieldIDPersona.getText(),fieldComentarios.getText(), boxCalificacion.getSelectedIndex());
         JOptionPane.showMessageDialog(null, "Reporte realizado con éxito");
         //}else{
         //JOptionPane.showMessageDialog(null, "El espacio para la Cédula sólo recibe números");
@@ -120,11 +143,11 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        fieldIDPersona.setText("");
+        fieldComentarios.setText("");
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void fieldIDPersonaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIDPersonaKeyTyped
+    private void fieldComentariosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldComentariosKeyTyped
         char c=evt.getKeyChar();
         if(Character.isLetter(c))
         {
@@ -132,13 +155,21 @@ public class VentanaReportarPersona extends javax.swing.JInternalFrame {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Ingrese Solo Numeros en este espacio");
         }
+    }//GEN-LAST:event_fieldComentariosKeyTyped
+
+    private void fieldIDPersonaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIDPersonaKeyTyped
+        // TODO add your handling code here:
     }//GEN-LAST:event_fieldIDPersonaKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox boxCalificacion;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JTextField fieldComentarios;
     private javax.swing.JTextField fieldIDPersona;
+    private javax.swing.JLabel lblCalificacion;
+    private javax.swing.JLabel lblComentarios1;
     private javax.swing.JLabel lblImagenBuscar;
     private javax.swing.JLabel lblImagenMascota;
     private javax.swing.JLabel lblTituloVentana;

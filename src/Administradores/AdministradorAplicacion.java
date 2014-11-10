@@ -4,6 +4,7 @@ package Administradores;
 import Estructuras.CasaCuna;
 import Estructuras.Mascota;
 import Estructuras.Persona;
+import Estructuras.ReporteListaNegra;
 import Estructuras.Usuario;
 import Estructuras.Donacion;
 import Interfaces.IConstantes;
@@ -18,7 +19,7 @@ public class AdministradorAplicacion implements IConstantes
     private ArrayList<Usuario> miListaUsuarios;
     private Usuario miUsuarioActual;
     private ArrayList<Persona> miListaPersonas;
-    private ArrayList<Persona> miListaNegra;
+    private ArrayList<ReporteListaNegra> miListaNegra;
     private ArrayList<CasaCuna> miListaCasasCuna;
     private ArrayList<Mascota> miListaMascotas;
     private ArrayList<Donacion> miListaDonacion;
@@ -228,11 +229,11 @@ public class AdministradorAplicacion implements IConstantes
         this.miAdministradorCorreos = miAdministradorCorreos;
     }
 
-    public ArrayList<Persona> getMiListaNegra() {
+    public ArrayList<ReporteListaNegra> getMiListaNegra() {
         return miListaNegra;
     }
 
-    public void setMiListaNegra(ArrayList<Persona> miListaNegra) {
+    public void setMiListaNegra(ArrayList<ReporteListaNegra> miListaNegra) {
         this.miListaNegra = miListaNegra;
     }
 
