@@ -4,6 +4,7 @@ import Estructuras.CasaCuna;
 import Estructuras.Donacion;
 import Estructuras.Mascota;
 import Estructuras.Persona;
+import Estructuras.Usuario;
 import java.util.ArrayList;
 
 public  class AdministradorConsultas {
@@ -24,27 +25,9 @@ public  class AdministradorConsultas {
     public void calcularCalificacionAdoptante(int pCalificacion){
         
     }
-    
-    //metodos  para consultas
-    public void consultarMascota(){
-        
-    }
-    
-    public void consultarDonaciones(String pDonacion){
-        
-    }
-    
-    public void consultarUsuario(String pUsuario){
-        
-    }
-    
-    public void consultarAdoptante(String pAdoptante){
-        
-    }
-   
     //Metodos para filtrar en buscar persona 
-     public ArrayList<Persona> filtroCedula(String pCedula, ArrayList<Persona> resultado){
-         for(Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
+     public ArrayList<Usuario> filtroCedula(String pCedula, ArrayList<Usuario> resultado){
+         for(Usuario persona : AdministradorAplicacion.getInstance().getMiListaUsuarios()){
              if(persona.getCedula().contains(pCedula)){
                  resultado.add(persona);
              }
@@ -52,8 +35,8 @@ public  class AdministradorConsultas {
          return resultado;
     }
      
-     public ArrayList<Persona> filtroNombre(String pNombre, ArrayList<Persona> resultado){
-        for(Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
+     public ArrayList<Usuario> filtroNombre(String pNombre, ArrayList<Usuario> resultado){
+        for(Usuario persona : AdministradorAplicacion.getInstance().getMiListaUsuarios()){
             if(persona.getNombre().contains(pNombre)){
                 resultado.add(persona);
             }
@@ -61,8 +44,8 @@ public  class AdministradorConsultas {
         return resultado;
     }
      
-     public ArrayList<Persona> filtroPrimerApellido(String pApellido, ArrayList<Persona> resultado){
-         for (Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
+     public ArrayList<Usuario> filtroPrimerApellido(String pApellido, ArrayList<Usuario> resultado){
+         for (Usuario persona : AdministradorAplicacion.getInstance().getMiListaUsuarios()){
              if (persona.getPrimerApellido().contains(pApellido)){
                  resultado.add(persona);
              }
@@ -70,8 +53,8 @@ public  class AdministradorConsultas {
         return resultado;
     }
      
-     public ArrayList<Persona> filtroSegundoApellido(String pApellido, ArrayList<Persona> resultado){
-     for(Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
+     public ArrayList<Usuario> filtroSegundoApellido(String pApellido, ArrayList<Usuario> resultado){
+     for(Usuario persona : AdministradorAplicacion.getInstance().getMiListaUsuarios()){
          if(persona.getSegundoApellido().contains(pApellido)){
              resultado.add(persona);
          }
@@ -79,8 +62,8 @@ public  class AdministradorConsultas {
      return resultado;
      }
      
-     public ArrayList<Persona> filtroEmail(String pEmail, ArrayList<Persona> resultado){
-         for(Persona persona : AdministradorAplicacion.getInstance().getMiListaPersonas()){
+     public ArrayList<Usuario> filtroEmail(String pEmail, ArrayList<Usuario> resultado){
+         for(Usuario persona : AdministradorAplicacion.getInstance().getMiListaUsuarios()){
            if( persona.getEmail().contains(pEmail))
            {
                resultado.add(persona);
@@ -126,6 +109,8 @@ public  class AdministradorConsultas {
         }
         return resultado;
     }
+     
+     
 }
      
      
