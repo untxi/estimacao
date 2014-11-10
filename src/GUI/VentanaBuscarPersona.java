@@ -2,6 +2,7 @@
 package GUI;
 
 import Controladores.ControladorConsultas;
+import Estructuras.Persona;
 import Estructuras.Usuario;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -71,7 +72,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         fieldIDPersona = new javax.swing.JTextField();
         lblApellido1 = new javax.swing.JLabel();
         fieldNombrePersona = new javax.swing.JTextField();
-        btnCancelar = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         fieldApellido1 = new javax.swing.JTextField();
         fieldApellido2 = new javax.swing.JTextField();
@@ -155,15 +156,15 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         });
         panelVentanaBuscar.add(fieldNombrePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 130, -1));
 
-        btnCancelar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(170, 80, 0));
-        btnCancelar.setText("Cerrar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(170, 80, 0));
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 380, 90, 40));
+        panelVentanaBuscar.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 380, 90, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
@@ -324,18 +325,19 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_fieldNombrePersonaActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-        nombre = fieldNombrePersona.getText();
-        primerApellido = fieldApellido1.getText();
-        segundoApellido = fieldApellido2.getText();
-        cedula = fieldIDPersona.getText();
-        email = fieldCorreo.getText();
-        //llenarTablaPersonas(Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios());
-        llenarTablaPersonas(Controladores.ControladorConsultas.getInstance().matchPersona(nombre, primerApellido, segundoApellido, cedula, email));
+        Persona miPersona;
+        miPersona = new Persona();
+        miPersona.setNombre(fieldNombre.getText());
+        miPersona.setPrimerApellido(fieldPrimerApellido.getText());
+        miPersona.setSegundoApellido(fieldSegundoApellido.getText());
+        miPersona.setEmail(fieldCorreo.getText());
+        miPersona.setCedula(fieldCedula.getText());
+        
+        miConsulta.matchUsuario(miPersona);
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
         fieldNombrePersona.setText("");
         fieldApellido1.setText("");
@@ -344,7 +346,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         fieldCorreo.setText("");
         clearTable(tablaUsuario);
         this.setVisible(false);
-    }//GEN-LAST:event_btnCancelarActionPerformed
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void fieldIDPersonaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldIDPersonaKeyTyped
         char c = evt.getKeyChar();
@@ -366,7 +368,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnReportarEncontrada;
     private javax.swing.JTextField fieldApellido1;
