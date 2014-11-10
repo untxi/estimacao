@@ -83,7 +83,6 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         lblCedula = new javax.swing.JLabel();
         fieldCorreo = new javax.swing.JTextField();
         limpiarTable = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
 
         fieldEmail.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
 
@@ -158,13 +157,13 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
 
         btnCerrar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCerrar.setForeground(new java.awt.Color(170, 80, 0));
-        btnCerrar.setText("Cerrar");
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/salir.png"))); // NOI18N
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 380, 90, 40));
+        panelVentanaBuscar.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 50, 40));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
@@ -174,7 +173,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 90, 40));
+        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 90, 40));
 
         fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 130, -1));
@@ -252,7 +251,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 btnReportarEncontradaActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 210, 40));
+        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 210, 30));
 
         lblCedula.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblCedula.setText("Cédula");
@@ -274,17 +273,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 limpiarTableActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(limpiarTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, -1, -1));
-
-        btnLimpiar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        btnLimpiar.setForeground(new java.awt.Color(170, 80, 0));
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
-            }
-        });
-        panelVentanaBuscar.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 90, 40));
+        panelVentanaBuscar.add(limpiarTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 380, 120, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -327,23 +316,24 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         Persona miPersona;
         miPersona = new Persona();
-        miPersona.setNombre(fieldNombre.getText());
-        miPersona.setPrimerApellido(fieldPrimerApellido.getText());
-        miPersona.setSegundoApellido(fieldSegundoApellido.getText());
+        miPersona.setNombre(fieldNombrePersona.getText());
+        miPersona.setPrimerApellido(fieldApellido1.getText());
+        miPersona.setSegundoApellido(fieldApellido2.getText());
         miPersona.setEmail(fieldCorreo.getText());
-        miPersona.setCedula(fieldCedula.getText());
-        
-        miConsulta.matchUsuario(miPersona);
+        miPersona.setCedula(fieldIDPersona.getText());
+        clearTable(tablaUsuario);
+      
+        llenarTablaPersonas(miConsulta.matchUsuario(miPersona));
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
-        fieldNombrePersona.setText("");
-        fieldApellido1.setText("");
-        fieldApellido2.setText("");
-        fieldIDPersona.setText("");
-        fieldCorreo.setText("");
+        fieldNombrePersona.setText(null);
+        fieldApellido1.setText(null);
+        fieldApellido2.setText(null);
+        fieldIDPersona.setText(null);
+        fieldCorreo.setText(null);
         clearTable(tablaUsuario);
         this.setVisible(false);
     }//GEN-LAST:event_btnCerrarActionPerformed
@@ -362,14 +352,10 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         clearTable(tablaUsuario);
     }//GEN-LAST:event_limpiarTableActionPerformed
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-    }//GEN-LAST:event_btnLimpiarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCerrar;
-    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnReportarEncontrada;
     private javax.swing.JTextField fieldApellido1;
     private javax.swing.JTextField fieldApellido2;
@@ -409,86 +395,5 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
     public void setBtnReportarEncontrada(javax.swing.JButton btnReportarEncontrada) {
         this.btnReportarEncontrada = btnReportarEncontrada;
     }
-
-    public javax.swing.JTextField getFieldApellido1() {
-        return fieldApellido1;
-    }
-
-    public void setFieldApellido1(javax.swing.JTextField fieldApellido1) {
-        this.fieldApellido1 = fieldApellido1;
-    }
-
-    public javax.swing.JTextField getFieldApellido2() {
-        return fieldApellido2;
-    }
-
-    public void setFieldApellido2(javax.swing.JTextField fieldApellido2) {
-        this.fieldApellido2 = fieldApellido2;
-    }
-
-    public javax.swing.JTextField getFieldEmail() {
-        return fieldEmail;
-    }
-
-    public void setFieldEmail(javax.swing.JTextField fieldEmail) {
-        this.fieldEmail = fieldEmail;
-    }
-
-    public javax.swing.JTextField getFieldIDPersona() {
-        return fieldIDPersona;
-    }
-
-    public void setFieldIDPersona(javax.swing.JTextField fieldIDPersona) {
-        this.fieldIDPersona = fieldIDPersona;
-    }
-
-    public javax.swing.JTextField getFieldNombrePersona() {
-        return fieldNombrePersona;
-    }
-
-    public void setFieldNombrePersona(javax.swing.JTextField fieldNombrePersona) {
-        this.fieldNombrePersona = fieldNombrePersona;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getPrimerApellido() {
-        return primerApellido;
-    }
-
-    public void setPrimerApellido(String primerApellido) {
-        this.primerApellido = primerApellido;
-    }
-
-    public String getSegundoApellido() {
-        return segundoApellido;
-    }
-
-    public void setSegundoApellido(String segundoApellido) {
-        this.segundoApellido = segundoApellido;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    
     
 }

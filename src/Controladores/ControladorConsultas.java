@@ -70,9 +70,25 @@ private static ArrayList<CasaCuna> filtroCasaCuna = new ArrayList<>();
   {
       
   }
-  
-  public void matchUsuario(Persona persona){
-      
-  }
-  
+  public ArrayList<Usuario> matchUsuario(Persona persona){
+      filtroUsuarios.clear();
+      if(persona.getNombre() == null &&
+              persona.getPrimerApellido() == null &&
+              persona.getSegundoApellido() == null &&
+              persona.getCedula() == null &&
+              persona.getEmail() == null){
+          return Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios();
+      }
+      for(Usuario user : Administradores.AdministradorAplicacion.getInstance().getMiListaUsuarios()){
+          if(user.getNombre().contains(persona.getNombre()) && 
+                  user.getPrimerApellido().contains(persona.getPrimerApellido()) && 
+                  user.getSegundoApellido().contains(persona.getSegundoApellido()) &&
+                  user.getCedula().contains(persona.getCedula()) && 
+                  user.getEmail().contains(persona.getEmail())){
+              filtroUsuarios.add((Usuario) persona);   
+          }
+      }
+      return filtroUsuarios;
+}
+
 }
