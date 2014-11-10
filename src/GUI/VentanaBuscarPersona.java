@@ -322,7 +322,6 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
         miPersona.setEmail(fieldCorreo.getText());
         miPersona.setCedula(fieldIDPersona.getText());
         clearTable(tablaUsuario);
-      
         llenarTablaPersonas(miConsulta.matchUsuario(miPersona));
         
     }//GEN-LAST:event_btnBuscarActionPerformed
