@@ -261,7 +261,6 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
     }//GEN-LAST:event_fieldUbicacionActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-<<<<<<< HEAD
         if(fieldIdChip.getText().isEmpty() || fieldNombreMascota.getText().isEmpty() ||
            fieldNombreReportante.getText().isEmpty() || fieldNotas.getText().isEmpty() ||
            fieldOjos.getText().isEmpty() || fieldPelaje.getText().isEmpty() ||
@@ -270,7 +269,8 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
            boxTamaño1.getSelectedIndex() == -1 )
         {
            JOptionPane.showMessageDialog(null, "Debe llenar todos los campos \n"+
-                                         "Si no conoce el dato ingrese '--' "); 
+                                         "Si no conoce el dato ingrese '--' \n"+
+                                         "El espacio para el chip debe tener 00 si la mascota no tiene chip" ); 
         }
         else
         {
@@ -281,17 +281,20 @@ public class VentanaReportarMascota extends javax.swing.JInternalFrame implement
 
             JOptionPane.showMessageDialog(null, "Reporte realizado con éxito");
             btnCancelarActionPerformed(evt);
-=======
-        if(stringNumerico.isNumeric(fieldIdChip.getText())){
-        ControladorReportes.getInstance().reportarMascota(fieldNombreMascota.getText(),
-        boxRaza.getSelectedItem().toString(), boxEspecie.getSelectedItem().toString(), boxTamaño1.getSelectedItem().toString(),
-        fieldPelaje.getText(), fieldOjos.getText(),fieldUbicacion.getText(), boxTamaño.getSelectedItem().toString(),
-        fieldNotas.getText(), " ", Integer.parseInt(fieldIdChip.getText()), false, buscarFecha.getCalendar());
-        JOptionPane.showMessageDialog(null, "Reporte realizado con éxito");
-        btnCancelarActionPerformed(evt);
-        }else{
-        JOptionPane.showMessageDialog(null, "El espacio para el chip debe tener 00 si la mascota no tiene chip"); 
->>>>>>> origin/master
+
+//        if(stringNumerico.isNumeric(fieldIdChip.getText()))
+//        {
+//        ControladorReportes.getInstance().reportarMascota(fieldNombreMascota.getText(),
+//        boxRaza.getSelectedItem().toString(), boxEspecie.getSelectedItem().toString(), boxTamaño1.getSelectedItem().toString(),
+//        fieldPelaje.getText(), fieldOjos.getText(),fieldUbicacion.getText(), boxTamaño.getSelectedItem().toString(),
+//        fieldNotas.getText(), " ", Integer.parseInt(fieldIdChip.getText()), false, buscarFecha.getCalendar());
+//        JOptionPane.showMessageDialog(null, "Reporte realizado con éxito");
+//        btnCancelarActionPerformed(evt);
+//        }else
+//        {
+//        JOptionPane.showMessageDialog(null, "El espacio para el chip debe tener 00 si la mascota no tiene chip"); 
+//
+//        }
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
