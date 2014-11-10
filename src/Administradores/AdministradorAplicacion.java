@@ -130,6 +130,21 @@ public class AdministradorAplicacion implements IConstantes
         return miAdministradorAplicacion;
     }
 
+    
+    
+    public CasaCuna buscarCasaCuna(String pDueño)
+    {
+        CasaCuna temp = null;
+        for (int i = 0;i < miListaCasasCuna.size();i++)
+        {
+            if(miListaCasasCuna.get(i).getNombreDueño().compareTo(pDueño)==0)
+            {
+                temp = miListaCasasCuna.get(i);
+                break;
+            }
+        }
+        return temp;
+    }
     public Usuario getMiUsuarioActual() {
         return miUsuarioActual;
     }

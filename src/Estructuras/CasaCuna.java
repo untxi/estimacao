@@ -18,6 +18,7 @@ public class CasaCuna
     private String descripcion;
     private ArrayList<String> fotosCasaCuna;
     private Persona dueñoCasaCuna;
+    private int donaciones = 0;
 
     public void setDueñoCasaCuna(Persona dueñoCasaCuna) {
         this.dueñoCasaCuna = dueñoCasaCuna;
@@ -33,6 +34,14 @@ public class CasaCuna
 
     public String getTamanoMascota() {
         return tamanoMascota;
+    }
+
+    public void setDonaciones(int donaciones) {
+        this.donaciones = donaciones;
+    }
+
+    public int getDonaciones() {
+        return donaciones;
     }
 
     public String getTipoMascota() {
@@ -103,6 +112,13 @@ public class CasaCuna
         this.fotosCasaCuna = fotosCasaCuna;
     }
     
+    public String getNombreDueño()
+    {
+        return dueñoCasaCuna.getNombre();
+    }
     
-    
+    public void sumarDonacion(int pCantidadDonaciones)
+    {
+        this.setDonaciones(donaciones + pCantidadDonaciones);
+    }
 }

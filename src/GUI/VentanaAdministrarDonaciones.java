@@ -74,7 +74,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 150, 40));
+        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, 150, 40));
 
         btnEntregarDonaciones.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnEntregarDonaciones.setForeground(new java.awt.Color(170, 80, 0));
@@ -84,7 +84,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
                 btnEntregarDonacionesActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEntregarDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, 40));
+        jPanel1.add(btnEntregarDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 150, 40));
 
         btnVerDonaciones.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnVerDonaciones.setForeground(new java.awt.Color(170, 80, 0));
@@ -94,7 +94,7 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
                 btnVerDonacionesActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 150, 40));
+        jPanel1.add(btnVerDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 150, 40));
 
         tablaDonaciones.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
         tablaDonaciones.setModel(new javax.swing.table.DefaultTableModel(
@@ -102,14 +102,14 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
 
             },
             new String [] {
-                "Fecha", "Cédula Donador", "Cantidad", "Entregar a"
+                "Fecha", "Cédula Donador", "Cantidad", "Entregar a", "Monto en Casa Cuna"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true
+                false, false, false, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -122,13 +122,13 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         });
         jScrollPane1.setViewportView(tablaDonaciones);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, 180));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 60, 640, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,11 +140,36 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         this.setVisible(false);
+        limpiarTabla();
     }//GEN-LAST:event_btnCerrarActionPerformed
 
+    private void comboBoxChange(java.awt.event.ActionEvent evt)
+    {
+       int indiceFilaTabla = tablaDonaciones.getSelectedRow();
+       if (indiceFilaTabla != -1)
+       {
+        if(!tablaDonaciones.getValueAt(indiceFilaTabla, 3).toString().isEmpty())
+        {
+             tablaDonaciones.setValueAt(AdministradorAplicacion.getInstance().buscarCasaCuna(tablaDonaciones.getValueAt(indiceFilaTabla, 3).toString()).getDonaciones(), indiceFilaTabla, 4);
+        } 
+         else
+        {
+               tablaDonaciones.setValueAt("", indiceFilaTabla, 4);
+        }
+       }
+    }
+    
     private void btnVerDonacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDonacionesActionPerformed
+        limpiarTabla();
         JComboBox prueba = new JComboBox();
         prueba.setModel(new DefaultComboBoxModel(AdministradorAplicacion.getInstance().demeUsuariosQueAceptanDonacion()));
+        prueba.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxChange(evt);
+            }
+        });
+        
         tablaDonaciones.getColumnModel().getColumn(3).setCellEditor(new DefaultCellEditor(prueba));
         for(int i = 0; i < tablaDonaciones.getRowCount();i++)
         {
@@ -152,12 +177,12 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         }
         for(int i = 0; i < Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().size();i++)
         {
-            ((DefaultTableModel)tablaDonaciones.getModel()).addRow(new Object[3]);
+            ((DefaultTableModel)tablaDonaciones.getModel()).addRow(new Object[4]);
             
             tablaDonaciones.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().get(i).getFechaRecibido().toString(), i, 0);
             tablaDonaciones.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().get(i).getIdDonante(), i, 1);
             tablaDonaciones.setValueAt(Administradores.AdministradorAplicacion.getInstance().getMiListaDonacion().get(i).getMonto(), i, 2);
-            //tablaDonaciones.setValueAt(prueba, i, 3);
+            tablaDonaciones.setValueAt("", i, 3);
         }
     }//GEN-LAST:event_btnVerDonacionesActionPerformed
 
@@ -176,11 +201,22 @@ public class VentanaAdministrarDonaciones extends javax.swing.JInternalFrame{
         {
             if(!tablaDonaciones.getValueAt(i, 3).toString().isEmpty())
             {
-                System.out.println(tablaDonaciones.getValueAt(i, 3).toString());
+                AdministradorAplicacion.getInstance().getMiListaDonacion().remove(i);
+                AdministradorAplicacion.getInstance().buscarCasaCuna(tablaDonaciones.getValueAt(i, 3).toString()).
+                        sumarDonacion(Integer.parseInt(tablaDonaciones.getValueAt(i, 2).toString()));
+                System.out.println("Monto en casa cuna: "+ AdministradorAplicacion.getInstance().buscarCasaCuna(tablaDonaciones.getValueAt(i, 3).toString()).getDonaciones());
             }
         }
-        // TODO add your handling code here:
+        limpiarTabla();
+        btnVerDonacionesActionPerformed(evt);
     }//GEN-LAST:event_btnEntregarDonacionesActionPerformed
+    private void limpiarTabla()
+    {
+        for(int i = 0; i < tablaDonaciones.getRowCount();i++)
+        {
+            ((DefaultTableModel)tablaDonaciones.getModel()).removeRow(i);   
+        }
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -112,7 +112,6 @@ public class VentanaDonar extends javax.swing.JInternalFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDonarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDonarActionPerformed
-        System.out.println(fechaDonacion.getJCalendar().getDate());
         Controladores.ControladorDonaciones.getInstance().crearDonacion(Integer.parseInt(fieldCantidadDonacion.getText()), fechaDonacion.getJCalendar().getDate());
         JOptionPane.showMessageDialog(null, "Donación realizada con éxito");
         fieldCantidadDonacion.setText("");
