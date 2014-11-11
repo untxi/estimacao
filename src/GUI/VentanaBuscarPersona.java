@@ -157,13 +157,13 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
 
         btnCerrar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnCerrar.setForeground(new java.awt.Color(170, 80, 0));
-        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/salir.png"))); // NOI18N
+        btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 50, 40));
+        panelVentanaBuscar.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 380, 80, 30));
 
         btnBuscar.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(170, 80, 0));
@@ -173,7 +173,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 90, 40));
+        panelVentanaBuscar.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 90, 40));
 
         fieldApellido1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelVentanaBuscar.add(fieldApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 130, -1));
@@ -251,7 +251,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 btnReportarEncontradaActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 210, 30));
+        panelVentanaBuscar.add(btnReportarEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 210, 30));
 
         lblCedula.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lblCedula.setText("Cédula");
@@ -273,7 +273,7 @@ public class VentanaBuscarPersona extends javax.swing.JInternalFrame {
                 limpiarTableActionPerformed(evt);
             }
         });
-        panelVentanaBuscar.add(limpiarTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 380, 120, 30));
+        panelVentanaBuscar.add(limpiarTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 120, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
