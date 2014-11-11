@@ -19,7 +19,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
     private String colorPelaje = "";
     private String colorOjos = "";
     private String ubicacion = "";
-    private final String estado;
+    private String estado = "";
     private static VentanaBuscarMascota miVentanaBuscarMascota;
     
     /**
@@ -467,10 +467,10 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
         int i = 0;
         for(Mascota mascota : lista){
             tablaBuscarMascota.setValueAt(mascota.getNombre(), i, 0);
-            tablaBuscarMascota.setValueAt(mascota.getChip(), i, 1);
+            tablaBuscarMascota.setValueAt(mascota.getChipID(), i, 1);
             tablaBuscarMascota.setValueAt(mascota.getEspecie(), i, 2);
             tablaBuscarMascota.setValueAt(mascota.getRaza(), i, 3);
-            tablaBuscarMascota.setValueAt(mascota.getTamaño(), i, 4);
+            tablaBuscarMascota.setValueAt(mascota.getSize(), i, 4);
             tablaBuscarMascota.setValueAt(mascota.getColorPelaje(), i, 5);
             tablaBuscarMascota.setValueAt(mascota.getColorOjos(), i, 6);
             tablaBuscarMascota.setValueAt(mascota.getUbicacion(), i, 7);
