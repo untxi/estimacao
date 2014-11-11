@@ -1,10 +1,15 @@
 
 package GUI;
 
+import Administradores.AdministradorAdopciones;
+import Controladores.ControladorAdopciones;
+import Estructuras.Adopcion;
 import Estructuras.Mascota;
 import static Interfaces.IConstantes.Especies;
 import static Interfaces.IConstantes.Razas;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import javax.swing.JOptionPane;
@@ -257,7 +262,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, true, true
+                false, false, false, false, false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -283,6 +288,7 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
             tablaBuscarMascota.getColumnModel().getColumn(5).setResizable(false);
             tablaBuscarMascota.getColumnModel().getColumn(6).setResizable(false);
             tablaBuscarMascota.getColumnModel().getColumn(7).setResizable(false);
+            tablaBuscarMascota.getColumnModel().getColumn(8).setResizable(false);
         }
 
         panelVentanaBuscar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 660, 320));
@@ -437,10 +443,19 @@ public class VentanaBuscarMascota extends javax.swing.JInternalFrame {
 
     private void btnAdoptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdoptarActionPerformed
         // TODO add your handling code here:
-        //if Check == true   donde esta lo del check??
-        //Controladores.ControladorAdopciones.getInstance().adoptarMascota(null);//En lugar de null va de donde extra la mascota
-        //poner un Else
-        JOptionPane.showMessageDialog(null, "Esta mascota no puede ser adoptada");
+        JOptionPane.showMessageDialog(null, "Felicidades, ha adoptado una mascota");
+        for(int i = 0; i < AdministradorAdopciones.getMiAdminAdopciones().size();i++)
+        {
+            if((Boolean)tablaBuscarMascota.getValueAt(i, 9))
+            {
+                try {
+                    Controladores.ControladorAdopciones.getInstance().adoptarMascota((Adopcion) tablaBuscarMascota.getValueAt(i, 9));
+                } catch (Exception ex) {
+                    Logger.getLogger(VentanaBuscarMascota.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else{
+             JOptionPane.showMessageDialog(null, "Esta mascota no puede ser adoptada");}
+        }
         
     }//GEN-LAST:event_btnAdoptarActionPerformed
 

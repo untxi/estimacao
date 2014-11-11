@@ -2,6 +2,7 @@ package Controladores;
 
 import Estructuras.Adopcion;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Soto
